@@ -1,0 +1,23 @@
+[project]
+name = "scraper_reggas"
+version = "0.1.0"
+description = "Default template for PDM package"
+authors = [
+    {name = "Sebastian Blanco Abrajan", email = "sebastian.blanco@kaxanuk.mx"},
+]
+dependencies = ["pandas>=2.2.3", 
+                "openpyxl>=3.1.5", 
+                "selenium>=4.28.1", 
+                "beautifulsoup4>=4.13.3", 
+                "lxml>=5.3.1"]
+requires-python = ">=3.12"
+readme = "README.md"
+license = {text = "MIT"}
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+
+[tool.pdm]
+distribution = true

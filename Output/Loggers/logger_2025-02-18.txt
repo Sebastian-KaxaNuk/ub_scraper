@@ -1,0 +1,2105 @@
+2025-02-18 14:23:51,349 - INFO - Logger inicializado. Guardando logs en: Output/Loggers/logger_2025-02-18.txt
+2025-02-18 14:24:18,263 - INFO - Logger inicializado. Guardando logs en: Output/Loggers/logger_2025-02-18.txt
+2025-02-18 14:31:56,183 - INFO - Logger inicializado. Guardando logs en: Output/Loggers/logger_2025-02-18.txt
+2025-02-18 14:31:56,186 - INFO - Iniciando el proceso de scraping...
+2025-02-18 14:31:56,653 - INFO - Archivo validado correctamente.
+2025-02-18 14:32:25,793 - INFO - Logger inicializado. Guardando logs en: Output/Loggers/logger_2025-02-18.txt
+2025-02-18 14:32:25,795 - INFO - Iniciando el proceso de scraping...
+2025-02-18 14:32:26,296 - INFO - Archivo validado correctamente.
+2025-02-18 14:32:48,354 - INFO - Logger inicializado. Guardando logs en: Output/Loggers/logger_2025-02-18.txt
+2025-02-18 14:32:48,357 - INFO - Iniciando el proceso de scraping...
+2025-02-18 14:32:48,818 - INFO - Archivo validado correctamente.
+2025-02-18 14:46:34,509 - INFO - Logger inicializado. Guardando logs en: Output/Loggers/logger_2025-02-18.txt
+2025-02-18 14:46:34,511 - INFO - Iniciando el proceso de scraping...
+2025-02-18 14:46:35,005 - INFO - Archivo validado correctamente.
+2025-02-18 14:46:52,736 - INFO - Clic en botón: Botón de Inicio
+2025-02-18 14:46:52,793 - INFO - Clic en botón: Botón de Aceptar Términos
+2025-02-18 14:46:55,641 - INFO - Clic en botón: Botón de Consulta Pública
+2025-02-18 14:47:00,127 - INFO - Clic en botón: Botón de Sistema Energético Mexicano
+2025-02-18 14:47:04,274 - INFO - Iniciando búsqueda para: PL/658/EXP/ES/2015
+2025-02-18 14:47:08,540 - INFO - Texto ingresado: PL/658/EXP/ES/2015
+2025-02-18 14:47:11,622 - INFO - Clic en botón: Botón de Lupa (Buscar) para PL/658/EXP/ES/2015
+2025-02-18 14:47:14,698 - INFO - Clic en botón: Botón Verde en Mapa para PL/658/EXP/ES/2015
+2025-02-18 14:47:17,716 - INFO - Se encontraron 2 iconos de gasolina para PL/658/EXP/ES/2015
+2025-02-18 14:47:17,717 - INFO - Haciendo clic en el icono de gasolina 1 para PL/658/EXP/ES/2015
+2025-02-18 14:47:20,819 - INFO - Scroll realizado
+2025-02-18 14:47:23,912 - INFO - Clic en botón: Botón de Ver Detalle para PL/658/EXP/ES/2015
+2025-02-18 14:47:26,925 - INFO - Cambiado a nueva pestaña
+2025-02-18 14:47:26,953 - INFO - Texto extraído de //*[@id="contact2"]/div/div/div[4]: Calle: BOULEVARD INSURGENTES NO. 1910
+Código Postal: 22040
+Colonia: LIBRAMIENTO TIJUANA
+ID Entidad Federativa: 02
+ID Municipio: 004
+2025-02-18 14:47:26,954 - INFO - Datos obtenidos del icono 1 para PL/658/EXP/ES/2015: Calle: BOULEVARD INSURGENTES NO. 1910
+Código Postal: 22040
+Colonia: LIBRAMIENTO TIJUANA
+ID Entidad Federativa: 02
+ID Municipio: 004
+2025-02-18 14:47:29,005 - INFO - Cerrada la pestaña actual y vuelta a la principal
+2025-02-18 14:47:31,007 - INFO - Haciendo clic en el icono de gasolina 2 para PL/658/EXP/ES/2015
+2025-02-18 14:47:34,086 - INFO - Scroll realizado
+2025-02-18 14:47:37,166 - INFO - Clic en botón: Botón de Ver Detalle para PL/658/EXP/ES/2015
+2025-02-18 14:47:40,178 - INFO - Cambiado a nueva pestaña
+2025-02-18 14:47:40,207 - INFO - Texto extraído de //*[@id="contact2"]/div/div/div[4]: Calle: BOULEVARD INSURGENTES NO. 20010
+Código Postal: 22210
+Colonia: TERCERA ETAPA RIO TIJUANA
+ID Entidad Federativa: 02
+ID Municipio: 004
+2025-02-18 14:47:40,208 - INFO - Datos obtenidos del icono 2 para PL/658/EXP/ES/2015: Calle: BOULEVARD INSURGENTES NO. 20010
+Código Postal: 22210
+Colonia: TERCERA ETAPA RIO TIJUANA
+ID Entidad Federativa: 02
+ID Municipio: 004
+2025-02-18 14:47:42,245 - INFO - Cerrada la pestaña actual y vuelta a la principal
+2025-02-18 14:47:44,248 - INFO - Iniciando búsqueda para: PL/902/EXP/ES/2015
+2025-02-18 14:47:48,989 - INFO - Texto ingresado: PL/902/EXP/ES/2015
+2025-02-18 14:47:52,105 - INFO - Clic en botón: Botón de Lupa (Buscar) para PL/902/EXP/ES/2015
+2025-02-18 14:48:00,250 - ERROR - Error al hacer clic en 'Botón Verde en Mapa para PL/902/EXP/ES/2015': Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF62EBF2EC5+28789]
+	(No symbol) [0x00007FF62EB5F870]
+	(No symbol) [0x00007FF62E9F8F9A]
+	(No symbol) [0x00007FF62EA4F236]
+	(No symbol) [0x00007FF62EA4F46C]
+	(No symbol) [0x00007FF62EAA29F7]
+	(No symbol) [0x00007FF62EA7725F]
+	(No symbol) [0x00007FF62EA9F6C3]
+	(No symbol) [0x00007FF62EA76FF3]
+	(No symbol) [0x00007FF62EA3FF0E]
+	(No symbol) [0x00007FF62EA41193]
+	GetHandleVerifier [0x00007FF62EF3D5FD+3479469]
+	GetHandleVerifier [0x00007FF62EF571A3+3584851]
+	GetHandleVerifier [0x00007FF62EF4C44D+3540477]
+	GetHandleVerifier [0x00007FF62ECB8B6A+838938]
+	(No symbol) [0x00007FF62EB6A4EF]
+	(No symbol) [0x00007FF62EB66954]
+	(No symbol) [0x00007FF62EB66AF6]
+	(No symbol) [0x00007FF62EB56499]
+	BaseThreadInitThunk [0x00007FFB8F4F259D+29]
+	RtlUserThreadStart [0x00007FFB9184AF38+40]
+
+2025-02-18 14:48:03,276 - INFO - Se encontraron 1 iconos de gasolina para PL/902/EXP/ES/2015
+2025-02-18 14:48:03,280 - INFO - Haciendo clic en el icono de gasolina 1 para PL/902/EXP/ES/2015
+2025-02-18 14:48:06,375 - INFO - Scroll realizado
+2025-02-18 14:48:09,547 - INFO - Clic en botón: Botón de Ver Detalle para PL/902/EXP/ES/2015
+2025-02-18 14:48:12,566 - INFO - Cambiado a nueva pestaña
+2025-02-18 14:48:12,596 - INFO - Texto extraído de //*[@id="contact2"]/div/div/div[4]: Calle: CARRETERA IXMIQUILPAN - PALMILLAS KM 58.5 HUICHAPAN
+Código Postal: 42084
+Colonia: S/C
+ID Entidad Federativa: 13
+ID Municipio: 029
+2025-02-18 14:48:12,597 - INFO - Datos obtenidos del icono 1 para PL/902/EXP/ES/2015: Calle: CARRETERA IXMIQUILPAN - PALMILLAS KM 58.5 HUICHAPAN
+Código Postal: 42084
+Colonia: S/C
+ID Entidad Federativa: 13
+ID Municipio: 029
+2025-02-18 14:48:14,638 - INFO - Cerrada la pestaña actual y vuelta a la principal
+2025-02-18 14:48:16,640 - INFO - Iniciando búsqueda para: PL/760/EXP/ES/2015
+2025-02-18 14:48:21,311 - INFO - Texto ingresado: PL/760/EXP/ES/2015
+2025-02-18 14:48:24,380 - INFO - Clic en botón: Botón de Lupa (Buscar) para PL/760/EXP/ES/2015
+2025-02-18 14:48:32,507 - ERROR - Error al hacer clic en 'Botón Verde en Mapa para PL/760/EXP/ES/2015': Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF62EBF2EC5+28789]
+	(No symbol) [0x00007FF62EB5F870]
+	(No symbol) [0x00007FF62E9F8F9A]
+	(No symbol) [0x00007FF62EA4F236]
+	(No symbol) [0x00007FF62EA4F46C]
+	(No symbol) [0x00007FF62EAA29F7]
+	(No symbol) [0x00007FF62EA7725F]
+	(No symbol) [0x00007FF62EA9F6C3]
+	(No symbol) [0x00007FF62EA76FF3]
+	(No symbol) [0x00007FF62EA3FF0E]
+	(No symbol) [0x00007FF62EA41193]
+	GetHandleVerifier [0x00007FF62EF3D5FD+3479469]
+	GetHandleVerifier [0x00007FF62EF571A3+3584851]
+	GetHandleVerifier [0x00007FF62EF4C44D+3540477]
+	GetHandleVerifier [0x00007FF62ECB8B6A+838938]
+	(No symbol) [0x00007FF62EB6A4EF]
+	(No symbol) [0x00007FF62EB66954]
+	(No symbol) [0x00007FF62EB66AF6]
+	(No symbol) [0x00007FF62EB56499]
+	BaseThreadInitThunk [0x00007FFB8F4F259D+29]
+	RtlUserThreadStart [0x00007FFB9184AF38+40]
+
+2025-02-18 14:48:35,523 - INFO - Se encontraron 9 iconos de gasolina para PL/760/EXP/ES/2015
+2025-02-18 14:48:35,524 - INFO - Haciendo clic en el icono de gasolina 1 para PL/760/EXP/ES/2015
+2025-02-18 14:48:35,535 - ERROR - Error al procesar el icono 1 para PL/760/EXP/ES/2015: Message: element not interactable
+  (Session info: chrome=133.0.6943.60)
+Stacktrace:
+	GetHandleVerifier [0x00007FF62EBF2EC5+28789]
+	(No symbol) [0x00007FF62EB5F870]
+	(No symbol) [0x00007FF62E9F8DCC]
+	(No symbol) [0x00007FF62EA50664]
+	(No symbol) [0x00007FF62EA42234]
+	(No symbol) [0x00007FF62EA7721A]
+	(No symbol) [0x00007FF62EA41AE6]
+	(No symbol) [0x00007FF62EA77430]
+	(No symbol) [0x00007FF62EA9F6C3]
+	(No symbol) [0x00007FF62EA76FF3]
+	(No symbol) [0x00007FF62EA3FF0E]
+	(No symbol) [0x00007FF62EA41193]
+	GetHandleVerifier [0x00007FF62EF3D5FD+3479469]
+	GetHandleVerifier [0x00007FF62EF571A3+3584851]
+	GetHandleVerifier [0x00007FF62EF4C44D+3540477]
+	GetHandleVerifier [0x00007FF62ECB8B6A+838938]
+	(No symbol) [0x00007FF62EB6A4EF]
+	(No symbol) [0x00007FF62EB66954]
+	(No symbol) [0x00007FF62EB66AF6]
+	(No symbol) [0x00007FF62EB56499]
+	BaseThreadInitThunk [0x00007FFB8F4F259D+29]
+	RtlUserThreadStart [0x00007FFB9184AF38+40]
+
+2025-02-18 14:48:35,536 - INFO - Haciendo clic en el icono de gasolina 2 para PL/760/EXP/ES/2015
+2025-02-18 14:48:35,547 - ERROR - Error al procesar el icono 2 para PL/760/EXP/ES/2015: Message: element not interactable
+  (Session info: chrome=133.0.6943.60)
+Stacktrace:
+	GetHandleVerifier [0x00007FF62EBF2EC5+28789]
+	(No symbol) [0x00007FF62EB5F870]
+	(No symbol) [0x00007FF62E9F8DCC]
+	(No symbol) [0x00007FF62EA50664]
+	(No symbol) [0x00007FF62EA42234]
+	(No symbol) [0x00007FF62EA7721A]
+	(No symbol) [0x00007FF62EA41AE6]
+	(No symbol) [0x00007FF62EA77430]
+	(No symbol) [0x00007FF62EA9F6C3]
+	(No symbol) [0x00007FF62EA76FF3]
+	(No symbol) [0x00007FF62EA3FF0E]
+	(No symbol) [0x00007FF62EA41193]
+	GetHandleVerifier [0x00007FF62EF3D5FD+3479469]
+	GetHandleVerifier [0x00007FF62EF571A3+3584851]
+	GetHandleVerifier [0x00007FF62EF4C44D+3540477]
+	GetHandleVerifier [0x00007FF62ECB8B6A+838938]
+	(No symbol) [0x00007FF62EB6A4EF]
+	(No symbol) [0x00007FF62EB66954]
+	(No symbol) [0x00007FF62EB66AF6]
+	(No symbol) [0x00007FF62EB56499]
+	BaseThreadInitThunk [0x00007FFB8F4F259D+29]
+	RtlUserThreadStart [0x00007FFB9184AF38+40]
+
+2025-02-18 14:48:35,548 - INFO - Haciendo clic en el icono de gasolina 3 para PL/760/EXP/ES/2015
+2025-02-18 14:48:38,614 - INFO - Scroll realizado
+2025-02-18 14:48:41,706 - INFO - Clic en botón: Botón de Ver Detalle para PL/760/EXP/ES/2015
+2025-02-18 14:48:44,717 - INFO - Cambiado a nueva pestaña
+2025-02-18 14:48:44,745 - INFO - Texto extraído de //*[@id="contact2"]/div/div/div[4]: Calle: AVENIDA ADOLFO LÓPEZ MATEOS NO. 1604
+Código Postal: 32380
+Colonia: MELCHOR OCAMPO
+ID Entidad Federativa: 08
+ID Municipio: 037
+2025-02-18 14:48:44,746 - INFO - Datos obtenidos del icono 3 para PL/760/EXP/ES/2015: Calle: AVENIDA ADOLFO LÓPEZ MATEOS NO. 1604
+Código Postal: 32380
+Colonia: MELCHOR OCAMPO
+ID Entidad Federativa: 08
+ID Municipio: 037
+2025-02-18 14:48:46,775 - INFO - Cerrada la pestaña actual y vuelta a la principal
+2025-02-18 14:48:48,777 - INFO - Haciendo clic en el icono de gasolina 4 para PL/760/EXP/ES/2015
+2025-02-18 14:48:49,870 - ERROR - Error al procesar el icono 4 para PL/760/EXP/ES/2015: Message: element click intercepted: Element <img src="/img/gasolinera.png" class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" alt="Marker" tabindex="0" role="button" style="margin-left: -18px; margin-top: -16px; width: 36px; height: 36px; transform: translate3d(736px, 178px, 0px); z-index: 178;"> is not clickable at point (1500, 688). Other element would receive the click: <li>...</li>
+  (Session info: chrome=133.0.6943.60)
+Stacktrace:
+	GetHandleVerifier [0x00007FF62EBF2EC5+28789]
+	(No symbol) [0x00007FF62EB5F870]
+	(No symbol) [0x00007FF62E9F8F9A]
+	(No symbol) [0x00007FF62EA570C9]
+	(No symbol) [0x00007FF62EA54A92]
+	(No symbol) [0x00007FF62EA51B31]
+	(No symbol) [0x00007FF62EA50A41]
+	(No symbol) [0x00007FF62EA42234]
+	(No symbol) [0x00007FF62EA7721A]
+	(No symbol) [0x00007FF62EA41AE6]
+	(No symbol) [0x00007FF62EA77430]
+	(No symbol) [0x00007FF62EA9F6C3]
+	(No symbol) [0x00007FF62EA76FF3]
+	(No symbol) [0x00007FF62EA3FF0E]
+	(No symbol) [0x00007FF62EA41193]
+	GetHandleVerifier [0x00007FF62EF3D5FD+3479469]
+	GetHandleVerifier [0x00007FF62EF571A3+3584851]
+	GetHandleVerifier [0x00007FF62EF4C44D+3540477]
+	GetHandleVerifier [0x00007FF62ECB8B6A+838938]
+	(No symbol) [0x00007FF62EB6A4EF]
+	(No symbol) [0x00007FF62EB66954]
+	(No symbol) [0x00007FF62EB66AF6]
+	(No symbol) [0x00007FF62EB56499]
+	BaseThreadInitThunk [0x00007FFB8F4F259D+29]
+	RtlUserThreadStart [0x00007FFB9184AF38+40]
+
+2025-02-18 14:48:49,871 - INFO - Haciendo clic en el icono de gasolina 5 para PL/760/EXP/ES/2015
+2025-02-18 14:48:49,883 - ERROR - Error al procesar el icono 5 para PL/760/EXP/ES/2015: Message: element not interactable
+  (Session info: chrome=133.0.6943.60)
+Stacktrace:
+	GetHandleVerifier [0x00007FF62EBF2EC5+28789]
+	(No symbol) [0x00007FF62EB5F870]
+	(No symbol) [0x00007FF62E9F8DCC]
+	(No symbol) [0x00007FF62EA50664]
+	(No symbol) [0x00007FF62EA42234]
+	(No symbol) [0x00007FF62EA7721A]
+	(No symbol) [0x00007FF62EA41AE6]
+	(No symbol) [0x00007FF62EA77430]
+	(No symbol) [0x00007FF62EA9F6C3]
+	(No symbol) [0x00007FF62EA76FF3]
+	(No symbol) [0x00007FF62EA3FF0E]
+	(No symbol) [0x00007FF62EA41193]
+	GetHandleVerifier [0x00007FF62EF3D5FD+3479469]
+	GetHandleVerifier [0x00007FF62EF571A3+3584851]
+	GetHandleVerifier [0x00007FF62EF4C44D+3540477]
+	GetHandleVerifier [0x00007FF62ECB8B6A+838938]
+	(No symbol) [0x00007FF62EB6A4EF]
+	(No symbol) [0x00007FF62EB66954]
+	(No symbol) [0x00007FF62EB66AF6]
+	(No symbol) [0x00007FF62EB56499]
+	BaseThreadInitThunk [0x00007FFB8F4F259D+29]
+	RtlUserThreadStart [0x00007FFB9184AF38+40]
+
+2025-02-18 14:48:49,884 - INFO - Haciendo clic en el icono de gasolina 6 para PL/760/EXP/ES/2015
+2025-02-18 14:48:49,896 - ERROR - Error al procesar el icono 6 para PL/760/EXP/ES/2015: Message: element not interactable
+  (Session info: chrome=133.0.6943.60)
+Stacktrace:
+	GetHandleVerifier [0x00007FF62EBF2EC5+28789]
+	(No symbol) [0x00007FF62EB5F870]
+	(No symbol) [0x00007FF62E9F8DCC]
+	(No symbol) [0x00007FF62EA50664]
+	(No symbol) [0x00007FF62EA42234]
+	(No symbol) [0x00007FF62EA7721A]
+	(No symbol) [0x00007FF62EA41AE6]
+	(No symbol) [0x00007FF62EA77430]
+	(No symbol) [0x00007FF62EA9F6C3]
+	(No symbol) [0x00007FF62EA76FF3]
+	(No symbol) [0x00007FF62EA3FF0E]
+	(No symbol) [0x00007FF62EA41193]
+	GetHandleVerifier [0x00007FF62EF3D5FD+3479469]
+	GetHandleVerifier [0x00007FF62EF571A3+3584851]
+	GetHandleVerifier [0x00007FF62EF4C44D+3540477]
+	GetHandleVerifier [0x00007FF62ECB8B6A+838938]
+	(No symbol) [0x00007FF62EB6A4EF]
+	(No symbol) [0x00007FF62EB66954]
+	(No symbol) [0x00007FF62EB66AF6]
+	(No symbol) [0x00007FF62EB56499]
+	BaseThreadInitThunk [0x00007FFB8F4F259D+29]
+	RtlUserThreadStart [0x00007FFB9184AF38+40]
+
+2025-02-18 14:48:49,897 - INFO - Haciendo clic en el icono de gasolina 7 para PL/760/EXP/ES/2015
+2025-02-18 14:48:49,913 - ERROR - Error al procesar el icono 7 para PL/760/EXP/ES/2015: Message: element not interactable
+  (Session info: chrome=133.0.6943.60)
+Stacktrace:
+	GetHandleVerifier [0x00007FF62EBF2EC5+28789]
+	(No symbol) [0x00007FF62EB5F870]
+	(No symbol) [0x00007FF62E9F8DCC]
+	(No symbol) [0x00007FF62EA50664]
+	(No symbol) [0x00007FF62EA42234]
+	(No symbol) [0x00007FF62EA7721A]
+	(No symbol) [0x00007FF62EA41AE6]
+	(No symbol) [0x00007FF62EA77430]
+	(No symbol) [0x00007FF62EA9F6C3]
+	(No symbol) [0x00007FF62EA76FF3]
+	(No symbol) [0x00007FF62EA3FF0E]
+	(No symbol) [0x00007FF62EA41193]
+	GetHandleVerifier [0x00007FF62EF3D5FD+3479469]
+	GetHandleVerifier [0x00007FF62EF571A3+3584851]
+	GetHandleVerifier [0x00007FF62EF4C44D+3540477]
+	GetHandleVerifier [0x00007FF62ECB8B6A+838938]
+	(No symbol) [0x00007FF62EB6A4EF]
+	(No symbol) [0x00007FF62EB66954]
+	(No symbol) [0x00007FF62EB66AF6]
+	(No symbol) [0x00007FF62EB56499]
+	BaseThreadInitThunk [0x00007FFB8F4F259D+29]
+	RtlUserThreadStart [0x00007FFB9184AF38+40]
+
+2025-02-18 14:48:49,914 - INFO - Haciendo clic en el icono de gasolina 8 para PL/760/EXP/ES/2015
+2025-02-18 14:48:49,926 - ERROR - Error al procesar el icono 8 para PL/760/EXP/ES/2015: Message: element not interactable
+  (Session info: chrome=133.0.6943.60)
+Stacktrace:
+	GetHandleVerifier [0x00007FF62EBF2EC5+28789]
+	(No symbol) [0x00007FF62EB5F870]
+	(No symbol) [0x00007FF62E9F8DCC]
+	(No symbol) [0x00007FF62EA50664]
+	(No symbol) [0x00007FF62EA42234]
+	(No symbol) [0x00007FF62EA7721A]
+	(No symbol) [0x00007FF62EA41AE6]
+	(No symbol) [0x00007FF62EA77430]
+	(No symbol) [0x00007FF62EA9F6C3]
+	(No symbol) [0x00007FF62EA76FF3]
+	(No symbol) [0x00007FF62EA3FF0E]
+	(No symbol) [0x00007FF62EA41193]
+	GetHandleVerifier [0x00007FF62EF3D5FD+3479469]
+	GetHandleVerifier [0x00007FF62EF571A3+3584851]
+	GetHandleVerifier [0x00007FF62EF4C44D+3540477]
+	GetHandleVerifier [0x00007FF62ECB8B6A+838938]
+	(No symbol) [0x00007FF62EB6A4EF]
+	(No symbol) [0x00007FF62EB66954]
+	(No symbol) [0x00007FF62EB66AF6]
+	(No symbol) [0x00007FF62EB56499]
+	BaseThreadInitThunk [0x00007FFB8F4F259D+29]
+	RtlUserThreadStart [0x00007FFB9184AF38+40]
+
+2025-02-18 14:48:49,927 - INFO - Haciendo clic en el icono de gasolina 9 para PL/760/EXP/ES/2015
+2025-02-18 14:48:49,938 - ERROR - Error al procesar el icono 9 para PL/760/EXP/ES/2015: Message: element not interactable
+  (Session info: chrome=133.0.6943.60)
+Stacktrace:
+	GetHandleVerifier [0x00007FF62EBF2EC5+28789]
+	(No symbol) [0x00007FF62EB5F870]
+	(No symbol) [0x00007FF62E9F8DCC]
+	(No symbol) [0x00007FF62EA50664]
+	(No symbol) [0x00007FF62EA42234]
+	(No symbol) [0x00007FF62EA7721A]
+	(No symbol) [0x00007FF62EA41AE6]
+	(No symbol) [0x00007FF62EA77430]
+	(No symbol) [0x00007FF62EA9F6C3]
+	(No symbol) [0x00007FF62EA76FF3]
+	(No symbol) [0x00007FF62EA3FF0E]
+	(No symbol) [0x00007FF62EA41193]
+	GetHandleVerifier [0x00007FF62EF3D5FD+3479469]
+	GetHandleVerifier [0x00007FF62EF571A3+3584851]
+	GetHandleVerifier [0x00007FF62EF4C44D+3540477]
+	GetHandleVerifier [0x00007FF62ECB8B6A+838938]
+	(No symbol) [0x00007FF62EB6A4EF]
+	(No symbol) [0x00007FF62EB66954]
+	(No symbol) [0x00007FF62EB66AF6]
+	(No symbol) [0x00007FF62EB56499]
+	BaseThreadInitThunk [0x00007FFB8F4F259D+29]
+	RtlUserThreadStart [0x00007FFB9184AF38+40]
+
+2025-02-18 14:48:49,940 - INFO - Iniciando búsqueda para: PL/825/EXP/ES/2015
+2025-02-18 14:48:55,168 - INFO - Texto ingresado: PL/825/EXP/ES/2015
+2025-02-18 14:48:58,253 - INFO - Clic en botón: Botón de Lupa (Buscar) para PL/825/EXP/ES/2015
+2025-02-18 14:49:06,377 - ERROR - Error al hacer clic en 'Botón Verde en Mapa para PL/825/EXP/ES/2015': Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF62EBF2EC5+28789]
+	(No symbol) [0x00007FF62EB5F870]
+	(No symbol) [0x00007FF62E9F8F9A]
+	(No symbol) [0x00007FF62EA4F236]
+	(No symbol) [0x00007FF62EA4F46C]
+	(No symbol) [0x00007FF62EAA29F7]
+	(No symbol) [0x00007FF62EA7725F]
+	(No symbol) [0x00007FF62EA9F6C3]
+	(No symbol) [0x00007FF62EA76FF3]
+	(No symbol) [0x00007FF62EA3FF0E]
+	(No symbol) [0x00007FF62EA41193]
+	GetHandleVerifier [0x00007FF62EF3D5FD+3479469]
+	GetHandleVerifier [0x00007FF62EF571A3+3584851]
+	GetHandleVerifier [0x00007FF62EF4C44D+3540477]
+	GetHandleVerifier [0x00007FF62ECB8B6A+838938]
+	(No symbol) [0x00007FF62EB6A4EF]
+	(No symbol) [0x00007FF62EB66954]
+	(No symbol) [0x00007FF62EB66AF6]
+	(No symbol) [0x00007FF62EB56499]
+	BaseThreadInitThunk [0x00007FFB8F4F259D+29]
+	RtlUserThreadStart [0x00007FFB9184AF38+40]
+
+2025-02-18 14:49:09,400 - INFO - Se encontraron 8 iconos de gasolina para PL/825/EXP/ES/2015
+2025-02-18 14:49:09,402 - INFO - Haciendo clic en el icono de gasolina 1 para PL/825/EXP/ES/2015
+2025-02-18 14:49:12,503 - INFO - Scroll realizado
+2025-02-18 14:49:15,618 - INFO - Clic en botón: Botón de Ver Detalle para PL/825/EXP/ES/2015
+2025-02-18 14:49:18,628 - INFO - Cambiado a nueva pestaña
+2025-02-18 14:49:18,668 - INFO - Texto extraído de //*[@id="contact2"]/div/div/div[4]: Calle: RICARDO FLORES MAGÓN NO. 950
+Código Postal: 44390
+Colonia: HUENTITAN EL ALTO
+ID Entidad Federativa: 14
+ID Municipio: 039
+2025-02-18 14:49:18,669 - INFO - Datos obtenidos del icono 1 para PL/825/EXP/ES/2015: Calle: RICARDO FLORES MAGÓN NO. 950
+Código Postal: 44390
+Colonia: HUENTITAN EL ALTO
+ID Entidad Federativa: 14
+ID Municipio: 039
+2025-02-18 14:49:20,700 - INFO - Cerrada la pestaña actual y vuelta a la principal
+2025-02-18 14:49:22,702 - INFO - Haciendo clic en el icono de gasolina 2 para PL/825/EXP/ES/2015
+2025-02-18 14:49:25,757 - INFO - Scroll realizado
+2025-02-18 14:49:28,846 - INFO - Clic en botón: Botón de Ver Detalle para PL/825/EXP/ES/2015
+2025-02-18 14:49:31,862 - INFO - Cambiado a nueva pestaña
+2025-02-18 14:49:31,906 - INFO - Texto extraído de //*[@id="contact2"]/div/div/div[4]: Calle: ANILLO PERIFERICO MANUEL GOMEZ MORIN 1525
+Código Postal: 44390
+Colonia: HUENTITAN EL ALTO
+ID Entidad Federativa: 14
+ID Municipio: 039
+2025-02-18 14:49:31,907 - INFO - Datos obtenidos del icono 2 para PL/825/EXP/ES/2015: Calle: ANILLO PERIFERICO MANUEL GOMEZ MORIN 1525
+Código Postal: 44390
+Colonia: HUENTITAN EL ALTO
+ID Entidad Federativa: 14
+ID Municipio: 039
+2025-02-18 14:49:33,955 - INFO - Cerrada la pestaña actual y vuelta a la principal
+2025-02-18 14:49:35,957 - INFO - Haciendo clic en el icono de gasolina 3 para PL/825/EXP/ES/2015
+2025-02-18 14:49:35,975 - ERROR - Error al procesar el icono 3 para PL/825/EXP/ES/2015: Message: element not interactable
+  (Session info: chrome=133.0.6943.60)
+Stacktrace:
+	GetHandleVerifier [0x00007FF62EBF2EC5+28789]
+	(No symbol) [0x00007FF62EB5F870]
+	(No symbol) [0x00007FF62E9F8DCC]
+	(No symbol) [0x00007FF62EA50664]
+	(No symbol) [0x00007FF62EA42234]
+	(No symbol) [0x00007FF62EA7721A]
+	(No symbol) [0x00007FF62EA41AE6]
+	(No symbol) [0x00007FF62EA77430]
+	(No symbol) [0x00007FF62EA9F6C3]
+	(No symbol) [0x00007FF62EA76FF3]
+	(No symbol) [0x00007FF62EA3FF0E]
+	(No symbol) [0x00007FF62EA41193]
+	GetHandleVerifier [0x00007FF62EF3D5FD+3479469]
+	GetHandleVerifier [0x00007FF62EF571A3+3584851]
+	GetHandleVerifier [0x00007FF62EF4C44D+3540477]
+	GetHandleVerifier [0x00007FF62ECB8B6A+838938]
+	(No symbol) [0x00007FF62EB6A4EF]
+	(No symbol) [0x00007FF62EB66954]
+	(No symbol) [0x00007FF62EB66AF6]
+	(No symbol) [0x00007FF62EB56499]
+	BaseThreadInitThunk [0x00007FFB8F4F259D+29]
+	RtlUserThreadStart [0x00007FFB9184AF38+40]
+
+2025-02-18 14:49:35,977 - INFO - Haciendo clic en el icono de gasolina 4 para PL/825/EXP/ES/2015
+2025-02-18 14:49:35,994 - ERROR - Error al procesar el icono 4 para PL/825/EXP/ES/2015: Message: element not interactable
+  (Session info: chrome=133.0.6943.60)
+Stacktrace:
+	GetHandleVerifier [0x00007FF62EBF2EC5+28789]
+	(No symbol) [0x00007FF62EB5F870]
+	(No symbol) [0x00007FF62E9F8DCC]
+	(No symbol) [0x00007FF62EA50664]
+	(No symbol) [0x00007FF62EA42234]
+	(No symbol) [0x00007FF62EA7721A]
+	(No symbol) [0x00007FF62EA41AE6]
+	(No symbol) [0x00007FF62EA77430]
+	(No symbol) [0x00007FF62EA9F6C3]
+	(No symbol) [0x00007FF62EA76FF3]
+	(No symbol) [0x00007FF62EA3FF0E]
+	(No symbol) [0x00007FF62EA41193]
+	GetHandleVerifier [0x00007FF62EF3D5FD+3479469]
+	GetHandleVerifier [0x00007FF62EF571A3+3584851]
+	GetHandleVerifier [0x00007FF62EF4C44D+3540477]
+	GetHandleVerifier [0x00007FF62ECB8B6A+838938]
+	(No symbol) [0x00007FF62EB6A4EF]
+	(No symbol) [0x00007FF62EB66954]
+	(No symbol) [0x00007FF62EB66AF6]
+	(No symbol) [0x00007FF62EB56499]
+	BaseThreadInitThunk [0x00007FFB8F4F259D+29]
+	RtlUserThreadStart [0x00007FFB9184AF38+40]
+
+2025-02-18 14:49:35,994 - INFO - Haciendo clic en el icono de gasolina 5 para PL/825/EXP/ES/2015
+2025-02-18 14:49:36,008 - ERROR - Error al procesar el icono 5 para PL/825/EXP/ES/2015: Message: element not interactable
+  (Session info: chrome=133.0.6943.60)
+Stacktrace:
+	GetHandleVerifier [0x00007FF62EBF2EC5+28789]
+	(No symbol) [0x00007FF62EB5F870]
+	(No symbol) [0x00007FF62E9F8DCC]
+	(No symbol) [0x00007FF62EA50664]
+	(No symbol) [0x00007FF62EA42234]
+	(No symbol) [0x00007FF62EA7721A]
+	(No symbol) [0x00007FF62EA41AE6]
+	(No symbol) [0x00007FF62EA77430]
+	(No symbol) [0x00007FF62EA9F6C3]
+	(No symbol) [0x00007FF62EA76FF3]
+	(No symbol) [0x00007FF62EA3FF0E]
+	(No symbol) [0x00007FF62EA41193]
+	GetHandleVerifier [0x00007FF62EF3D5FD+3479469]
+	GetHandleVerifier [0x00007FF62EF571A3+3584851]
+	GetHandleVerifier [0x00007FF62EF4C44D+3540477]
+	GetHandleVerifier [0x00007FF62ECB8B6A+838938]
+	(No symbol) [0x00007FF62EB6A4EF]
+	(No symbol) [0x00007FF62EB66954]
+	(No symbol) [0x00007FF62EB66AF6]
+	(No symbol) [0x00007FF62EB56499]
+	BaseThreadInitThunk [0x00007FFB8F4F259D+29]
+	RtlUserThreadStart [0x00007FFB9184AF38+40]
+
+2025-02-18 14:49:36,009 - INFO - Haciendo clic en el icono de gasolina 6 para PL/825/EXP/ES/2015
+2025-02-18 14:49:36,021 - ERROR - Error al procesar el icono 6 para PL/825/EXP/ES/2015: Message: element not interactable
+  (Session info: chrome=133.0.6943.60)
+Stacktrace:
+	GetHandleVerifier [0x00007FF62EBF2EC5+28789]
+	(No symbol) [0x00007FF62EB5F870]
+	(No symbol) [0x00007FF62E9F8DCC]
+	(No symbol) [0x00007FF62EA50664]
+	(No symbol) [0x00007FF62EA42234]
+	(No symbol) [0x00007FF62EA7721A]
+	(No symbol) [0x00007FF62EA41AE6]
+	(No symbol) [0x00007FF62EA77430]
+	(No symbol) [0x00007FF62EA9F6C3]
+	(No symbol) [0x00007FF62EA76FF3]
+	(No symbol) [0x00007FF62EA3FF0E]
+	(No symbol) [0x00007FF62EA41193]
+	GetHandleVerifier [0x00007FF62EF3D5FD+3479469]
+	GetHandleVerifier [0x00007FF62EF571A3+3584851]
+	GetHandleVerifier [0x00007FF62EF4C44D+3540477]
+	GetHandleVerifier [0x00007FF62ECB8B6A+838938]
+	(No symbol) [0x00007FF62EB6A4EF]
+	(No symbol) [0x00007FF62EB66954]
+	(No symbol) [0x00007FF62EB66AF6]
+	(No symbol) [0x00007FF62EB56499]
+	BaseThreadInitThunk [0x00007FFB8F4F259D+29]
+	RtlUserThreadStart [0x00007FFB9184AF38+40]
+
+2025-02-18 14:49:36,022 - INFO - Haciendo clic en el icono de gasolina 7 para PL/825/EXP/ES/2015
+2025-02-18 14:49:36,032 - ERROR - Error al procesar el icono 7 para PL/825/EXP/ES/2015: Message: element not interactable
+  (Session info: chrome=133.0.6943.60)
+Stacktrace:
+	GetHandleVerifier [0x00007FF62EBF2EC5+28789]
+	(No symbol) [0x00007FF62EB5F870]
+	(No symbol) [0x00007FF62E9F8DCC]
+	(No symbol) [0x00007FF62EA50664]
+	(No symbol) [0x00007FF62EA42234]
+	(No symbol) [0x00007FF62EA7721A]
+	(No symbol) [0x00007FF62EA41AE6]
+	(No symbol) [0x00007FF62EA77430]
+	(No symbol) [0x00007FF62EA9F6C3]
+	(No symbol) [0x00007FF62EA76FF3]
+	(No symbol) [0x00007FF62EA3FF0E]
+	(No symbol) [0x00007FF62EA41193]
+	GetHandleVerifier [0x00007FF62EF3D5FD+3479469]
+	GetHandleVerifier [0x00007FF62EF571A3+3584851]
+	GetHandleVerifier [0x00007FF62EF4C44D+3540477]
+	GetHandleVerifier [0x00007FF62ECB8B6A+838938]
+	(No symbol) [0x00007FF62EB6A4EF]
+	(No symbol) [0x00007FF62EB66954]
+	(No symbol) [0x00007FF62EB66AF6]
+	(No symbol) [0x00007FF62EB56499]
+	BaseThreadInitThunk [0x00007FFB8F4F259D+29]
+	RtlUserThreadStart [0x00007FFB9184AF38+40]
+
+2025-02-18 14:49:36,033 - INFO - Haciendo clic en el icono de gasolina 8 para PL/825/EXP/ES/2015
+2025-02-18 14:49:36,043 - ERROR - Error al procesar el icono 8 para PL/825/EXP/ES/2015: Message: element not interactable
+  (Session info: chrome=133.0.6943.60)
+Stacktrace:
+	GetHandleVerifier [0x00007FF62EBF2EC5+28789]
+	(No symbol) [0x00007FF62EB5F870]
+	(No symbol) [0x00007FF62E9F8DCC]
+	(No symbol) [0x00007FF62EA50664]
+	(No symbol) [0x00007FF62EA42234]
+	(No symbol) [0x00007FF62EA7721A]
+	(No symbol) [0x00007FF62EA41AE6]
+	(No symbol) [0x00007FF62EA77430]
+	(No symbol) [0x00007FF62EA9F6C3]
+	(No symbol) [0x00007FF62EA76FF3]
+	(No symbol) [0x00007FF62EA3FF0E]
+	(No symbol) [0x00007FF62EA41193]
+	GetHandleVerifier [0x00007FF62EF3D5FD+3479469]
+	GetHandleVerifier [0x00007FF62EF571A3+3584851]
+	GetHandleVerifier [0x00007FF62EF4C44D+3540477]
+	GetHandleVerifier [0x00007FF62ECB8B6A+838938]
+	(No symbol) [0x00007FF62EB6A4EF]
+	(No symbol) [0x00007FF62EB66954]
+	(No symbol) [0x00007FF62EB66AF6]
+	(No symbol) [0x00007FF62EB56499]
+	BaseThreadInitThunk [0x00007FFB8F4F259D+29]
+	RtlUserThreadStart [0x00007FFB9184AF38+40]
+
+2025-02-18 14:49:36,044 - INFO - Iniciando búsqueda para: PL/585/EXP/ES/2015
+2025-02-18 14:49:41,012 - INFO - Texto ingresado: PL/585/EXP/ES/2015
+2025-02-18 14:49:44,129 - INFO - Clic en botón: Botón de Lupa (Buscar) para PL/585/EXP/ES/2015
+2025-02-18 14:49:52,313 - ERROR - Error al hacer clic en 'Botón Verde en Mapa para PL/585/EXP/ES/2015': Message: 
+
+2025-02-18 14:49:55,344 - INFO - Se encontraron 6 iconos de gasolina para PL/585/EXP/ES/2015
+2025-02-18 14:49:55,347 - INFO - Haciendo clic en el icono de gasolina 1 para PL/585/EXP/ES/2015
+2025-02-18 14:49:55,382 - ERROR - Error al procesar el icono 1 para PL/585/EXP/ES/2015: Message: element not interactable
+  (Session info: chrome=133.0.6943.60)
+Stacktrace:
+	GetHandleVerifier [0x00007FF62EBF2EC5+28789]
+	(No symbol) [0x00007FF62EB5F870]
+	(No symbol) [0x00007FF62E9F8DCC]
+	(No symbol) [0x00007FF62EA50664]
+	(No symbol) [0x00007FF62EA42234]
+	(No symbol) [0x00007FF62EA7721A]
+	(No symbol) [0x00007FF62EA41AE6]
+	(No symbol) [0x00007FF62EA77430]
+	(No symbol) [0x00007FF62EA9F6C3]
+	(No symbol) [0x00007FF62EA76FF3]
+	(No symbol) [0x00007FF62EA3FF0E]
+	(No symbol) [0x00007FF62EA41193]
+	GetHandleVerifier [0x00007FF62EF3D5FD+3479469]
+	GetHandleVerifier [0x00007FF62EF571A3+3584851]
+	GetHandleVerifier [0x00007FF62EF4C44D+3540477]
+	GetHandleVerifier [0x00007FF62ECB8B6A+838938]
+	(No symbol) [0x00007FF62EB6A4EF]
+	(No symbol) [0x00007FF62EB66954]
+	(No symbol) [0x00007FF62EB66AF6]
+	(No symbol) [0x00007FF62EB56499]
+	BaseThreadInitThunk [0x00007FFB8F4F259D+29]
+	RtlUserThreadStart [0x00007FFB9184AF38+40]
+
+2025-02-18 14:49:55,384 - INFO - Haciendo clic en el icono de gasolina 2 para PL/585/EXP/ES/2015
+2025-02-18 14:49:55,410 - ERROR - Error al procesar el icono 2 para PL/585/EXP/ES/2015: Message: element not interactable
+  (Session info: chrome=133.0.6943.60)
+Stacktrace:
+	GetHandleVerifier [0x00007FF62EBF2EC5+28789]
+	(No symbol) [0x00007FF62EB5F870]
+	(No symbol) [0x00007FF62E9F8DCC]
+	(No symbol) [0x00007FF62EA50664]
+	(No symbol) [0x00007FF62EA42234]
+	(No symbol) [0x00007FF62EA7721A]
+	(No symbol) [0x00007FF62EA41AE6]
+	(No symbol) [0x00007FF62EA77430]
+	(No symbol) [0x00007FF62EA9F6C3]
+	(No symbol) [0x00007FF62EA76FF3]
+	(No symbol) [0x00007FF62EA3FF0E]
+	(No symbol) [0x00007FF62EA41193]
+	GetHandleVerifier [0x00007FF62EF3D5FD+3479469]
+	GetHandleVerifier [0x00007FF62EF571A3+3584851]
+	GetHandleVerifier [0x00007FF62EF4C44D+3540477]
+	GetHandleVerifier [0x00007FF62ECB8B6A+838938]
+	(No symbol) [0x00007FF62EB6A4EF]
+	(No symbol) [0x00007FF62EB66954]
+	(No symbol) [0x00007FF62EB66AF6]
+	(No symbol) [0x00007FF62EB56499]
+	BaseThreadInitThunk [0x00007FFB8F4F259D+29]
+	RtlUserThreadStart [0x00007FFB9184AF38+40]
+
+2025-02-18 14:49:55,413 - INFO - Haciendo clic en el icono de gasolina 3 para PL/585/EXP/ES/2015
+2025-02-18 14:49:55,429 - ERROR - Error al procesar el icono 3 para PL/585/EXP/ES/2015: Message: element not interactable
+  (Session info: chrome=133.0.6943.60)
+Stacktrace:
+	GetHandleVerifier [0x00007FF62EBF2EC5+28789]
+	(No symbol) [0x00007FF62EB5F870]
+	(No symbol) [0x00007FF62E9F8DCC]
+	(No symbol) [0x00007FF62EA50664]
+	(No symbol) [0x00007FF62EA42234]
+	(No symbol) [0x00007FF62EA7721A]
+	(No symbol) [0x00007FF62EA41AE6]
+	(No symbol) [0x00007FF62EA77430]
+	(No symbol) [0x00007FF62EA9F6C3]
+	(No symbol) [0x00007FF62EA76FF3]
+	(No symbol) [0x00007FF62EA3FF0E]
+	(No symbol) [0x00007FF62EA41193]
+	GetHandleVerifier [0x00007FF62EF3D5FD+3479469]
+	GetHandleVerifier [0x00007FF62EF571A3+3584851]
+	GetHandleVerifier [0x00007FF62EF4C44D+3540477]
+	GetHandleVerifier [0x00007FF62ECB8B6A+838938]
+	(No symbol) [0x00007FF62EB6A4EF]
+	(No symbol) [0x00007FF62EB66954]
+	(No symbol) [0x00007FF62EB66AF6]
+	(No symbol) [0x00007FF62EB56499]
+	BaseThreadInitThunk [0x00007FFB8F4F259D+29]
+	RtlUserThreadStart [0x00007FFB9184AF38+40]
+
+2025-02-18 14:49:55,430 - INFO - Haciendo clic en el icono de gasolina 4 para PL/585/EXP/ES/2015
+2025-02-18 14:49:55,442 - ERROR - Error al procesar el icono 4 para PL/585/EXP/ES/2015: Message: element not interactable
+  (Session info: chrome=133.0.6943.60)
+Stacktrace:
+	GetHandleVerifier [0x00007FF62EBF2EC5+28789]
+	(No symbol) [0x00007FF62EB5F870]
+	(No symbol) [0x00007FF62E9F8DCC]
+	(No symbol) [0x00007FF62EA50664]
+	(No symbol) [0x00007FF62EA42234]
+	(No symbol) [0x00007FF62EA7721A]
+	(No symbol) [0x00007FF62EA41AE6]
+	(No symbol) [0x00007FF62EA77430]
+	(No symbol) [0x00007FF62EA9F6C3]
+	(No symbol) [0x00007FF62EA76FF3]
+	(No symbol) [0x00007FF62EA3FF0E]
+	(No symbol) [0x00007FF62EA41193]
+	GetHandleVerifier [0x00007FF62EF3D5FD+3479469]
+	GetHandleVerifier [0x00007FF62EF571A3+3584851]
+	GetHandleVerifier [0x00007FF62EF4C44D+3540477]
+	GetHandleVerifier [0x00007FF62ECB8B6A+838938]
+	(No symbol) [0x00007FF62EB6A4EF]
+	(No symbol) [0x00007FF62EB66954]
+	(No symbol) [0x00007FF62EB66AF6]
+	(No symbol) [0x00007FF62EB56499]
+	BaseThreadInitThunk [0x00007FFB8F4F259D+29]
+	RtlUserThreadStart [0x00007FFB9184AF38+40]
+
+2025-02-18 14:49:55,443 - INFO - Haciendo clic en el icono de gasolina 5 para PL/585/EXP/ES/2015
+2025-02-18 14:49:58,539 - INFO - Scroll realizado
+2025-02-18 14:50:01,645 - INFO - Clic en botón: Botón de Ver Detalle para PL/585/EXP/ES/2015
+2025-02-18 14:50:04,664 - INFO - Cambiado a nueva pestaña
+2025-02-18 14:50:04,697 - INFO - Texto extraído de //*[@id="contact2"]/div/div/div[4]: Calle: PROLONGACIÓN RIO PURIFICACIÓN NO. 800 ESQUINA OSCAR ALEXANDER
+Código Postal: 88793
+Colonia: LUIS DONALDO COLOSIO
+ID Entidad Federativa: 28
+ID Municipio: 032
+2025-02-18 14:50:04,698 - INFO - Datos obtenidos del icono 5 para PL/585/EXP/ES/2015: Calle: PROLONGACIÓN RIO PURIFICACIÓN NO. 800 ESQUINA OSCAR ALEXANDER
+Código Postal: 88793
+Colonia: LUIS DONALDO COLOSIO
+ID Entidad Federativa: 28
+ID Municipio: 032
+2025-02-18 14:50:06,732 - INFO - Cerrada la pestaña actual y vuelta a la principal
+2025-02-18 14:50:08,734 - INFO - Haciendo clic en el icono de gasolina 6 para PL/585/EXP/ES/2015
+2025-02-18 14:50:08,754 - ERROR - Error al procesar el icono 6 para PL/585/EXP/ES/2015: Message: element not interactable
+  (Session info: chrome=133.0.6943.60)
+Stacktrace:
+	GetHandleVerifier [0x00007FF62EBF2EC5+28789]
+	(No symbol) [0x00007FF62EB5F870]
+	(No symbol) [0x00007FF62E9F8DCC]
+	(No symbol) [0x00007FF62EA50664]
+	(No symbol) [0x00007FF62EA42234]
+	(No symbol) [0x00007FF62EA7721A]
+	(No symbol) [0x00007FF62EA41AE6]
+	(No symbol) [0x00007FF62EA77430]
+	(No symbol) [0x00007FF62EA9F6C3]
+	(No symbol) [0x00007FF62EA76FF3]
+	(No symbol) [0x00007FF62EA3FF0E]
+	(No symbol) [0x00007FF62EA41193]
+	GetHandleVerifier [0x00007FF62EF3D5FD+3479469]
+	GetHandleVerifier [0x00007FF62EF571A3+3584851]
+	GetHandleVerifier [0x00007FF62EF4C44D+3540477]
+	GetHandleVerifier [0x00007FF62ECB8B6A+838938]
+	(No symbol) [0x00007FF62EB6A4EF]
+	(No symbol) [0x00007FF62EB66954]
+	(No symbol) [0x00007FF62EB66AF6]
+	(No symbol) [0x00007FF62EB56499]
+	BaseThreadInitThunk [0x00007FFB8F4F259D+29]
+	RtlUserThreadStart [0x00007FFB9184AF38+40]
+
+2025-02-18 14:50:08,755 - INFO - Iniciando búsqueda para: PL/842/EXP/ES/2015
+2025-02-18 14:50:13,385 - INFO - Texto ingresado: PL/842/EXP/ES/2015
+2025-02-18 14:50:16,485 - INFO - Clic en botón: Botón de Lupa (Buscar) para PL/842/EXP/ES/2015
+2025-02-18 14:50:24,613 - ERROR - Error al hacer clic en 'Botón Verde en Mapa para PL/842/EXP/ES/2015': Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF62EBF2EC5+28789]
+	(No symbol) [0x00007FF62EB5F870]
+	(No symbol) [0x00007FF62E9F8F9A]
+	(No symbol) [0x00007FF62EA4F236]
+	(No symbol) [0x00007FF62EA4F46C]
+	(No symbol) [0x00007FF62EAA29F7]
+	(No symbol) [0x00007FF62EA7725F]
+	(No symbol) [0x00007FF62EA9F6C3]
+	(No symbol) [0x00007FF62EA76FF3]
+	(No symbol) [0x00007FF62EA3FF0E]
+	(No symbol) [0x00007FF62EA41193]
+	GetHandleVerifier [0x00007FF62EF3D5FD+3479469]
+	GetHandleVerifier [0x00007FF62EF571A3+3584851]
+	GetHandleVerifier [0x00007FF62EF4C44D+3540477]
+	GetHandleVerifier [0x00007FF62ECB8B6A+838938]
+	(No symbol) [0x00007FF62EB6A4EF]
+	(No symbol) [0x00007FF62EB66954]
+	(No symbol) [0x00007FF62EB66AF6]
+	(No symbol) [0x00007FF62EB56499]
+	BaseThreadInitThunk [0x00007FFB8F4F259D+29]
+	RtlUserThreadStart [0x00007FFB9184AF38+40]
+
+2025-02-18 14:50:27,627 - INFO - Se encontraron 3 iconos de gasolina para PL/842/EXP/ES/2015
+2025-02-18 14:50:27,628 - INFO - Haciendo clic en el icono de gasolina 1 para PL/842/EXP/ES/2015
+2025-02-18 14:50:30,714 - INFO - Scroll realizado
+2025-02-18 14:50:33,839 - INFO - Clic en botón: Botón de Ver Detalle para PL/842/EXP/ES/2015
+2025-02-18 14:50:36,858 - INFO - Cambiado a nueva pestaña
+2025-02-18 14:50:36,890 - INFO - Texto extraído de //*[@id="contact2"]/div/div/div[4]: Calle: CALLE MANUEL GUTIÉRREZ NÁJERA NO. 3102
+Código Postal: 22600
+Colonia: EL CORTEZ
+ID Entidad Federativa: 02
+ID Municipio: 004
+2025-02-18 14:50:36,891 - INFO - Datos obtenidos del icono 1 para PL/842/EXP/ES/2015: Calle: CALLE MANUEL GUTIÉRREZ NÁJERA NO. 3102
+Código Postal: 22600
+Colonia: EL CORTEZ
+ID Entidad Federativa: 02
+ID Municipio: 004
+2025-02-18 14:50:38,929 - INFO - Cerrada la pestaña actual y vuelta a la principal
+2025-02-18 14:50:40,931 - INFO - Haciendo clic en el icono de gasolina 2 para PL/842/EXP/ES/2015
+2025-02-18 14:50:40,947 - ERROR - Error al procesar el icono 2 para PL/842/EXP/ES/2015: Message: element not interactable
+  (Session info: chrome=133.0.6943.60)
+Stacktrace:
+	GetHandleVerifier [0x00007FF62EBF2EC5+28789]
+	(No symbol) [0x00007FF62EB5F870]
+	(No symbol) [0x00007FF62E9F8DCC]
+	(No symbol) [0x00007FF62EA50664]
+	(No symbol) [0x00007FF62EA42234]
+	(No symbol) [0x00007FF62EA7721A]
+	(No symbol) [0x00007FF62EA41AE6]
+	(No symbol) [0x00007FF62EA77430]
+	(No symbol) [0x00007FF62EA9F6C3]
+	(No symbol) [0x00007FF62EA76FF3]
+	(No symbol) [0x00007FF62EA3FF0E]
+	(No symbol) [0x00007FF62EA41193]
+	GetHandleVerifier [0x00007FF62EF3D5FD+3479469]
+	GetHandleVerifier [0x00007FF62EF571A3+3584851]
+	GetHandleVerifier [0x00007FF62EF4C44D+3540477]
+	GetHandleVerifier [0x00007FF62ECB8B6A+838938]
+	(No symbol) [0x00007FF62EB6A4EF]
+	(No symbol) [0x00007FF62EB66954]
+	(No symbol) [0x00007FF62EB66AF6]
+	(No symbol) [0x00007FF62EB56499]
+	BaseThreadInitThunk [0x00007FFB8F4F259D+29]
+	RtlUserThreadStart [0x00007FFB9184AF38+40]
+
+2025-02-18 14:50:40,948 - INFO - Haciendo clic en el icono de gasolina 3 para PL/842/EXP/ES/2015
+2025-02-18 14:50:40,957 - ERROR - Error al procesar el icono 3 para PL/842/EXP/ES/2015: Message: element not interactable
+  (Session info: chrome=133.0.6943.60)
+Stacktrace:
+	GetHandleVerifier [0x00007FF62EBF2EC5+28789]
+	(No symbol) [0x00007FF62EB5F870]
+	(No symbol) [0x00007FF62E9F8DCC]
+	(No symbol) [0x00007FF62EA50664]
+	(No symbol) [0x00007FF62EA42234]
+	(No symbol) [0x00007FF62EA7721A]
+	(No symbol) [0x00007FF62EA41AE6]
+	(No symbol) [0x00007FF62EA77430]
+	(No symbol) [0x00007FF62EA9F6C3]
+	(No symbol) [0x00007FF62EA76FF3]
+	(No symbol) [0x00007FF62EA3FF0E]
+	(No symbol) [0x00007FF62EA41193]
+	GetHandleVerifier [0x00007FF62EF3D5FD+3479469]
+	GetHandleVerifier [0x00007FF62EF571A3+3584851]
+	GetHandleVerifier [0x00007FF62EF4C44D+3540477]
+	GetHandleVerifier [0x00007FF62ECB8B6A+838938]
+	(No symbol) [0x00007FF62EB6A4EF]
+	(No symbol) [0x00007FF62EB66954]
+	(No symbol) [0x00007FF62EB66AF6]
+	(No symbol) [0x00007FF62EB56499]
+	BaseThreadInitThunk [0x00007FFB8F4F259D+29]
+	RtlUserThreadStart [0x00007FFB9184AF38+40]
+
+2025-02-18 14:50:40,958 - INFO - Iniciando búsqueda para: PL/371/EXP/ES/2015
+2025-02-18 14:50:45,771 - INFO - Texto ingresado: PL/371/EXP/ES/2015
+2025-02-18 14:50:48,868 - INFO - Clic en botón: Botón de Lupa (Buscar) para PL/371/EXP/ES/2015
+2025-02-18 14:50:57,006 - ERROR - Error al hacer clic en 'Botón Verde en Mapa para PL/371/EXP/ES/2015': Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF62EBF2EC5+28789]
+	(No symbol) [0x00007FF62EB5F870]
+	(No symbol) [0x00007FF62E9F8F9A]
+	(No symbol) [0x00007FF62EA4F236]
+	(No symbol) [0x00007FF62EA4F46C]
+	(No symbol) [0x00007FF62EAA29F7]
+	(No symbol) [0x00007FF62EA7725F]
+	(No symbol) [0x00007FF62EA9F6C3]
+	(No symbol) [0x00007FF62EA76FF3]
+	(No symbol) [0x00007FF62EA3FF0E]
+	(No symbol) [0x00007FF62EA41193]
+	GetHandleVerifier [0x00007FF62EF3D5FD+3479469]
+	GetHandleVerifier [0x00007FF62EF571A3+3584851]
+	GetHandleVerifier [0x00007FF62EF4C44D+3540477]
+	GetHandleVerifier [0x00007FF62ECB8B6A+838938]
+	(No symbol) [0x00007FF62EB6A4EF]
+	(No symbol) [0x00007FF62EB66954]
+	(No symbol) [0x00007FF62EB66AF6]
+	(No symbol) [0x00007FF62EB56499]
+	BaseThreadInitThunk [0x00007FFB8F4F259D+29]
+	RtlUserThreadStart [0x00007FFB9184AF38+40]
+
+2025-02-18 14:51:00,027 - INFO - Se encontraron 2 iconos de gasolina para PL/371/EXP/ES/2015
+2025-02-18 14:51:00,029 - INFO - Haciendo clic en el icono de gasolina 1 para PL/371/EXP/ES/2015
+2025-02-18 14:51:03,094 - INFO - Scroll realizado
+2025-02-18 14:51:06,204 - INFO - Clic en botón: Botón de Ver Detalle para PL/371/EXP/ES/2015
+2025-02-18 14:51:09,219 - INFO - Cambiado a nueva pestaña
+2025-02-18 14:51:09,246 - INFO - Texto extraído de //*[@id="contact2"]/div/div/div[4]: Calle: CARRETERA AL 20 DE NOVIEMBRE NO. 3005
+Código Postal: 81223
+Colonia: EJIDO 20 DE NOVIEMBRE
+ID Entidad Federativa: 25
+ID Municipio: 001
+2025-02-18 14:51:09,247 - INFO - Datos obtenidos del icono 1 para PL/371/EXP/ES/2015: Calle: CARRETERA AL 20 DE NOVIEMBRE NO. 3005
+Código Postal: 81223
+Colonia: EJIDO 20 DE NOVIEMBRE
+ID Entidad Federativa: 25
+ID Municipio: 001
+2025-02-18 14:51:11,280 - INFO - Cerrada la pestaña actual y vuelta a la principal
+2025-02-18 14:51:13,284 - INFO - Haciendo clic en el icono de gasolina 2 para PL/371/EXP/ES/2015
+2025-02-18 14:51:13,300 - ERROR - Error al procesar el icono 2 para PL/371/EXP/ES/2015: Message: element not interactable
+  (Session info: chrome=133.0.6943.60)
+Stacktrace:
+	GetHandleVerifier [0x00007FF62EBF2EC5+28789]
+	(No symbol) [0x00007FF62EB5F870]
+	(No symbol) [0x00007FF62E9F8DCC]
+	(No symbol) [0x00007FF62EA50664]
+	(No symbol) [0x00007FF62EA42234]
+	(No symbol) [0x00007FF62EA7721A]
+	(No symbol) [0x00007FF62EA41AE6]
+	(No symbol) [0x00007FF62EA77430]
+	(No symbol) [0x00007FF62EA9F6C3]
+	(No symbol) [0x00007FF62EA76FF3]
+	(No symbol) [0x00007FF62EA3FF0E]
+	(No symbol) [0x00007FF62EA41193]
+	GetHandleVerifier [0x00007FF62EF3D5FD+3479469]
+	GetHandleVerifier [0x00007FF62EF571A3+3584851]
+	GetHandleVerifier [0x00007FF62EF4C44D+3540477]
+	GetHandleVerifier [0x00007FF62ECB8B6A+838938]
+	(No symbol) [0x00007FF62EB6A4EF]
+	(No symbol) [0x00007FF62EB66954]
+	(No symbol) [0x00007FF62EB66AF6]
+	(No symbol) [0x00007FF62EB56499]
+	BaseThreadInitThunk [0x00007FFB8F4F259D+29]
+	RtlUserThreadStart [0x00007FFB9184AF38+40]
+
+2025-02-18 14:51:13,302 - INFO - Iniciando búsqueda para: PL/439/EXP/ES/2015
+2025-02-18 14:51:17,747 - INFO - Texto ingresado: PL/439/EXP/ES/2015
+2025-02-18 14:51:20,822 - INFO - Clic en botón: Botón de Lupa (Buscar) para PL/439/EXP/ES/2015
+2025-02-18 14:51:29,084 - ERROR - Error al hacer clic en 'Botón Verde en Mapa para PL/439/EXP/ES/2015': Message: 
+
+2025-02-18 14:51:32,103 - INFO - Se encontraron 12 iconos de gasolina para PL/439/EXP/ES/2015
+2025-02-18 14:51:32,105 - INFO - Haciendo clic en el icono de gasolina 1 para PL/439/EXP/ES/2015
+2025-02-18 14:51:32,127 - ERROR - Error al procesar el icono 1 para PL/439/EXP/ES/2015: Message: element not interactable
+  (Session info: chrome=133.0.6943.60)
+Stacktrace:
+	GetHandleVerifier [0x00007FF62EBF2EC5+28789]
+	(No symbol) [0x00007FF62EB5F870]
+	(No symbol) [0x00007FF62E9F8DCC]
+	(No symbol) [0x00007FF62EA50664]
+	(No symbol) [0x00007FF62EA42234]
+	(No symbol) [0x00007FF62EA7721A]
+	(No symbol) [0x00007FF62EA41AE6]
+	(No symbol) [0x00007FF62EA77430]
+	(No symbol) [0x00007FF62EA9F6C3]
+	(No symbol) [0x00007FF62EA76FF3]
+	(No symbol) [0x00007FF62EA3FF0E]
+	(No symbol) [0x00007FF62EA41193]
+	GetHandleVerifier [0x00007FF62EF3D5FD+3479469]
+	GetHandleVerifier [0x00007FF62EF571A3+3584851]
+	GetHandleVerifier [0x00007FF62EF4C44D+3540477]
+	GetHandleVerifier [0x00007FF62ECB8B6A+838938]
+	(No symbol) [0x00007FF62EB6A4EF]
+	(No symbol) [0x00007FF62EB66954]
+	(No symbol) [0x00007FF62EB66AF6]
+	(No symbol) [0x00007FF62EB56499]
+	BaseThreadInitThunk [0x00007FFB8F4F259D+29]
+	RtlUserThreadStart [0x00007FFB9184AF38+40]
+
+2025-02-18 14:51:32,128 - INFO - Haciendo clic en el icono de gasolina 2 para PL/439/EXP/ES/2015
+2025-02-18 14:51:32,144 - ERROR - Error al procesar el icono 2 para PL/439/EXP/ES/2015: Message: element not interactable
+  (Session info: chrome=133.0.6943.60)
+Stacktrace:
+	GetHandleVerifier [0x00007FF62EBF2EC5+28789]
+	(No symbol) [0x00007FF62EB5F870]
+	(No symbol) [0x00007FF62E9F8DCC]
+	(No symbol) [0x00007FF62EA50664]
+	(No symbol) [0x00007FF62EA42234]
+	(No symbol) [0x00007FF62EA7721A]
+	(No symbol) [0x00007FF62EA41AE6]
+	(No symbol) [0x00007FF62EA77430]
+	(No symbol) [0x00007FF62EA9F6C3]
+	(No symbol) [0x00007FF62EA76FF3]
+	(No symbol) [0x00007FF62EA3FF0E]
+	(No symbol) [0x00007FF62EA41193]
+	GetHandleVerifier [0x00007FF62EF3D5FD+3479469]
+	GetHandleVerifier [0x00007FF62EF571A3+3584851]
+	GetHandleVerifier [0x00007FF62EF4C44D+3540477]
+	GetHandleVerifier [0x00007FF62ECB8B6A+838938]
+	(No symbol) [0x00007FF62EB6A4EF]
+	(No symbol) [0x00007FF62EB66954]
+	(No symbol) [0x00007FF62EB66AF6]
+	(No symbol) [0x00007FF62EB56499]
+	BaseThreadInitThunk [0x00007FFB8F4F259D+29]
+	RtlUserThreadStart [0x00007FFB9184AF38+40]
+
+2025-02-18 14:51:32,146 - INFO - Haciendo clic en el icono de gasolina 3 para PL/439/EXP/ES/2015
+2025-02-18 14:51:32,159 - ERROR - Error al procesar el icono 3 para PL/439/EXP/ES/2015: Message: element not interactable
+  (Session info: chrome=133.0.6943.60)
+Stacktrace:
+	GetHandleVerifier [0x00007FF62EBF2EC5+28789]
+	(No symbol) [0x00007FF62EB5F870]
+	(No symbol) [0x00007FF62E9F8DCC]
+	(No symbol) [0x00007FF62EA50664]
+	(No symbol) [0x00007FF62EA42234]
+	(No symbol) [0x00007FF62EA7721A]
+	(No symbol) [0x00007FF62EA41AE6]
+	(No symbol) [0x00007FF62EA77430]
+	(No symbol) [0x00007FF62EA9F6C3]
+	(No symbol) [0x00007FF62EA76FF3]
+	(No symbol) [0x00007FF62EA3FF0E]
+	(No symbol) [0x00007FF62EA41193]
+	GetHandleVerifier [0x00007FF62EF3D5FD+3479469]
+	GetHandleVerifier [0x00007FF62EF571A3+3584851]
+	GetHandleVerifier [0x00007FF62EF4C44D+3540477]
+	GetHandleVerifier [0x00007FF62ECB8B6A+838938]
+	(No symbol) [0x00007FF62EB6A4EF]
+	(No symbol) [0x00007FF62EB66954]
+	(No symbol) [0x00007FF62EB66AF6]
+	(No symbol) [0x00007FF62EB56499]
+	BaseThreadInitThunk [0x00007FFB8F4F259D+29]
+	RtlUserThreadStart [0x00007FFB9184AF38+40]
+
+2025-02-18 14:51:32,160 - INFO - Haciendo clic en el icono de gasolina 4 para PL/439/EXP/ES/2015
+2025-02-18 14:51:32,175 - ERROR - Error al procesar el icono 4 para PL/439/EXP/ES/2015: Message: element not interactable
+  (Session info: chrome=133.0.6943.60)
+Stacktrace:
+	GetHandleVerifier [0x00007FF62EBF2EC5+28789]
+	(No symbol) [0x00007FF62EB5F870]
+	(No symbol) [0x00007FF62E9F8DCC]
+	(No symbol) [0x00007FF62EA50664]
+	(No symbol) [0x00007FF62EA42234]
+	(No symbol) [0x00007FF62EA7721A]
+	(No symbol) [0x00007FF62EA41AE6]
+	(No symbol) [0x00007FF62EA77430]
+	(No symbol) [0x00007FF62EA9F6C3]
+	(No symbol) [0x00007FF62EA76FF3]
+	(No symbol) [0x00007FF62EA3FF0E]
+	(No symbol) [0x00007FF62EA41193]
+	GetHandleVerifier [0x00007FF62EF3D5FD+3479469]
+	GetHandleVerifier [0x00007FF62EF571A3+3584851]
+	GetHandleVerifier [0x00007FF62EF4C44D+3540477]
+	GetHandleVerifier [0x00007FF62ECB8B6A+838938]
+	(No symbol) [0x00007FF62EB6A4EF]
+	(No symbol) [0x00007FF62EB66954]
+	(No symbol) [0x00007FF62EB66AF6]
+	(No symbol) [0x00007FF62EB56499]
+	BaseThreadInitThunk [0x00007FFB8F4F259D+29]
+	RtlUserThreadStart [0x00007FFB9184AF38+40]
+
+2025-02-18 14:51:32,176 - INFO - Haciendo clic en el icono de gasolina 5 para PL/439/EXP/ES/2015
+2025-02-18 14:51:32,191 - ERROR - Error al procesar el icono 5 para PL/439/EXP/ES/2015: Message: element not interactable
+  (Session info: chrome=133.0.6943.60)
+Stacktrace:
+	GetHandleVerifier [0x00007FF62EBF2EC5+28789]
+	(No symbol) [0x00007FF62EB5F870]
+	(No symbol) [0x00007FF62E9F8DCC]
+	(No symbol) [0x00007FF62EA50664]
+	(No symbol) [0x00007FF62EA42234]
+	(No symbol) [0x00007FF62EA7721A]
+	(No symbol) [0x00007FF62EA41AE6]
+	(No symbol) [0x00007FF62EA77430]
+	(No symbol) [0x00007FF62EA9F6C3]
+	(No symbol) [0x00007FF62EA76FF3]
+	(No symbol) [0x00007FF62EA3FF0E]
+	(No symbol) [0x00007FF62EA41193]
+	GetHandleVerifier [0x00007FF62EF3D5FD+3479469]
+	GetHandleVerifier [0x00007FF62EF571A3+3584851]
+	GetHandleVerifier [0x00007FF62EF4C44D+3540477]
+	GetHandleVerifier [0x00007FF62ECB8B6A+838938]
+	(No symbol) [0x00007FF62EB6A4EF]
+	(No symbol) [0x00007FF62EB66954]
+	(No symbol) [0x00007FF62EB66AF6]
+	(No symbol) [0x00007FF62EB56499]
+	BaseThreadInitThunk [0x00007FFB8F4F259D+29]
+	RtlUserThreadStart [0x00007FFB9184AF38+40]
+
+2025-02-18 14:51:32,192 - INFO - Haciendo clic en el icono de gasolina 6 para PL/439/EXP/ES/2015
+2025-02-18 14:51:35,260 - INFO - Scroll realizado
+2025-02-18 14:51:38,351 - INFO - Clic en botón: Botón de Ver Detalle para PL/439/EXP/ES/2015
+2025-02-18 14:51:41,378 - INFO - Cambiado a nueva pestaña
+2025-02-18 14:51:41,417 - INFO - Texto extraído de //*[@id="contact2"]/div/div/div[4]: Calle: PROLONGACIÓN JUÁREZ NO. 312
+Código Postal: 36960
+Colonia: CENTRO
+ID Entidad Federativa: 11
+ID Municipio: 012
+2025-02-18 14:51:41,418 - INFO - Datos obtenidos del icono 6 para PL/439/EXP/ES/2015: Calle: PROLONGACIÓN JUÁREZ NO. 312
+Código Postal: 36960
+Colonia: CENTRO
+ID Entidad Federativa: 11
+ID Municipio: 012
+2025-02-18 14:51:43,446 - INFO - Cerrada la pestaña actual y vuelta a la principal
+2025-02-18 14:51:45,448 - INFO - Haciendo clic en el icono de gasolina 7 para PL/439/EXP/ES/2015
+2025-02-18 14:51:48,531 - INFO - Scroll realizado
+2025-02-18 14:51:51,701 - INFO - Clic en botón: Botón de Ver Detalle para PL/439/EXP/ES/2015
+2025-02-18 14:51:54,712 - INFO - Cambiado a nueva pestaña
+2025-02-18 14:51:54,748 - INFO - Texto extraído de //*[@id="contact2"]/div/div/div[4]: Calle: CARRETERA A COLOMBIA NO. 400
+Código Postal: 66050
+Colonia: EX HACIENDA EL CANADA
+ID Entidad Federativa: 19
+ID Municipio: 021
+2025-02-18 14:51:54,749 - INFO - Datos obtenidos del icono 7 para PL/439/EXP/ES/2015: Calle: CARRETERA A COLOMBIA NO. 400
+Código Postal: 66050
+Colonia: EX HACIENDA EL CANADA
+ID Entidad Federativa: 19
+ID Municipio: 021
+2025-02-18 14:51:56,779 - INFO - Cerrada la pestaña actual y vuelta a la principal
+2025-02-18 14:51:58,780 - INFO - Haciendo clic en el icono de gasolina 8 para PL/439/EXP/ES/2015
+2025-02-18 14:52:01,868 - INFO - Scroll realizado
+2025-02-18 14:52:04,961 - INFO - Clic en botón: Botón de Ver Detalle para PL/439/EXP/ES/2015
+2025-02-18 14:52:07,980 - INFO - Cambiado a nueva pestaña
+2025-02-18 14:52:08,016 - INFO - Texto extraído de //*[@id="contact2"]/div/div/div[4]: Calle: BLVD. JOSE LOPEZ PORTILLO NO. 716
+Código Postal: 66059
+Colonia: GRAL. ESCOBEDO
+ID Entidad Federativa: 19
+ID Municipio: 021
+2025-02-18 14:52:08,017 - INFO - Datos obtenidos del icono 8 para PL/439/EXP/ES/2015: Calle: BLVD. JOSE LOPEZ PORTILLO NO. 716
+Código Postal: 66059
+Colonia: GRAL. ESCOBEDO
+ID Entidad Federativa: 19
+ID Municipio: 021
+2025-02-18 14:52:10,062 - INFO - Cerrada la pestaña actual y vuelta a la principal
+2025-02-18 14:52:12,064 - INFO - Haciendo clic en el icono de gasolina 9 para PL/439/EXP/ES/2015
+2025-02-18 14:52:12,077 - ERROR - Error al procesar el icono 9 para PL/439/EXP/ES/2015: Message: element not interactable
+  (Session info: chrome=133.0.6943.60)
+Stacktrace:
+	GetHandleVerifier [0x00007FF62EBF2EC5+28789]
+	(No symbol) [0x00007FF62EB5F870]
+	(No symbol) [0x00007FF62E9F8DCC]
+	(No symbol) [0x00007FF62EA50664]
+	(No symbol) [0x00007FF62EA42234]
+	(No symbol) [0x00007FF62EA7721A]
+	(No symbol) [0x00007FF62EA41AE6]
+	(No symbol) [0x00007FF62EA77430]
+	(No symbol) [0x00007FF62EA9F6C3]
+	(No symbol) [0x00007FF62EA76FF3]
+	(No symbol) [0x00007FF62EA3FF0E]
+	(No symbol) [0x00007FF62EA41193]
+	GetHandleVerifier [0x00007FF62EF3D5FD+3479469]
+	GetHandleVerifier [0x00007FF62EF571A3+3584851]
+	GetHandleVerifier [0x00007FF62EF4C44D+3540477]
+	GetHandleVerifier [0x00007FF62ECB8B6A+838938]
+	(No symbol) [0x00007FF62EB6A4EF]
+	(No symbol) [0x00007FF62EB66954]
+	(No symbol) [0x00007FF62EB66AF6]
+	(No symbol) [0x00007FF62EB56499]
+	BaseThreadInitThunk [0x00007FFB8F4F259D+29]
+	RtlUserThreadStart [0x00007FFB9184AF38+40]
+
+2025-02-18 14:52:12,078 - INFO - Haciendo clic en el icono de gasolina 10 para PL/439/EXP/ES/2015
+2025-02-18 14:52:12,089 - ERROR - Error al procesar el icono 10 para PL/439/EXP/ES/2015: Message: element not interactable
+  (Session info: chrome=133.0.6943.60)
+Stacktrace:
+	GetHandleVerifier [0x00007FF62EBF2EC5+28789]
+	(No symbol) [0x00007FF62EB5F870]
+	(No symbol) [0x00007FF62E9F8DCC]
+	(No symbol) [0x00007FF62EA50664]
+	(No symbol) [0x00007FF62EA42234]
+	(No symbol) [0x00007FF62EA7721A]
+	(No symbol) [0x00007FF62EA41AE6]
+	(No symbol) [0x00007FF62EA77430]
+	(No symbol) [0x00007FF62EA9F6C3]
+	(No symbol) [0x00007FF62EA76FF3]
+	(No symbol) [0x00007FF62EA3FF0E]
+	(No symbol) [0x00007FF62EA41193]
+	GetHandleVerifier [0x00007FF62EF3D5FD+3479469]
+	GetHandleVerifier [0x00007FF62EF571A3+3584851]
+	GetHandleVerifier [0x00007FF62EF4C44D+3540477]
+	GetHandleVerifier [0x00007FF62ECB8B6A+838938]
+	(No symbol) [0x00007FF62EB6A4EF]
+	(No symbol) [0x00007FF62EB66954]
+	(No symbol) [0x00007FF62EB66AF6]
+	(No symbol) [0x00007FF62EB56499]
+	BaseThreadInitThunk [0x00007FFB8F4F259D+29]
+	RtlUserThreadStart [0x00007FFB9184AF38+40]
+
+2025-02-18 14:52:12,089 - INFO - Haciendo clic en el icono de gasolina 11 para PL/439/EXP/ES/2015
+2025-02-18 14:52:12,100 - ERROR - Error al procesar el icono 11 para PL/439/EXP/ES/2015: Message: element not interactable
+  (Session info: chrome=133.0.6943.60)
+Stacktrace:
+	GetHandleVerifier [0x00007FF62EBF2EC5+28789]
+	(No symbol) [0x00007FF62EB5F870]
+	(No symbol) [0x00007FF62E9F8DCC]
+	(No symbol) [0x00007FF62EA50664]
+	(No symbol) [0x00007FF62EA42234]
+	(No symbol) [0x00007FF62EA7721A]
+	(No symbol) [0x00007FF62EA41AE6]
+	(No symbol) [0x00007FF62EA77430]
+	(No symbol) [0x00007FF62EA9F6C3]
+	(No symbol) [0x00007FF62EA76FF3]
+	(No symbol) [0x00007FF62EA3FF0E]
+	(No symbol) [0x00007FF62EA41193]
+	GetHandleVerifier [0x00007FF62EF3D5FD+3479469]
+	GetHandleVerifier [0x00007FF62EF571A3+3584851]
+	GetHandleVerifier [0x00007FF62EF4C44D+3540477]
+	GetHandleVerifier [0x00007FF62ECB8B6A+838938]
+	(No symbol) [0x00007FF62EB6A4EF]
+	(No symbol) [0x00007FF62EB66954]
+	(No symbol) [0x00007FF62EB66AF6]
+	(No symbol) [0x00007FF62EB56499]
+	BaseThreadInitThunk [0x00007FFB8F4F259D+29]
+	RtlUserThreadStart [0x00007FFB9184AF38+40]
+
+2025-02-18 14:52:12,100 - INFO - Haciendo clic en el icono de gasolina 12 para PL/439/EXP/ES/2015
+2025-02-18 14:52:12,109 - ERROR - Error al procesar el icono 12 para PL/439/EXP/ES/2015: Message: element not interactable
+  (Session info: chrome=133.0.6943.60)
+Stacktrace:
+	GetHandleVerifier [0x00007FF62EBF2EC5+28789]
+	(No symbol) [0x00007FF62EB5F870]
+	(No symbol) [0x00007FF62E9F8DCC]
+	(No symbol) [0x00007FF62EA50664]
+	(No symbol) [0x00007FF62EA42234]
+	(No symbol) [0x00007FF62EA7721A]
+	(No symbol) [0x00007FF62EA41AE6]
+	(No symbol) [0x00007FF62EA77430]
+	(No symbol) [0x00007FF62EA9F6C3]
+	(No symbol) [0x00007FF62EA76FF3]
+	(No symbol) [0x00007FF62EA3FF0E]
+	(No symbol) [0x00007FF62EA41193]
+	GetHandleVerifier [0x00007FF62EF3D5FD+3479469]
+	GetHandleVerifier [0x00007FF62EF571A3+3584851]
+	GetHandleVerifier [0x00007FF62EF4C44D+3540477]
+	GetHandleVerifier [0x00007FF62ECB8B6A+838938]
+	(No symbol) [0x00007FF62EB6A4EF]
+	(No symbol) [0x00007FF62EB66954]
+	(No symbol) [0x00007FF62EB66AF6]
+	(No symbol) [0x00007FF62EB56499]
+	BaseThreadInitThunk [0x00007FFB8F4F259D+29]
+	RtlUserThreadStart [0x00007FFB9184AF38+40]
+
+2025-02-18 14:52:12,109 - INFO - Iniciando búsqueda para: PL/860/EXP/ES/2015
+2025-02-18 14:52:16,497 - INFO - Texto ingresado: PL/860/EXP/ES/2015
+2025-02-18 14:52:19,583 - INFO - Clic en botón: Botón de Lupa (Buscar) para PL/860/EXP/ES/2015
+2025-02-18 14:52:22,640 - INFO - Clic en botón: Botón Verde en Mapa para PL/860/EXP/ES/2015
+2025-02-18 14:52:25,656 - INFO - Se encontraron 3 iconos de gasolina para PL/860/EXP/ES/2015
+2025-02-18 14:52:25,659 - INFO - Haciendo clic en el icono de gasolina 1 para PL/860/EXP/ES/2015
+2025-02-18 14:52:25,681 - ERROR - Error al procesar el icono 1 para PL/860/EXP/ES/2015: Message: element not interactable
+  (Session info: chrome=133.0.6943.60)
+Stacktrace:
+	GetHandleVerifier [0x00007FF62EBF2EC5+28789]
+	(No symbol) [0x00007FF62EB5F870]
+	(No symbol) [0x00007FF62E9F8DCC]
+	(No symbol) [0x00007FF62EA50664]
+	(No symbol) [0x00007FF62EA42234]
+	(No symbol) [0x00007FF62EA7721A]
+	(No symbol) [0x00007FF62EA41AE6]
+	(No symbol) [0x00007FF62EA77430]
+	(No symbol) [0x00007FF62EA9F6C3]
+	(No symbol) [0x00007FF62EA76FF3]
+	(No symbol) [0x00007FF62EA3FF0E]
+	(No symbol) [0x00007FF62EA41193]
+	GetHandleVerifier [0x00007FF62EF3D5FD+3479469]
+	GetHandleVerifier [0x00007FF62EF571A3+3584851]
+	GetHandleVerifier [0x00007FF62EF4C44D+3540477]
+	GetHandleVerifier [0x00007FF62ECB8B6A+838938]
+	(No symbol) [0x00007FF62EB6A4EF]
+	(No symbol) [0x00007FF62EB66954]
+	(No symbol) [0x00007FF62EB66AF6]
+	(No symbol) [0x00007FF62EB56499]
+	BaseThreadInitThunk [0x00007FFB8F4F259D+29]
+	RtlUserThreadStart [0x00007FFB9184AF38+40]
+
+2025-02-18 14:52:25,683 - INFO - Haciendo clic en el icono de gasolina 2 para PL/860/EXP/ES/2015
+2025-02-18 14:52:28,738 - INFO - Scroll realizado
+2025-02-18 14:52:31,821 - INFO - Clic en botón: Botón de Ver Detalle para PL/860/EXP/ES/2015
+2025-02-18 14:52:34,847 - INFO - Cambiado a nueva pestaña
+2025-02-18 14:52:34,893 - INFO - Texto extraído de //*[@id="contact2"]/div/div/div[4]: Calle: AVENIDA RAYÓN NO. 876
+Código Postal: 22880
+Colonia: SECCIÓN PRIMERA
+ID Entidad Federativa: 02
+ID Municipio: 001
+2025-02-18 14:52:34,894 - INFO - Datos obtenidos del icono 2 para PL/860/EXP/ES/2015: Calle: AVENIDA RAYÓN NO. 876
+Código Postal: 22880
+Colonia: SECCIÓN PRIMERA
+ID Entidad Federativa: 02
+ID Municipio: 001
+2025-02-18 14:52:36,933 - INFO - Cerrada la pestaña actual y vuelta a la principal
+2025-02-18 14:52:38,935 - INFO - Haciendo clic en el icono de gasolina 3 para PL/860/EXP/ES/2015
+2025-02-18 14:52:39,988 - ERROR - Error al procesar el icono 3 para PL/860/EXP/ES/2015: Message: element click intercepted: Element <img src="/img/gasolinera.png" class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" alt="Marker" tabindex="0" role="button" style="margin-left: -18px; margin-top: -16px; width: 36px; height: 36px; opacity: 1; transform: translate3d(657px, 320px, 0px); z-index: 320;"> is not clickable at point (1421, 830). Other element would receive the click: <div class="popup-content">...</div>
+  (Session info: chrome=133.0.6943.60)
+Stacktrace:
+	GetHandleVerifier [0x00007FF62EBF2EC5+28789]
+	(No symbol) [0x00007FF62EB5F870]
+	(No symbol) [0x00007FF62E9F8F9A]
+	(No symbol) [0x00007FF62EA570C9]
+	(No symbol) [0x00007FF62EA54A92]
+	(No symbol) [0x00007FF62EA51B31]
+	(No symbol) [0x00007FF62EA50A41]
+	(No symbol) [0x00007FF62EA42234]
+	(No symbol) [0x00007FF62EA7721A]
+	(No symbol) [0x00007FF62EA41AE6]
+	(No symbol) [0x00007FF62EA77430]
+	(No symbol) [0x00007FF62EA9F6C3]
+	(No symbol) [0x00007FF62EA76FF3]
+	(No symbol) [0x00007FF62EA3FF0E]
+	(No symbol) [0x00007FF62EA41193]
+	GetHandleVerifier [0x00007FF62EF3D5FD+3479469]
+	GetHandleVerifier [0x00007FF62EF571A3+3584851]
+	GetHandleVerifier [0x00007FF62EF4C44D+3540477]
+	GetHandleVerifier [0x00007FF62ECB8B6A+838938]
+	(No symbol) [0x00007FF62EB6A4EF]
+	(No symbol) [0x00007FF62EB66954]
+	(No symbol) [0x00007FF62EB66AF6]
+	(No symbol) [0x00007FF62EB56499]
+	BaseThreadInitThunk [0x00007FFB8F4F259D+29]
+	RtlUserThreadStart [0x00007FFB9184AF38+40]
+
+2025-02-18 14:52:39,993 - INFO - Iniciando búsqueda para: PL/897/EXP/ES/2015
+2025-02-18 14:52:44,458 - INFO - Texto ingresado: PL/897/EXP/ES/2015
+2025-02-18 14:52:47,563 - INFO - Clic en botón: Botón de Lupa (Buscar) para PL/897/EXP/ES/2015
+2025-02-18 14:52:55,758 - ERROR - Error al hacer clic en 'Botón Verde en Mapa para PL/897/EXP/ES/2015': Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF62EBF2EC5+28789]
+	(No symbol) [0x00007FF62EB5F870]
+	(No symbol) [0x00007FF62E9F8F9A]
+	(No symbol) [0x00007FF62EA4F236]
+	(No symbol) [0x00007FF62EA4F46C]
+	(No symbol) [0x00007FF62EAA29F7]
+	(No symbol) [0x00007FF62EA7725F]
+	(No symbol) [0x00007FF62EA9F6C3]
+	(No symbol) [0x00007FF62EA76FF3]
+	(No symbol) [0x00007FF62EA3FF0E]
+	(No symbol) [0x00007FF62EA41193]
+	GetHandleVerifier [0x00007FF62EF3D5FD+3479469]
+	GetHandleVerifier [0x00007FF62EF571A3+3584851]
+	GetHandleVerifier [0x00007FF62EF4C44D+3540477]
+	GetHandleVerifier [0x00007FF62ECB8B6A+838938]
+	(No symbol) [0x00007FF62EB6A4EF]
+	(No symbol) [0x00007FF62EB66954]
+	(No symbol) [0x00007FF62EB66AF6]
+	(No symbol) [0x00007FF62EB56499]
+	BaseThreadInitThunk [0x00007FFB8F4F259D+29]
+	RtlUserThreadStart [0x00007FFB9184AF38+40]
+
+2025-02-18 14:52:58,775 - INFO - Se encontraron 1 iconos de gasolina para PL/897/EXP/ES/2015
+2025-02-18 14:52:58,777 - INFO - Haciendo clic en el icono de gasolina 1 para PL/897/EXP/ES/2015
+2025-02-18 14:53:01,853 - INFO - Scroll realizado
+2025-02-18 14:53:04,957 - INFO - Clic en botón: Botón de Ver Detalle para PL/897/EXP/ES/2015
+2025-02-18 14:53:07,981 - INFO - Cambiado a nueva pestaña
+2025-02-18 14:53:08,022 - INFO - Texto extraído de //*[@id="contact2"]/div/div/div[4]: Calle: CARRETERA LIBRE TIJUANA - ENSENADA NO. 3109 PLAYA ENCANTADA PLAYAS DE ROSARITO
+Código Postal: 22710
+Colonia: S/C
+ID Entidad Federativa: 02
+ID Municipio: 004
+2025-02-18 14:53:08,023 - INFO - Datos obtenidos del icono 1 para PL/897/EXP/ES/2015: Calle: CARRETERA LIBRE TIJUANA - ENSENADA NO. 3109 PLAYA ENCANTADA PLAYAS DE ROSARITO
+Código Postal: 22710
+Colonia: S/C
+ID Entidad Federativa: 02
+ID Municipio: 004
+2025-02-18 14:53:10,079 - INFO - Cerrada la pestaña actual y vuelta a la principal
+2025-02-18 14:53:12,081 - INFO - Proceso finalizado correctamente.
+2025-02-18 14:58:36,999 - INFO - Logger inicializado. Guardando logs en: Output/Loggers/logger_2025-02-18.txt
+2025-02-18 14:58:37,002 - INFO - Iniciando el proceso de scraping...
+2025-02-18 14:58:37,507 - INFO - Archivo validado correctamente.
+2025-02-18 14:58:40,406 - INFO - Clic en botón: Botón de Inicio
+2025-02-18 14:58:40,457 - INFO - Clic en botón: Botón de Aceptar Términos
+2025-02-18 14:58:43,448 - INFO - Clic en botón: Botón de Consulta Pública
+2025-02-18 14:58:51,332 - INFO - Clic en botón: Botón de Sistema Energético Mexicano
+2025-02-18 14:58:55,338 - INFO - Iniciando búsqueda para: PL/658/EXP/ES/2015
+2025-02-18 14:58:59,409 - INFO - Texto ingresado: PL/658/EXP/ES/2015
+2025-02-18 14:59:02,509 - INFO - Clic en botón: Botón de Lupa (Buscar) para PL/658/EXP/ES/2015
+2025-02-18 14:59:05,568 - INFO - Clic en botón: Botón Verde en Mapa para PL/658/EXP/ES/2015
+2025-02-18 15:01:43,608 - INFO - Logger inicializado. Guardando logs en: Output/Loggers/logger_2025-02-18.txt
+2025-02-18 15:01:43,610 - INFO - Iniciando el proceso de scraping...
+2025-02-18 15:01:44,060 - INFO - Archivo validado correctamente.
+2025-02-18 15:01:52,628 - INFO - Logger inicializado. Guardando logs en: Output/Loggers/logger_2025-02-18.txt
+2025-02-18 15:01:52,630 - INFO - Iniciando el proceso de scraping...
+2025-02-18 15:01:53,108 - INFO - Archivo validado correctamente.
+2025-02-18 15:02:02,222 - INFO - Clic en botón: Botón de Inicio
+2025-02-18 15:02:02,277 - INFO - Clic en botón: Botón de Aceptar Términos
+2025-02-18 15:02:05,140 - INFO - Clic en botón: Botón de Consulta Pública
+2025-02-18 15:02:11,999 - INFO - Clic en botón: Botón de Sistema Energético Mexicano
+2025-02-18 15:03:01,997 - INFO - Logger inicializado. Guardando logs en: Output/Loggers/logger_2025-02-18.txt
+2025-02-18 15:03:01,999 - INFO - Iniciando el proceso de scraping...
+2025-02-18 15:03:02,463 - INFO - Archivo validado correctamente.
+2025-02-18 15:03:05,947 - INFO - Clic en botón: Botón de Inicio
+2025-02-18 15:03:05,994 - INFO - Clic en botón: Botón de Aceptar Términos
+2025-02-18 15:03:08,641 - INFO - Clic en botón: Botón de Consulta Pública
+2025-02-18 15:03:13,039 - INFO - Clic en botón: Botón de Sistema Energético Mexicano
+2025-02-18 15:03:17,044 - INFO - Iniciando búsqueda para: PL/658/EXP/ES/2015
+2025-02-18 15:03:22,869 - INFO - Texto ingresado: PL/658/EXP/ES/2015
+2025-02-18 15:03:25,953 - INFO - Clic en botón: Botón de Lupa (Buscar) para PL/658/EXP/ES/2015
+2025-02-18 15:03:29,021 - INFO - Clic en botón: Botón Verde en Mapa para PL/658/EXP/ES/2015
+2025-02-18 15:03:32,034 - INFO - Se encontraron 2 iconos de gasolina para PL/658/EXP/ES/2015
+2025-02-18 15:03:32,037 - INFO - Haciendo clic en el icono de gasolina 1 para PL/658/EXP/ES/2015
+2025-02-18 15:03:35,146 - INFO - Scroll realizado
+2025-02-18 15:03:38,216 - INFO - Clic en botón: Botón de Ver Detalle para PL/658/EXP/ES/2015
+2025-02-18 15:03:41,228 - INFO - Cambiado a nueva pestaña
+2025-02-18 15:03:41,255 - INFO - Texto extraído de //*[@id="contact2"]/div/div/div[4]: Calle: BOULEVARD INSURGENTES NO. 1910
+Código Postal: 22040
+Colonia: LIBRAMIENTO TIJUANA
+ID Entidad Federativa: 02
+ID Municipio: 004
+2025-02-18 15:03:41,256 - INFO - Datos obtenidos del icono 1 para PL/658/EXP/ES/2015: Calle: BOULEVARD INSURGENTES NO. 1910
+Código Postal: 22040
+Colonia: LIBRAMIENTO TIJUANA
+ID Entidad Federativa: 02
+ID Municipio: 004
+2025-02-18 15:03:43,288 - INFO - Cerrada la pestaña actual y vuelta a la principal
+2025-02-18 15:03:45,291 - INFO - Haciendo clic en el icono de gasolina 2 para PL/658/EXP/ES/2015
+2025-02-18 15:03:48,351 - INFO - Scroll realizado
+2025-02-18 15:03:51,431 - INFO - Clic en botón: Botón de Ver Detalle para PL/658/EXP/ES/2015
+2025-02-18 15:03:54,441 - INFO - Cambiado a nueva pestaña
+2025-02-18 15:03:54,470 - INFO - Texto extraído de //*[@id="contact2"]/div/div/div[4]: Calle: BOULEVARD INSURGENTES NO. 20010
+Código Postal: 22210
+Colonia: TERCERA ETAPA RIO TIJUANA
+ID Entidad Federativa: 02
+ID Municipio: 004
+2025-02-18 15:03:54,471 - INFO - Datos obtenidos del icono 2 para PL/658/EXP/ES/2015: Calle: BOULEVARD INSURGENTES NO. 20010
+Código Postal: 22210
+Colonia: TERCERA ETAPA RIO TIJUANA
+ID Entidad Federativa: 02
+ID Municipio: 004
+2025-02-18 15:03:56,496 - INFO - Cerrada la pestaña actual y vuelta a la principal
+2025-02-18 15:03:58,499 - INFO - Iniciando búsqueda para: PL/902/EXP/ES/2015
+2025-02-18 15:04:02,852 - INFO - Texto ingresado: PL/902/EXP/ES/2015
+2025-02-18 15:04:05,924 - INFO - Clic en botón: Botón de Lupa (Buscar) para PL/902/EXP/ES/2015
+2025-02-18 15:04:14,029 - ERROR - Error al hacer clic en 'Botón Verde en Mapa para PL/902/EXP/ES/2015': Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF62EBF2EC5+28789]
+	(No symbol) [0x00007FF62EB5F870]
+	(No symbol) [0x00007FF62E9F8F9A]
+	(No symbol) [0x00007FF62EA4F236]
+	(No symbol) [0x00007FF62EA4F46C]
+	(No symbol) [0x00007FF62EAA29F7]
+	(No symbol) [0x00007FF62EA7725F]
+	(No symbol) [0x00007FF62EA9F6C3]
+	(No symbol) [0x00007FF62EA76FF3]
+	(No symbol) [0x00007FF62EA3FF0E]
+	(No symbol) [0x00007FF62EA41193]
+	GetHandleVerifier [0x00007FF62EF3D5FD+3479469]
+	GetHandleVerifier [0x00007FF62EF571A3+3584851]
+	GetHandleVerifier [0x00007FF62EF4C44D+3540477]
+	GetHandleVerifier [0x00007FF62ECB8B6A+838938]
+	(No symbol) [0x00007FF62EB6A4EF]
+	(No symbol) [0x00007FF62EB66954]
+	(No symbol) [0x00007FF62EB66AF6]
+	(No symbol) [0x00007FF62EB56499]
+	BaseThreadInitThunk [0x00007FFB8F4F259D+29]
+	RtlUserThreadStart [0x00007FFB9184AF38+40]
+
+2025-02-18 15:04:17,042 - INFO - Se encontraron 1 iconos de gasolina para PL/902/EXP/ES/2015
+2025-02-18 15:04:17,043 - INFO - Haciendo clic en el icono de gasolina 1 para PL/902/EXP/ES/2015
+2025-02-18 15:04:20,116 - INFO - Scroll realizado
+2025-02-18 15:04:23,188 - INFO - Clic en botón: Botón de Ver Detalle para PL/902/EXP/ES/2015
+2025-02-18 15:04:26,200 - INFO - Cambiado a nueva pestaña
+2025-02-18 15:04:26,237 - INFO - Texto extraído de //*[@id="contact2"]/div/div/div[4]: Calle: CARRETERA IXMIQUILPAN - PALMILLAS KM 58.5 HUICHAPAN
+Código Postal: 42084
+Colonia: S/C
+ID Entidad Federativa: 13
+ID Municipio: 029
+2025-02-18 15:04:26,239 - INFO - Datos obtenidos del icono 1 para PL/902/EXP/ES/2015: Calle: CARRETERA IXMIQUILPAN - PALMILLAS KM 58.5 HUICHAPAN
+Código Postal: 42084
+Colonia: S/C
+ID Entidad Federativa: 13
+ID Municipio: 029
+2025-02-18 15:04:28,260 - INFO - Cerrada la pestaña actual y vuelta a la principal
+2025-02-18 15:04:30,264 - INFO - Iniciando búsqueda para: PL/760/EXP/ES/2015
+2025-02-18 15:04:34,857 - INFO - Texto ingresado: PL/760/EXP/ES/2015
+2025-02-18 15:04:37,931 - INFO - Clic en botón: Botón de Lupa (Buscar) para PL/760/EXP/ES/2015
+2025-02-18 15:04:46,043 - ERROR - Error al hacer clic en 'Botón Verde en Mapa para PL/760/EXP/ES/2015': Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF62EBF2EC5+28789]
+	(No symbol) [0x00007FF62EB5F870]
+	(No symbol) [0x00007FF62E9F8F9A]
+	(No symbol) [0x00007FF62EA4F236]
+	(No symbol) [0x00007FF62EA4F46C]
+	(No symbol) [0x00007FF62EAA29F7]
+	(No symbol) [0x00007FF62EA7725F]
+	(No symbol) [0x00007FF62EA9F6C3]
+	(No symbol) [0x00007FF62EA76FF3]
+	(No symbol) [0x00007FF62EA3FF0E]
+	(No symbol) [0x00007FF62EA41193]
+	GetHandleVerifier [0x00007FF62EF3D5FD+3479469]
+	GetHandleVerifier [0x00007FF62EF571A3+3584851]
+	GetHandleVerifier [0x00007FF62EF4C44D+3540477]
+	GetHandleVerifier [0x00007FF62ECB8B6A+838938]
+	(No symbol) [0x00007FF62EB6A4EF]
+	(No symbol) [0x00007FF62EB66954]
+	(No symbol) [0x00007FF62EB66AF6]
+	(No symbol) [0x00007FF62EB56499]
+	BaseThreadInitThunk [0x00007FFB8F4F259D+29]
+	RtlUserThreadStart [0x00007FFB9184AF38+40]
+
+2025-02-18 15:04:49,061 - INFO - Se encontraron 25 iconos de gasolina para PL/760/EXP/ES/2015
+2025-02-18 15:04:49,063 - INFO - Haciendo clic en el icono de gasolina 1 para PL/760/EXP/ES/2015
+2025-02-18 15:04:49,076 - ERROR - Error al procesar el icono 1 para PL/760/EXP/ES/2015: Message: element not interactable
+  (Session info: chrome=133.0.6943.60)
+Stacktrace:
+	GetHandleVerifier [0x00007FF62EBF2EC5+28789]
+	(No symbol) [0x00007FF62EB5F870]
+	(No symbol) [0x00007FF62E9F8DCC]
+	(No symbol) [0x00007FF62EA50664]
+	(No symbol) [0x00007FF62EA42234]
+	(No symbol) [0x00007FF62EA7721A]
+	(No symbol) [0x00007FF62EA41AE6]
+	(No symbol) [0x00007FF62EA77430]
+	(No symbol) [0x00007FF62EA9F6C3]
+	(No symbol) [0x00007FF62EA76FF3]
+	(No symbol) [0x00007FF62EA3FF0E]
+	(No symbol) [0x00007FF62EA41193]
+	GetHandleVerifier [0x00007FF62EF3D5FD+3479469]
+	GetHandleVerifier [0x00007FF62EF571A3+3584851]
+	GetHandleVerifier [0x00007FF62EF4C44D+3540477]
+	GetHandleVerifier [0x00007FF62ECB8B6A+838938]
+	(No symbol) [0x00007FF62EB6A4EF]
+	(No symbol) [0x00007FF62EB66954]
+	(No symbol) [0x00007FF62EB66AF6]
+	(No symbol) [0x00007FF62EB56499]
+	BaseThreadInitThunk [0x00007FFB8F4F259D+29]
+	RtlUserThreadStart [0x00007FFB9184AF38+40]
+
+2025-02-18 15:04:49,078 - INFO - Haciendo clic en el icono de gasolina 2 para PL/760/EXP/ES/2015
+2025-02-18 15:04:49,088 - ERROR - Error al procesar el icono 2 para PL/760/EXP/ES/2015: Message: element not interactable
+  (Session info: chrome=133.0.6943.60)
+Stacktrace:
+	GetHandleVerifier [0x00007FF62EBF2EC5+28789]
+	(No symbol) [0x00007FF62EB5F870]
+	(No symbol) [0x00007FF62E9F8DCC]
+	(No symbol) [0x00007FF62EA50664]
+	(No symbol) [0x00007FF62EA42234]
+	(No symbol) [0x00007FF62EA7721A]
+	(No symbol) [0x00007FF62EA41AE6]
+	(No symbol) [0x00007FF62EA77430]
+	(No symbol) [0x00007FF62EA9F6C3]
+	(No symbol) [0x00007FF62EA76FF3]
+	(No symbol) [0x00007FF62EA3FF0E]
+	(No symbol) [0x00007FF62EA41193]
+	GetHandleVerifier [0x00007FF62EF3D5FD+3479469]
+	GetHandleVerifier [0x00007FF62EF571A3+3584851]
+	GetHandleVerifier [0x00007FF62EF4C44D+3540477]
+	GetHandleVerifier [0x00007FF62ECB8B6A+838938]
+	(No symbol) [0x00007FF62EB6A4EF]
+	(No symbol) [0x00007FF62EB66954]
+	(No symbol) [0x00007FF62EB66AF6]
+	(No symbol) [0x00007FF62EB56499]
+	BaseThreadInitThunk [0x00007FFB8F4F259D+29]
+	RtlUserThreadStart [0x00007FFB9184AF38+40]
+
+2025-02-18 15:04:49,089 - INFO - Haciendo clic en el icono de gasolina 3 para PL/760/EXP/ES/2015
+2025-02-18 15:04:49,102 - ERROR - Error al procesar el icono 3 para PL/760/EXP/ES/2015: Message: element not interactable
+  (Session info: chrome=133.0.6943.60)
+Stacktrace:
+	GetHandleVerifier [0x00007FF62EBF2EC5+28789]
+	(No symbol) [0x00007FF62EB5F870]
+	(No symbol) [0x00007FF62E9F8DCC]
+	(No symbol) [0x00007FF62EA50664]
+	(No symbol) [0x00007FF62EA42234]
+	(No symbol) [0x00007FF62EA7721A]
+	(No symbol) [0x00007FF62EA41AE6]
+	(No symbol) [0x00007FF62EA77430]
+	(No symbol) [0x00007FF62EA9F6C3]
+	(No symbol) [0x00007FF62EA76FF3]
+	(No symbol) [0x00007FF62EA3FF0E]
+	(No symbol) [0x00007FF62EA41193]
+	GetHandleVerifier [0x00007FF62EF3D5FD+3479469]
+	GetHandleVerifier [0x00007FF62EF571A3+3584851]
+	GetHandleVerifier [0x00007FF62EF4C44D+3540477]
+	GetHandleVerifier [0x00007FF62ECB8B6A+838938]
+	(No symbol) [0x00007FF62EB6A4EF]
+	(No symbol) [0x00007FF62EB66954]
+	(No symbol) [0x00007FF62EB66AF6]
+	(No symbol) [0x00007FF62EB56499]
+	BaseThreadInitThunk [0x00007FFB8F4F259D+29]
+	RtlUserThreadStart [0x00007FFB9184AF38+40]
+
+2025-02-18 15:04:49,103 - INFO - Haciendo clic en el icono de gasolina 4 para PL/760/EXP/ES/2015
+2025-02-18 15:04:49,114 - ERROR - Error al procesar el icono 4 para PL/760/EXP/ES/2015: Message: element not interactable
+  (Session info: chrome=133.0.6943.60)
+Stacktrace:
+	GetHandleVerifier [0x00007FF62EBF2EC5+28789]
+	(No symbol) [0x00007FF62EB5F870]
+	(No symbol) [0x00007FF62E9F8DCC]
+	(No symbol) [0x00007FF62EA50664]
+	(No symbol) [0x00007FF62EA42234]
+	(No symbol) [0x00007FF62EA7721A]
+	(No symbol) [0x00007FF62EA41AE6]
+	(No symbol) [0x00007FF62EA77430]
+	(No symbol) [0x00007FF62EA9F6C3]
+	(No symbol) [0x00007FF62EA76FF3]
+	(No symbol) [0x00007FF62EA3FF0E]
+	(No symbol) [0x00007FF62EA41193]
+	GetHandleVerifier [0x00007FF62EF3D5FD+3479469]
+	GetHandleVerifier [0x00007FF62EF571A3+3584851]
+	GetHandleVerifier [0x00007FF62EF4C44D+3540477]
+	GetHandleVerifier [0x00007FF62ECB8B6A+838938]
+	(No symbol) [0x00007FF62EB6A4EF]
+	(No symbol) [0x00007FF62EB66954]
+	(No symbol) [0x00007FF62EB66AF6]
+	(No symbol) [0x00007FF62EB56499]
+	BaseThreadInitThunk [0x00007FFB8F4F259D+29]
+	RtlUserThreadStart [0x00007FFB9184AF38+40]
+
+2025-02-18 15:04:49,114 - INFO - Haciendo clic en el icono de gasolina 5 para PL/760/EXP/ES/2015
+2025-02-18 15:04:49,122 - ERROR - Error al procesar el icono 5 para PL/760/EXP/ES/2015: Message: element not interactable
+  (Session info: chrome=133.0.6943.60)
+Stacktrace:
+	GetHandleVerifier [0x00007FF62EBF2EC5+28789]
+	(No symbol) [0x00007FF62EB5F870]
+	(No symbol) [0x00007FF62E9F8DCC]
+	(No symbol) [0x00007FF62EA50664]
+	(No symbol) [0x00007FF62EA42234]
+	(No symbol) [0x00007FF62EA7721A]
+	(No symbol) [0x00007FF62EA41AE6]
+	(No symbol) [0x00007FF62EA77430]
+	(No symbol) [0x00007FF62EA9F6C3]
+	(No symbol) [0x00007FF62EA76FF3]
+	(No symbol) [0x00007FF62EA3FF0E]
+	(No symbol) [0x00007FF62EA41193]
+	GetHandleVerifier [0x00007FF62EF3D5FD+3479469]
+	GetHandleVerifier [0x00007FF62EF571A3+3584851]
+	GetHandleVerifier [0x00007FF62EF4C44D+3540477]
+	GetHandleVerifier [0x00007FF62ECB8B6A+838938]
+	(No symbol) [0x00007FF62EB6A4EF]
+	(No symbol) [0x00007FF62EB66954]
+	(No symbol) [0x00007FF62EB66AF6]
+	(No symbol) [0x00007FF62EB56499]
+	BaseThreadInitThunk [0x00007FFB8F4F259D+29]
+	RtlUserThreadStart [0x00007FFB9184AF38+40]
+
+2025-02-18 15:04:49,123 - INFO - Haciendo clic en el icono de gasolina 6 para PL/760/EXP/ES/2015
+2025-02-18 15:04:49,132 - ERROR - Error al procesar el icono 6 para PL/760/EXP/ES/2015: Message: element not interactable
+  (Session info: chrome=133.0.6943.60)
+Stacktrace:
+	GetHandleVerifier [0x00007FF62EBF2EC5+28789]
+	(No symbol) [0x00007FF62EB5F870]
+	(No symbol) [0x00007FF62E9F8DCC]
+	(No symbol) [0x00007FF62EA50664]
+	(No symbol) [0x00007FF62EA42234]
+	(No symbol) [0x00007FF62EA7721A]
+	(No symbol) [0x00007FF62EA41AE6]
+	(No symbol) [0x00007FF62EA77430]
+	(No symbol) [0x00007FF62EA9F6C3]
+	(No symbol) [0x00007FF62EA76FF3]
+	(No symbol) [0x00007FF62EA3FF0E]
+	(No symbol) [0x00007FF62EA41193]
+	GetHandleVerifier [0x00007FF62EF3D5FD+3479469]
+	GetHandleVerifier [0x00007FF62EF571A3+3584851]
+	GetHandleVerifier [0x00007FF62EF4C44D+3540477]
+	GetHandleVerifier [0x00007FF62ECB8B6A+838938]
+	(No symbol) [0x00007FF62EB6A4EF]
+	(No symbol) [0x00007FF62EB66954]
+	(No symbol) [0x00007FF62EB66AF6]
+	(No symbol) [0x00007FF62EB56499]
+	BaseThreadInitThunk [0x00007FFB8F4F259D+29]
+	RtlUserThreadStart [0x00007FFB9184AF38+40]
+
+2025-02-18 15:04:49,133 - INFO - Haciendo clic en el icono de gasolina 7 para PL/760/EXP/ES/2015
+2025-02-18 15:04:49,141 - ERROR - Error al procesar el icono 7 para PL/760/EXP/ES/2015: Message: element not interactable
+  (Session info: chrome=133.0.6943.60)
+Stacktrace:
+	GetHandleVerifier [0x00007FF62EBF2EC5+28789]
+	(No symbol) [0x00007FF62EB5F870]
+	(No symbol) [0x00007FF62E9F8DCC]
+	(No symbol) [0x00007FF62EA50664]
+	(No symbol) [0x00007FF62EA42234]
+	(No symbol) [0x00007FF62EA7721A]
+	(No symbol) [0x00007FF62EA41AE6]
+	(No symbol) [0x00007FF62EA77430]
+	(No symbol) [0x00007FF62EA9F6C3]
+	(No symbol) [0x00007FF62EA76FF3]
+	(No symbol) [0x00007FF62EA3FF0E]
+	(No symbol) [0x00007FF62EA41193]
+	GetHandleVerifier [0x00007FF62EF3D5FD+3479469]
+	GetHandleVerifier [0x00007FF62EF571A3+3584851]
+	GetHandleVerifier [0x00007FF62EF4C44D+3540477]
+	GetHandleVerifier [0x00007FF62ECB8B6A+838938]
+	(No symbol) [0x00007FF62EB6A4EF]
+	(No symbol) [0x00007FF62EB66954]
+	(No symbol) [0x00007FF62EB66AF6]
+	(No symbol) [0x00007FF62EB56499]
+	BaseThreadInitThunk [0x00007FFB8F4F259D+29]
+	RtlUserThreadStart [0x00007FFB9184AF38+40]
+
+2025-02-18 15:04:49,142 - INFO - Haciendo clic en el icono de gasolina 8 para PL/760/EXP/ES/2015
+2025-02-18 15:04:49,150 - ERROR - Error al procesar el icono 8 para PL/760/EXP/ES/2015: Message: element not interactable
+  (Session info: chrome=133.0.6943.60)
+Stacktrace:
+	GetHandleVerifier [0x00007FF62EBF2EC5+28789]
+	(No symbol) [0x00007FF62EB5F870]
+	(No symbol) [0x00007FF62E9F8DCC]
+	(No symbol) [0x00007FF62EA50664]
+	(No symbol) [0x00007FF62EA42234]
+	(No symbol) [0x00007FF62EA7721A]
+	(No symbol) [0x00007FF62EA41AE6]
+	(No symbol) [0x00007FF62EA77430]
+	(No symbol) [0x00007FF62EA9F6C3]
+	(No symbol) [0x00007FF62EA76FF3]
+	(No symbol) [0x00007FF62EA3FF0E]
+	(No symbol) [0x00007FF62EA41193]
+	GetHandleVerifier [0x00007FF62EF3D5FD+3479469]
+	GetHandleVerifier [0x00007FF62EF571A3+3584851]
+	GetHandleVerifier [0x00007FF62EF4C44D+3540477]
+	GetHandleVerifier [0x00007FF62ECB8B6A+838938]
+	(No symbol) [0x00007FF62EB6A4EF]
+	(No symbol) [0x00007FF62EB66954]
+	(No symbol) [0x00007FF62EB66AF6]
+	(No symbol) [0x00007FF62EB56499]
+	BaseThreadInitThunk [0x00007FFB8F4F259D+29]
+	RtlUserThreadStart [0x00007FFB9184AF38+40]
+
+2025-02-18 15:04:49,152 - INFO - Haciendo clic en el icono de gasolina 9 para PL/760/EXP/ES/2015
+2025-02-18 15:04:49,161 - ERROR - Error al procesar el icono 9 para PL/760/EXP/ES/2015: Message: element not interactable
+  (Session info: chrome=133.0.6943.60)
+Stacktrace:
+	GetHandleVerifier [0x00007FF62EBF2EC5+28789]
+	(No symbol) [0x00007FF62EB5F870]
+	(No symbol) [0x00007FF62E9F8DCC]
+	(No symbol) [0x00007FF62EA50664]
+	(No symbol) [0x00007FF62EA42234]
+	(No symbol) [0x00007FF62EA7721A]
+	(No symbol) [0x00007FF62EA41AE6]
+	(No symbol) [0x00007FF62EA77430]
+	(No symbol) [0x00007FF62EA9F6C3]
+	(No symbol) [0x00007FF62EA76FF3]
+	(No symbol) [0x00007FF62EA3FF0E]
+	(No symbol) [0x00007FF62EA41193]
+	GetHandleVerifier [0x00007FF62EF3D5FD+3479469]
+	GetHandleVerifier [0x00007FF62EF571A3+3584851]
+	GetHandleVerifier [0x00007FF62EF4C44D+3540477]
+	GetHandleVerifier [0x00007FF62ECB8B6A+838938]
+	(No symbol) [0x00007FF62EB6A4EF]
+	(No symbol) [0x00007FF62EB66954]
+	(No symbol) [0x00007FF62EB66AF6]
+	(No symbol) [0x00007FF62EB56499]
+	BaseThreadInitThunk [0x00007FFB8F4F259D+29]
+	RtlUserThreadStart [0x00007FFB9184AF38+40]
+
+2025-02-18 15:04:49,162 - INFO - Haciendo clic en el icono de gasolina 10 para PL/760/EXP/ES/2015
+2025-02-18 15:04:49,171 - ERROR - Error al procesar el icono 10 para PL/760/EXP/ES/2015: Message: element not interactable
+  (Session info: chrome=133.0.6943.60)
+Stacktrace:
+	GetHandleVerifier [0x00007FF62EBF2EC5+28789]
+	(No symbol) [0x00007FF62EB5F870]
+	(No symbol) [0x00007FF62E9F8DCC]
+	(No symbol) [0x00007FF62EA50664]
+	(No symbol) [0x00007FF62EA42234]
+	(No symbol) [0x00007FF62EA7721A]
+	(No symbol) [0x00007FF62EA41AE6]
+	(No symbol) [0x00007FF62EA77430]
+	(No symbol) [0x00007FF62EA9F6C3]
+	(No symbol) [0x00007FF62EA76FF3]
+	(No symbol) [0x00007FF62EA3FF0E]
+	(No symbol) [0x00007FF62EA41193]
+	GetHandleVerifier [0x00007FF62EF3D5FD+3479469]
+	GetHandleVerifier [0x00007FF62EF571A3+3584851]
+	GetHandleVerifier [0x00007FF62EF4C44D+3540477]
+	GetHandleVerifier [0x00007FF62ECB8B6A+838938]
+	(No symbol) [0x00007FF62EB6A4EF]
+	(No symbol) [0x00007FF62EB66954]
+	(No symbol) [0x00007FF62EB66AF6]
+	(No symbol) [0x00007FF62EB56499]
+	BaseThreadInitThunk [0x00007FFB8F4F259D+29]
+	RtlUserThreadStart [0x00007FFB9184AF38+40]
+
+2025-02-18 15:04:49,172 - INFO - Haciendo clic en el icono de gasolina 11 para PL/760/EXP/ES/2015
+2025-02-18 15:04:49,180 - ERROR - Error al procesar el icono 11 para PL/760/EXP/ES/2015: Message: element not interactable
+  (Session info: chrome=133.0.6943.60)
+Stacktrace:
+	GetHandleVerifier [0x00007FF62EBF2EC5+28789]
+	(No symbol) [0x00007FF62EB5F870]
+	(No symbol) [0x00007FF62E9F8DCC]
+	(No symbol) [0x00007FF62EA50664]
+	(No symbol) [0x00007FF62EA42234]
+	(No symbol) [0x00007FF62EA7721A]
+	(No symbol) [0x00007FF62EA41AE6]
+	(No symbol) [0x00007FF62EA77430]
+	(No symbol) [0x00007FF62EA9F6C3]
+	(No symbol) [0x00007FF62EA76FF3]
+	(No symbol) [0x00007FF62EA3FF0E]
+	(No symbol) [0x00007FF62EA41193]
+	GetHandleVerifier [0x00007FF62EF3D5FD+3479469]
+	GetHandleVerifier [0x00007FF62EF571A3+3584851]
+	GetHandleVerifier [0x00007FF62EF4C44D+3540477]
+	GetHandleVerifier [0x00007FF62ECB8B6A+838938]
+	(No symbol) [0x00007FF62EB6A4EF]
+	(No symbol) [0x00007FF62EB66954]
+	(No symbol) [0x00007FF62EB66AF6]
+	(No symbol) [0x00007FF62EB56499]
+	BaseThreadInitThunk [0x00007FFB8F4F259D+29]
+	RtlUserThreadStart [0x00007FFB9184AF38+40]
+
+2025-02-18 15:04:49,181 - INFO - Haciendo clic en el icono de gasolina 12 para PL/760/EXP/ES/2015
+2025-02-18 15:04:49,189 - ERROR - Error al procesar el icono 12 para PL/760/EXP/ES/2015: Message: element not interactable
+  (Session info: chrome=133.0.6943.60)
+Stacktrace:
+	GetHandleVerifier [0x00007FF62EBF2EC5+28789]
+	(No symbol) [0x00007FF62EB5F870]
+	(No symbol) [0x00007FF62E9F8DCC]
+	(No symbol) [0x00007FF62EA50664]
+	(No symbol) [0x00007FF62EA42234]
+	(No symbol) [0x00007FF62EA7721A]
+	(No symbol) [0x00007FF62EA41AE6]
+	(No symbol) [0x00007FF62EA77430]
+	(No symbol) [0x00007FF62EA9F6C3]
+	(No symbol) [0x00007FF62EA76FF3]
+	(No symbol) [0x00007FF62EA3FF0E]
+	(No symbol) [0x00007FF62EA41193]
+	GetHandleVerifier [0x00007FF62EF3D5FD+3479469]
+	GetHandleVerifier [0x00007FF62EF571A3+3584851]
+	GetHandleVerifier [0x00007FF62EF4C44D+3540477]
+	GetHandleVerifier [0x00007FF62ECB8B6A+838938]
+	(No symbol) [0x00007FF62EB6A4EF]
+	(No symbol) [0x00007FF62EB66954]
+	(No symbol) [0x00007FF62EB66AF6]
+	(No symbol) [0x00007FF62EB56499]
+	BaseThreadInitThunk [0x00007FFB8F4F259D+29]
+	RtlUserThreadStart [0x00007FFB9184AF38+40]
+
+2025-02-18 15:04:49,190 - INFO - Haciendo clic en el icono de gasolina 13 para PL/760/EXP/ES/2015
+2025-02-18 15:04:52,249 - INFO - Scroll realizado
+2025-02-18 15:04:55,332 - INFO - Clic en botón: Botón de Ver Detalle para PL/760/EXP/ES/2015
+2025-02-18 15:04:58,341 - INFO - Cambiado a nueva pestaña
+2025-02-18 15:04:58,369 - INFO - Texto extraído de //*[@id="contact2"]/div/div/div[4]: Calle: AVENIDA ADOLFO LÓPEZ MATEOS NO. 1604
+Código Postal: 32380
+Colonia: MELCHOR OCAMPO
+ID Entidad Federativa: 08
+ID Municipio: 037
+2025-02-18 15:04:58,370 - INFO - Datos obtenidos del icono 13 para PL/760/EXP/ES/2015: Calle: AVENIDA ADOLFO LÓPEZ MATEOS NO. 1604
+Código Postal: 32380
+Colonia: MELCHOR OCAMPO
+ID Entidad Federativa: 08
+ID Municipio: 037
+2025-02-18 15:05:00,394 - INFO - Cerrada la pestaña actual y vuelta a la principal
+2025-02-18 15:05:02,396 - INFO - Haciendo clic en el icono de gasolina 14 para PL/760/EXP/ES/2015
+2025-02-18 15:05:03,434 - ERROR - Error al procesar el icono 14 para PL/760/EXP/ES/2015: Message: element click intercepted: Element <img src="/img/gasolinera.png" class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" alt="Marker" tabindex="0" role="button" style="margin-left: -18px; margin-top: -16px; width: 36px; height: 36px; transform: translate3d(736px, 579px, 0px); z-index: 579;"> is not clickable at point (1478, 1410). Other element would receive the click: <li>...</li>
+  (Session info: chrome=133.0.6943.60)
+Stacktrace:
+	GetHandleVerifier [0x00007FF62EBF2EC5+28789]
+	(No symbol) [0x00007FF62EB5F870]
+	(No symbol) [0x00007FF62E9F8F9A]
+	(No symbol) [0x00007FF62EA570C9]
+	(No symbol) [0x00007FF62EA54A92]
+	(No symbol) [0x00007FF62EA51B31]
+	(No symbol) [0x00007FF62EA50A41]
+	(No symbol) [0x00007FF62EA42234]
+	(No symbol) [0x00007FF62EA7721A]
+	(No symbol) [0x00007FF62EA41AE6]
+	(No symbol) [0x00007FF62EA77430]
+	(No symbol) [0x00007FF62EA9F6C3]
+	(No symbol) [0x00007FF62EA76FF3]
+	(No symbol) [0x00007FF62EA3FF0E]
+	(No symbol) [0x00007FF62EA41193]
+	GetHandleVerifier [0x00007FF62EF3D5FD+3479469]
+	GetHandleVerifier [0x00007FF62EF571A3+3584851]
+	GetHandleVerifier [0x00007FF62EF4C44D+3540477]
+	GetHandleVerifier [0x00007FF62ECB8B6A+838938]
+	(No symbol) [0x00007FF62EB6A4EF]
+	(No symbol) [0x00007FF62EB66954]
+	(No symbol) [0x00007FF62EB66AF6]
+	(No symbol) [0x00007FF62EB56499]
+	BaseThreadInitThunk [0x00007FFB8F4F259D+29]
+	RtlUserThreadStart [0x00007FFB9184AF38+40]
+
+2025-02-18 15:05:03,436 - INFO - Haciendo clic en el icono de gasolina 15 para PL/760/EXP/ES/2015
+2025-02-18 15:05:03,449 - ERROR - Error al procesar el icono 15 para PL/760/EXP/ES/2015: Message: element not interactable
+  (Session info: chrome=133.0.6943.60)
+Stacktrace:
+	GetHandleVerifier [0x00007FF62EBF2EC5+28789]
+	(No symbol) [0x00007FF62EB5F870]
+	(No symbol) [0x00007FF62E9F8DCC]
+	(No symbol) [0x00007FF62EA50664]
+	(No symbol) [0x00007FF62EA42234]
+	(No symbol) [0x00007FF62EA7721A]
+	(No symbol) [0x00007FF62EA41AE6]
+	(No symbol) [0x00007FF62EA77430]
+	(No symbol) [0x00007FF62EA9F6C3]
+	(No symbol) [0x00007FF62EA76FF3]
+	(No symbol) [0x00007FF62EA3FF0E]
+	(No symbol) [0x00007FF62EA41193]
+	GetHandleVerifier [0x00007FF62EF3D5FD+3479469]
+	GetHandleVerifier [0x00007FF62EF571A3+3584851]
+	GetHandleVerifier [0x00007FF62EF4C44D+3540477]
+	GetHandleVerifier [0x00007FF62ECB8B6A+838938]
+	(No symbol) [0x00007FF62EB6A4EF]
+	(No symbol) [0x00007FF62EB66954]
+	(No symbol) [0x00007FF62EB66AF6]
+	(No symbol) [0x00007FF62EB56499]
+	BaseThreadInitThunk [0x00007FFB8F4F259D+29]
+	RtlUserThreadStart [0x00007FFB9184AF38+40]
+
+2025-02-18 15:05:03,450 - INFO - Haciendo clic en el icono de gasolina 16 para PL/760/EXP/ES/2015
+2025-02-18 15:05:06,503 - INFO - Scroll realizado
+2025-02-18 15:05:09,577 - INFO - Clic en botón: Botón de Ver Detalle para PL/760/EXP/ES/2015
+2025-02-18 15:05:12,596 - INFO - Cambiado a nueva pestaña
+2025-02-18 15:05:12,623 - INFO - Texto extraído de //*[@id="contact2"]/div/div/div[4]: Calle: BOULEVARD OSCAR FLORES SANCHEZ NO. 3585
+Código Postal: 32380
+Colonia: SAN JOSE
+ID Entidad Federativa: 08
+ID Municipio: 037
+2025-02-18 15:05:12,624 - INFO - Datos obtenidos del icono 16 para PL/760/EXP/ES/2015: Calle: BOULEVARD OSCAR FLORES SANCHEZ NO. 3585
+Código Postal: 32380
+Colonia: SAN JOSE
+ID Entidad Federativa: 08
+ID Municipio: 037
+2025-02-18 15:05:14,640 - INFO - Cerrada la pestaña actual y vuelta a la principal
+2025-02-18 15:05:16,642 - INFO - Haciendo clic en el icono de gasolina 17 para PL/760/EXP/ES/2015
+2025-02-18 15:05:16,653 - ERROR - Error al procesar el icono 17 para PL/760/EXP/ES/2015: Message: element not interactable
+  (Session info: chrome=133.0.6943.60)
+Stacktrace:
+	GetHandleVerifier [0x00007FF62EBF2EC5+28789]
+	(No symbol) [0x00007FF62EB5F870]
+	(No symbol) [0x00007FF62E9F8DCC]
+	(No symbol) [0x00007FF62EA50664]
+	(No symbol) [0x00007FF62EA42234]
+	(No symbol) [0x00007FF62EA7721A]
+	(No symbol) [0x00007FF62EA41AE6]
+	(No symbol) [0x00007FF62EA77430]
+	(No symbol) [0x00007FF62EA9F6C3]
+	(No symbol) [0x00007FF62EA76FF3]
+	(No symbol) [0x00007FF62EA3FF0E]
+	(No symbol) [0x00007FF62EA41193]
+	GetHandleVerifier [0x00007FF62EF3D5FD+3479469]
+	GetHandleVerifier [0x00007FF62EF571A3+3584851]
+	GetHandleVerifier [0x00007FF62EF4C44D+3540477]
+	GetHandleVerifier [0x00007FF62ECB8B6A+838938]
+	(No symbol) [0x00007FF62EB6A4EF]
+	(No symbol) [0x00007FF62EB66954]
+	(No symbol) [0x00007FF62EB66AF6]
+	(No symbol) [0x00007FF62EB56499]
+	BaseThreadInitThunk [0x00007FFB8F4F259D+29]
+	RtlUserThreadStart [0x00007FFB9184AF38+40]
+
+2025-02-18 15:05:16,656 - INFO - Haciendo clic en el icono de gasolina 18 para PL/760/EXP/ES/2015
+2025-02-18 15:05:16,665 - ERROR - Error al procesar el icono 18 para PL/760/EXP/ES/2015: Message: element not interactable
+  (Session info: chrome=133.0.6943.60)
+Stacktrace:
+	GetHandleVerifier [0x00007FF62EBF2EC5+28789]
+	(No symbol) [0x00007FF62EB5F870]
+	(No symbol) [0x00007FF62E9F8DCC]
+	(No symbol) [0x00007FF62EA50664]
+	(No symbol) [0x00007FF62EA42234]
+	(No symbol) [0x00007FF62EA7721A]
+	(No symbol) [0x00007FF62EA41AE6]
+	(No symbol) [0x00007FF62EA77430]
+	(No symbol) [0x00007FF62EA9F6C3]
+	(No symbol) [0x00007FF62EA76FF3]
+	(No symbol) [0x00007FF62EA3FF0E]
+	(No symbol) [0x00007FF62EA41193]
+	GetHandleVerifier [0x00007FF62EF3D5FD+3479469]
+	GetHandleVerifier [0x00007FF62EF571A3+3584851]
+	GetHandleVerifier [0x00007FF62EF4C44D+3540477]
+	GetHandleVerifier [0x00007FF62ECB8B6A+838938]
+	(No symbol) [0x00007FF62EB6A4EF]
+	(No symbol) [0x00007FF62EB66954]
+	(No symbol) [0x00007FF62EB66AF6]
+	(No symbol) [0x00007FF62EB56499]
+	BaseThreadInitThunk [0x00007FFB8F4F259D+29]
+	RtlUserThreadStart [0x00007FFB9184AF38+40]
+
+2025-02-18 15:05:16,666 - INFO - Haciendo clic en el icono de gasolina 19 para PL/760/EXP/ES/2015
+2025-02-18 15:05:16,674 - ERROR - Error al procesar el icono 19 para PL/760/EXP/ES/2015: Message: element not interactable
+  (Session info: chrome=133.0.6943.60)
+Stacktrace:
+	GetHandleVerifier [0x00007FF62EBF2EC5+28789]
+	(No symbol) [0x00007FF62EB5F870]
+	(No symbol) [0x00007FF62E9F8DCC]
+	(No symbol) [0x00007FF62EA50664]
+	(No symbol) [0x00007FF62EA42234]
+	(No symbol) [0x00007FF62EA7721A]
+	(No symbol) [0x00007FF62EA41AE6]
+	(No symbol) [0x00007FF62EA77430]
+	(No symbol) [0x00007FF62EA9F6C3]
+	(No symbol) [0x00007FF62EA76FF3]
+	(No symbol) [0x00007FF62EA3FF0E]
+	(No symbol) [0x00007FF62EA41193]
+	GetHandleVerifier [0x00007FF62EF3D5FD+3479469]
+	GetHandleVerifier [0x00007FF62EF571A3+3584851]
+	GetHandleVerifier [0x00007FF62EF4C44D+3540477]
+	GetHandleVerifier [0x00007FF62ECB8B6A+838938]
+	(No symbol) [0x00007FF62EB6A4EF]
+	(No symbol) [0x00007FF62EB66954]
+	(No symbol) [0x00007FF62EB66AF6]
+	(No symbol) [0x00007FF62EB56499]
+	BaseThreadInitThunk [0x00007FFB8F4F259D+29]
+	RtlUserThreadStart [0x00007FFB9184AF38+40]
+
+2025-02-18 15:05:16,675 - INFO - Haciendo clic en el icono de gasolina 20 para PL/760/EXP/ES/2015
+2025-02-18 15:05:16,683 - ERROR - Error al procesar el icono 20 para PL/760/EXP/ES/2015: Message: element not interactable
+  (Session info: chrome=133.0.6943.60)
+Stacktrace:
+	GetHandleVerifier [0x00007FF62EBF2EC5+28789]
+	(No symbol) [0x00007FF62EB5F870]
+	(No symbol) [0x00007FF62E9F8DCC]
+	(No symbol) [0x00007FF62EA50664]
+	(No symbol) [0x00007FF62EA42234]
+	(No symbol) [0x00007FF62EA7721A]
+	(No symbol) [0x00007FF62EA41AE6]
+	(No symbol) [0x00007FF62EA77430]
+	(No symbol) [0x00007FF62EA9F6C3]
+	(No symbol) [0x00007FF62EA76FF3]
+	(No symbol) [0x00007FF62EA3FF0E]
+	(No symbol) [0x00007FF62EA41193]
+	GetHandleVerifier [0x00007FF62EF3D5FD+3479469]
+	GetHandleVerifier [0x00007FF62EF571A3+3584851]
+	GetHandleVerifier [0x00007FF62EF4C44D+3540477]
+	GetHandleVerifier [0x00007FF62ECB8B6A+838938]
+	(No symbol) [0x00007FF62EB6A4EF]
+	(No symbol) [0x00007FF62EB66954]
+	(No symbol) [0x00007FF62EB66AF6]
+	(No symbol) [0x00007FF62EB56499]
+	BaseThreadInitThunk [0x00007FFB8F4F259D+29]
+	RtlUserThreadStart [0x00007FFB9184AF38+40]
+
+2025-02-18 15:05:16,684 - INFO - Haciendo clic en el icono de gasolina 21 para PL/760/EXP/ES/2015
+2025-02-18 15:05:16,693 - ERROR - Error al procesar el icono 21 para PL/760/EXP/ES/2015: Message: element not interactable
+  (Session info: chrome=133.0.6943.60)
+Stacktrace:
+	GetHandleVerifier [0x00007FF62EBF2EC5+28789]
+	(No symbol) [0x00007FF62EB5F870]
+	(No symbol) [0x00007FF62E9F8DCC]
+	(No symbol) [0x00007FF62EA50664]
+	(No symbol) [0x00007FF62EA42234]
+	(No symbol) [0x00007FF62EA7721A]
+	(No symbol) [0x00007FF62EA41AE6]
+	(No symbol) [0x00007FF62EA77430]
+	(No symbol) [0x00007FF62EA9F6C3]
+	(No symbol) [0x00007FF62EA76FF3]
+	(No symbol) [0x00007FF62EA3FF0E]
+	(No symbol) [0x00007FF62EA41193]
+	GetHandleVerifier [0x00007FF62EF3D5FD+3479469]
+	GetHandleVerifier [0x00007FF62EF571A3+3584851]
+	GetHandleVerifier [0x00007FF62EF4C44D+3540477]
+	GetHandleVerifier [0x00007FF62ECB8B6A+838938]
+	(No symbol) [0x00007FF62EB6A4EF]
+	(No symbol) [0x00007FF62EB66954]
+	(No symbol) [0x00007FF62EB66AF6]
+	(No symbol) [0x00007FF62EB56499]
+	BaseThreadInitThunk [0x00007FFB8F4F259D+29]
+	RtlUserThreadStart [0x00007FFB9184AF38+40]
+
+2025-02-18 15:05:16,694 - INFO - Haciendo clic en el icono de gasolina 22 para PL/760/EXP/ES/2015
+2025-02-18 15:05:16,702 - ERROR - Error al procesar el icono 22 para PL/760/EXP/ES/2015: Message: element not interactable
+  (Session info: chrome=133.0.6943.60)
+Stacktrace:
+	GetHandleVerifier [0x00007FF62EBF2EC5+28789]
+	(No symbol) [0x00007FF62EB5F870]
+	(No symbol) [0x00007FF62E9F8DCC]
+	(No symbol) [0x00007FF62EA50664]
+	(No symbol) [0x00007FF62EA42234]
+	(No symbol) [0x00007FF62EA7721A]
+	(No symbol) [0x00007FF62EA41AE6]
+	(No symbol) [0x00007FF62EA77430]
+	(No symbol) [0x00007FF62EA9F6C3]
+	(No symbol) [0x00007FF62EA76FF3]
+	(No symbol) [0x00007FF62EA3FF0E]
+	(No symbol) [0x00007FF62EA41193]
+	GetHandleVerifier [0x00007FF62EF3D5FD+3479469]
+	GetHandleVerifier [0x00007FF62EF571A3+3584851]
+	GetHandleVerifier [0x00007FF62EF4C44D+3540477]
+	GetHandleVerifier [0x00007FF62ECB8B6A+838938]
+	(No symbol) [0x00007FF62EB6A4EF]
+	(No symbol) [0x00007FF62EB66954]
+	(No symbol) [0x00007FF62EB66AF6]
+	(No symbol) [0x00007FF62EB56499]
+	BaseThreadInitThunk [0x00007FFB8F4F259D+29]
+	RtlUserThreadStart [0x00007FFB9184AF38+40]
+
+2025-02-18 15:05:16,704 - INFO - Haciendo clic en el icono de gasolina 23 para PL/760/EXP/ES/2015
+2025-02-18 15:05:16,711 - ERROR - Error al procesar el icono 23 para PL/760/EXP/ES/2015: Message: element not interactable
+  (Session info: chrome=133.0.6943.60)
+Stacktrace:
+	GetHandleVerifier [0x00007FF62EBF2EC5+28789]
+	(No symbol) [0x00007FF62EB5F870]
+	(No symbol) [0x00007FF62E9F8DCC]
+	(No symbol) [0x00007FF62EA50664]
+	(No symbol) [0x00007FF62EA42234]
+	(No symbol) [0x00007FF62EA7721A]
+	(No symbol) [0x00007FF62EA41AE6]
+	(No symbol) [0x00007FF62EA77430]
+	(No symbol) [0x00007FF62EA9F6C3]
+	(No symbol) [0x00007FF62EA76FF3]
+	(No symbol) [0x00007FF62EA3FF0E]
+	(No symbol) [0x00007FF62EA41193]
+	GetHandleVerifier [0x00007FF62EF3D5FD+3479469]
+	GetHandleVerifier [0x00007FF62EF571A3+3584851]
+	GetHandleVerifier [0x00007FF62EF4C44D+3540477]
+	GetHandleVerifier [0x00007FF62ECB8B6A+838938]
+	(No symbol) [0x00007FF62EB6A4EF]
+	(No symbol) [0x00007FF62EB66954]
+	(No symbol) [0x00007FF62EB66AF6]
+	(No symbol) [0x00007FF62EB56499]
+	BaseThreadInitThunk [0x00007FFB8F4F259D+29]
+	RtlUserThreadStart [0x00007FFB9184AF38+40]
+
+2025-02-18 15:05:16,712 - INFO - Haciendo clic en el icono de gasolina 24 para PL/760/EXP/ES/2015
+2025-02-18 15:05:16,721 - ERROR - Error al procesar el icono 24 para PL/760/EXP/ES/2015: Message: element not interactable
+  (Session info: chrome=133.0.6943.60)
+Stacktrace:
+	GetHandleVerifier [0x00007FF62EBF2EC5+28789]
+	(No symbol) [0x00007FF62EB5F870]
+	(No symbol) [0x00007FF62E9F8DCC]
+	(No symbol) [0x00007FF62EA50664]
+	(No symbol) [0x00007FF62EA42234]
+	(No symbol) [0x00007FF62EA7721A]
+	(No symbol) [0x00007FF62EA41AE6]
+	(No symbol) [0x00007FF62EA77430]
+	(No symbol) [0x00007FF62EA9F6C3]
+	(No symbol) [0x00007FF62EA76FF3]
+	(No symbol) [0x00007FF62EA3FF0E]
+	(No symbol) [0x00007FF62EA41193]
+	GetHandleVerifier [0x00007FF62EF3D5FD+3479469]
+	GetHandleVerifier [0x00007FF62EF571A3+3584851]
+	GetHandleVerifier [0x00007FF62EF4C44D+3540477]
+	GetHandleVerifier [0x00007FF62ECB8B6A+838938]
+	(No symbol) [0x00007FF62EB6A4EF]
+	(No symbol) [0x00007FF62EB66954]
+	(No symbol) [0x00007FF62EB66AF6]
+	(No symbol) [0x00007FF62EB56499]
+	BaseThreadInitThunk [0x00007FFB8F4F259D+29]
+	RtlUserThreadStart [0x00007FFB9184AF38+40]
+
+2025-02-18 15:05:16,722 - INFO - Haciendo clic en el icono de gasolina 25 para PL/760/EXP/ES/2015
+2025-02-18 15:05:16,730 - ERROR - Error al procesar el icono 25 para PL/760/EXP/ES/2015: Message: element not interactable
+  (Session info: chrome=133.0.6943.60)
+Stacktrace:
+	GetHandleVerifier [0x00007FF62EBF2EC5+28789]
+	(No symbol) [0x00007FF62EB5F870]
+	(No symbol) [0x00007FF62E9F8DCC]
+	(No symbol) [0x00007FF62EA50664]
+	(No symbol) [0x00007FF62EA42234]
+	(No symbol) [0x00007FF62EA7721A]
+	(No symbol) [0x00007FF62EA41AE6]
+	(No symbol) [0x00007FF62EA77430]
+	(No symbol) [0x00007FF62EA9F6C3]
+	(No symbol) [0x00007FF62EA76FF3]
+	(No symbol) [0x00007FF62EA3FF0E]
+	(No symbol) [0x00007FF62EA41193]
+	GetHandleVerifier [0x00007FF62EF3D5FD+3479469]
+	GetHandleVerifier [0x00007FF62EF571A3+3584851]
+	GetHandleVerifier [0x00007FF62EF4C44D+3540477]
+	GetHandleVerifier [0x00007FF62ECB8B6A+838938]
+	(No symbol) [0x00007FF62EB6A4EF]
+	(No symbol) [0x00007FF62EB66954]
+	(No symbol) [0x00007FF62EB66AF6]
+	(No symbol) [0x00007FF62EB56499]
+	BaseThreadInitThunk [0x00007FFB8F4F259D+29]
+	RtlUserThreadStart [0x00007FFB9184AF38+40]
+
+2025-02-18 15:05:16,730 - INFO - Proceso finalizado correctamente.
