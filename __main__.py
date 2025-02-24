@@ -206,7 +206,7 @@ time.sleep(2)
 
 resultados = {}
 
-for valor in reggas_list[:5]:
+for valor in reggas_list[:2]:
     
     logger.info(f"Iniciando búsqueda para: {valor}")
 
@@ -258,9 +258,12 @@ for valor in reggas_list[:5]:
                 
                 if original_window:
                     texto_extraido = extract_text(driver=driver, xpath='//*[@id="contact2"]/div/div/div[4]')
-
+                    razon_social = extract_text(driver=driver, xpath='//*[@id="contact2"]/div/div/div[3]')
+                    marca = extract_text(driver=driver, xpath='//*[@id="contact2"]/div/div/div[5]')
                     if texto_extraido:
                         detalles_extraidos.append(texto_extraido)
+                        detalles_extraidos.append(razon_social)
+                        detalles_extraidos.append(marca)
                         logger.info(f"Datos obtenidos del icono {idx} para {valor}: {texto_extraido}")
 
 
@@ -291,5 +294,31 @@ logger.info("Proceso finalizado correctamente.")
 
 #%%
 
-# print(results_dict.keys())
+with open("resultado.txt", "w", encoding="utf-8") as file:
+    for identificador, datos in resultados.items():
+
+        direccion_info = {}
+        for linea in datos[0].splitlines():
+            if ":" in linea:
+                campo, valor = linea.split(":", 1)
+                direccion_info[campo.strip()] = valor.strip()
+
+        salida = (
+            f"{identificador} - {direccion_info.get('Calle', '')} - Código Postal {direccion_info.get('Código Postal', '')} "
+            f"- Colonia {direccion_info.get('Colonia', '')} - Estado {direccion_info.get('ID Entidad Federativa', '')} "
+            f"- Municipio {direccion_info.get('ID Municipio', '')} - {datos[1]} - {datos[2]}"
+        )
+        
+        file.write(salida + "\n")
+
+
+
+
+
+
+
+
+
+
+
 
