@@ -79,14 +79,16 @@ def enter_text(driver, xpath: str, text: str, timeout: int=5):
     except Exception as e:
         logger.error(f"Error al ingresar texto en {xpath}: {e}")
 
-def scroll_element(driver, xpath: str):
+def scroll_element(driver, xpath: str, pixeles: str):
     """
     Hace scroll dentro de un 
     elemento específico.
     """
     try:
         element = WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.XPATH, xpath)))
-        driver.execute_script("arguments[0].scrollTop = arguments[0].scrollHeight;", element)
+        driver.execute_script(f"arguments[0].scrollTop += {pixeles};", element)
+        # driver.execute_script("arguments[0].scrollTop = arguments[0].scrollHeight;", element)
+        # driver.execute_script("window.scrollBy(0, 437);")
         logger.info("Scroll realizado")
     except Exception as e:
         logger.error(f"Error al hacer scroll en {xpath}: {e}")
@@ -151,13 +153,13 @@ options.add_experimental_option("excludeSwitches", ["enable-automation"])
 options.add_argument("start-maximized")
 options.add_argument("--disable-javascript")
 
-options.add_argument("--headless")
+# options.add_argument("--headless")
 options.add_argument("--no-sandbox")
 options.add_argument("--disable-dev-shm-usage")
 options.add_experimental_option('useAutomationExtension', False)
 headers = {"User-agent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.80 Safari/537.36"}
-# executable_path_user = r'chromedriver.exe'
-# s = Service(r'chromedriver.exe')
+executable_path_user = r'chromedriver.exe'
+s = Service(r'chromedriver.exe')
 
 #%%
 
@@ -165,8 +167,8 @@ url = 'https://energeo.cre.gob.mx/Acceso/SesionExpirada#5/24.567/-101.755'
 
 #%%
 
-# driver = webdriver.Chrome(service=s, options=options)
-driver = webdriver.Chrome(options=options)
+driver = webdriver.Chrome(service=s, options=options)
+# driver = webdriver.Chrome(options=options)
 driver.get(url)
 
 #%%
@@ -178,6 +180,7 @@ icono_gas_xpath = '//*[@id="map"]/div[1]/div[4]/img[1]'
 cajita_popup_xpath = '//*[@id="map"]/div[1]/div[6]/div/div[1]/div/div'
 ver_detalle_boton_xpath = '//*[@id="map"]/div[1]/div[6]/div/div[1]/div/div/a[1]'
 caja_con_contenido_xpath = '//*[@id="contact2"]/div/div/div[4]'
+retry_xpath = '//*[@id="autocomplete-list"]/div[2]'
 
 #%%
 
@@ -187,74 +190,106 @@ click_button(driver=driver, xpath='//*[@id="terms-and-conditions-modal"]/div/div
 click_button(driver=driver, xpath='//*[@id="consultaPublica"]/div/div[2]/a', button_name="Botón de Consulta Pública")
 click_button(driver=driver, xpath='//*[@id="app-nav-main"]/li[2]/a', button_name="Botón de Sistema Energético Mexicano")
 
-time.sleep(2)
-driver.execute_script("window.scrollBy(0, 450);")
+time.sleep(4)
+driver.execute_script("window.scrollBy(0, 437);")
+
+#TODO: INCLUIR RAZON SOCIAL Y LA MARCA
 
 #%%
 
-def main_function():
+#TODO: Un archivo .txt
 
-    nap = 3
+
+nap = 6
+
+time.sleep(2)
+
+resultados = {}
+
+for valor in reggas_list[:5]:
     
-    time.sleep(2)
+    logger.info(f"Iniciando búsqueda para: {valor}")
+
+    enter_text(driver=driver, xpath=buscar_en_el_mapa_xpath, text=valor)
+    time.sleep(nap)
     
-    resultados = {}
+    click_button(driver=driver, xpath=retry_xpath, button_name=f"Botón de RETRY - {valor}")
+    time.sleep(nap)
     
-    for valor in reggas_list[:3]:
-        
-        logger.info(f"Iniciando búsqueda para: {valor}")
+    click_button(driver=driver, xpath=lupa_buscar_xpath, button_name=f"Botón de Lupa (Buscar) para {valor}")
+    time.sleep(nap)
+
+    click_button(driver=driver, xpath='//*[@id="map"]/div[1]/div[4]/div', button_name=f"Botón Verde en Mapa para {valor}")
+    time.sleep(nap)
+
+    gas_icons = driver.find_elements(By.XPATH, '//*[@id="map"]/div[1]/div[4]/img')
+
+    if gas_icons:
+        logger.info(f"Se encontraron {len(gas_icons)} iconos de gasolina para {valor}")
+    else:
+        logger.warning(f"No se encontraron iconos de gasolina para {valor}")
+        continue
     
-        enter_text(driver=driver, xpath=buscar_en_el_mapa_xpath, text=valor)
-        time.sleep(nap)
-        
-        click_button(driver=driver, xpath=lupa_buscar_xpath, button_name=f"Botón de Lupa (Buscar) para {valor}")
-        time.sleep(nap)
-    
-        click_button(driver=driver, xpath='//*[@id="map"]/div[1]/div[4]/div', button_name=f"Botón Verde en Mapa para {valor}")
-        time.sleep(nap)
-    
-        gas_icons = driver.find_elements(By.XPATH, '//*[@id="map"]/div[1]/div[4]/img')
-    
-        if gas_icons:
-            logger.info(f"Se encontraron {len(gas_icons)} iconos de gasolina para {valor}")
-        else:
-            logger.warning(f"No se encontraron iconos de gasolina para {valor}")
-            continue
-    
-        detalles_extraidos = []
-    
-        for idx, icon in enumerate(gas_icons, start=1):
-            try:
-                logger.info(f"Haciendo clic en el icono de gasolina {idx} para {valor}")
-                icon.click()
-                time.sleep(nap)
-    
-                scroll_element(driver=driver, xpath='//*[@id="map"]/div[1]/div[6]/div/div[1]/div/div')
-                time.sleep(nap)
-    
+    detalles_extraidos = []
+
+    for idx, icon in enumerate(gas_icons, start=1):
+        try:
+            logger.info(f"Haciendo clic en el icono de gasolina {idx} para {valor}")
+            icon.click()
+            time.sleep(nap)
+
+            scroll_element(driver=driver, xpath='//*[@id="map"]/div[1]/div[6]/div/div[1]/div/div', pixeles=150)
+            time.sleep(nap)
+            
+            pl_valor_confirmar = extract_text(driver=driver, xpath='//*[@id="map"]/div[1]/div[6]/div/div[1]/div/div/ul/li[2]')
+            pl_valor_confirmar = pl_valor_confirmar.split(": ")[1]
+            
+            if pl_valor_confirmar == valor:
+                logger.info(f"El icono {idx} coincide con {valor}, extrayendo detalles.")
+                
+                scroll_element(driver=driver, xpath='//*[@id="map"]/div[1]/div[6]/div/div[1]/div/div', pixeles=300)
+
                 click_button(driver=driver, xpath='//*[@id="map"]/div[1]/div[6]/div/div[1]/div/div/a[1]', 
                              button_name=f"Botón de Ver Detalle para {valor}")
+
                 time.sleep(nap)
-    
+
                 original_window = switch_to_new_tab(driver=driver)
+                
                 if original_window:
                     texto_extraido = extract_text(driver=driver, xpath='//*[@id="contact2"]/div/div/div[4]')
-    
+
                     if texto_extraido:
                         detalles_extraidos.append(texto_extraido)
                         logger.info(f"Datos obtenidos del icono {idx} para {valor}: {texto_extraido}")
+
 
                     time.sleep(2)
                     close_current_tab_and_return(driver=driver, original_window=original_window)
                     time.sleep(2)
 
-            except Exception as e:
-                logger.error(f"Error al procesar el icono {idx} para {valor}: {e}")
+                break
+            
+            else:
+                logger.info(f"El icono {idx} no coincide con {valor}, cerrando popup y buscando otro.")
+                scroll_element(driver=driver, xpath='//*[@id="map"]/div[1]/div[6]/div/div[1]/div/div', pixeles=300)
+                time.sleep(nap)
 
-        resultados[valor] = detalles_extraidos
+                xpath_cerrar = '//*[@id="map"]/div[1]/div[6]/div/a'
+                click_button(driver=driver, xpath=xpath_cerrar, button_name="Botón para cerrar")
+                time.sleep(1.5)
+        except Exception as e:
+            logger.error(f"Error al procesar el icono {idx} para {valor}: {e}")
 
-    logger.info("Proceso finalizado correctamente.")
 
-    return resultados
+    resultados[valor] = detalles_extraidos
 
-results_dict = main_function()
+logger.info("Proceso finalizado correctamente.")
+
+
+# results_dict = main_function()
+
+#%%
+
+# print(results_dict.keys())
+
