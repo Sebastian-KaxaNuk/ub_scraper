@@ -8,7 +8,6 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.service import Service
-from bs4 import BeautifulSoup
 import logging
 import time
 import os
@@ -193,12 +192,7 @@ click_button(driver=driver, xpath='//*[@id="app-nav-main"]/li[2]/a', button_name
 time.sleep(4)
 driver.execute_script("window.scrollBy(0, 437);")
 
-#TODO: INCLUIR RAZON SOCIAL Y LA MARCA
-
 #%%
-
-#TODO: Un archivo .txt
-
 
 nap = 6
 
@@ -294,7 +288,11 @@ logger.info("Proceso finalizado correctamente.")
 
 #%%
 
-with open("resultado.txt", "w", encoding="utf-8") as file:
+os.makedirs("Output/Results", exist_ok=True)
+
+ruta_archivo = os.path.join("Output", "Results", "resultado.txt")
+
+with open(ruta_archivo, "w", encoding="utf-8") as file:
     for identificador, datos in resultados.items():
 
         direccion_info = {}
@@ -310,15 +308,4 @@ with open("resultado.txt", "w", encoding="utf-8") as file:
         )
         
         file.write(salida + "\n")
-
-
-
-
-
-
-
-
-
-
-
 
