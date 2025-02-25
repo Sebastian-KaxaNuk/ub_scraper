@@ -2,7 +2,6 @@
 from src.scrapers_reggas.input_handlers import excel_handler as exlh
 
 # Libraries
-import pandas as pd
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
@@ -137,11 +136,44 @@ def extract_text(driver, xpath: str, timeout: int=5):
 
 #%%
 
+os.makedirs("Output/Results", exist_ok=True)
+
+ruta_archivo = os.path.join("Output", "Results", "resultado.txt")
+
 directorio_reggas = 'Input/reggas.xlsx'
 
 reggas_file = exlh.validacion_archivo(path=directorio_reggas)
 
 reggas_list = list(reggas_file['reg'])
+
+#%%
+
+update = False
+
+folder = os.path.join("Output", "Results")
+os.makedirs(folder, exist_ok=True)
+file_path = os.path.join(folder, "resultado.txt")
+    
+if os.path.exists(file_path) and update:
+    existing_identifiers = set()
+    with open(file_path, "r", encoding="utf-8") as f:
+        for line in f:
+            parts = line.split(" - ")
+            if parts:
+                existing_identifiers.add(parts[0].strip())
+    logger.info(f"Identificadores ya procesados: {existing_identifiers}")
+else:
+    existing_identifiers = set()
+    if not os.path.exists(file_path):
+        logger.warning("No se encontró el archivo de resultados. Se procesarán todos los identificadores.")
+    else:
+        logger.info("Parámetro update=False. Se procesarán todos los identificadores.")
+
+if update:
+    ids_to_process = [iden for iden in reggas_list if iden not in existing_identifiers]
+else:
+    ids_to_process = reggas_list
+
 
 #%%
 
@@ -170,6 +202,9 @@ driver = webdriver.Chrome(service=s, options=options)
 # driver = webdriver.Chrome(options=options)
 driver.get(url)
 
+#es el que viene
+# click_button(driver=driver, xpath='//*[@id="btnContinuarSesion"]', button_name="Botón de Sistema Energético Mexicano")
+
 #%%
 
 buscar_en_el_mapa_xpath = '//*[@id="busquedaGeneralInput"]'
@@ -194,118 +229,228 @@ driver.execute_script("window.scrollBy(0, 437);")
 
 #%%
 
+#TODO: AGREGAR EL CLICK DEL POPUP QUE NO CONOCIA DE LOGIN (algo de que expiró)
+
 nap = 6
 
 time.sleep(2)
 
 resultados = {}
 
-for valor in reggas_list[:2]:
+
+# for valor in ids_to_process:
     
-    logger.info(f"Iniciando búsqueda para: {valor}")
+#     logger.info(f"Iniciando búsqueda para: {valor}")
 
-    enter_text(driver=driver, xpath=buscar_en_el_mapa_xpath, text=valor)
-    time.sleep(nap)
+#     enter_text(driver=driver, xpath=buscar_en_el_mapa_xpath, text=valor)
+#     time.sleep(nap)
     
-    click_button(driver=driver, xpath=retry_xpath, button_name=f"Botón de RETRY - {valor}")
-    time.sleep(nap)
+#     click_button(driver=driver, xpath=retry_xpath, button_name=f"Botón de RETRY - {valor}")
+#     time.sleep(nap)
     
-    click_button(driver=driver, xpath=lupa_buscar_xpath, button_name=f"Botón de Lupa (Buscar) para {valor}")
-    time.sleep(nap)
+#     click_button(driver=driver, xpath=lupa_buscar_xpath, button_name=f"Botón de Lupa (Buscar) para {valor}")
+#     time.sleep(nap)
 
-    click_button(driver=driver, xpath='//*[@id="map"]/div[1]/div[4]/div', button_name=f"Botón Verde en Mapa para {valor}")
-    time.sleep(nap)
+#     click_button(driver=driver, xpath='//*[@id="map"]/div[1]/div[4]/div', button_name=f"Botón Verde en Mapa para {valor}")
+#     time.sleep(nap)
 
-    gas_icons = driver.find_elements(By.XPATH, '//*[@id="map"]/div[1]/div[4]/img')
+#     gas_icons = driver.find_elements(By.XPATH, '//*[@id="map"]/div[1]/div[4]/img')
 
-    if gas_icons:
-        logger.info(f"Se encontraron {len(gas_icons)} iconos de gasolina para {valor}")
-    else:
-        logger.warning(f"No se encontraron iconos de gasolina para {valor}")
-        continue
+#     if gas_icons:
+#         logger.info(f"Se encontraron {len(gas_icons)} iconos de gasolina para {valor}")
+#     else:
+#         logger.warning(f"No se encontraron iconos de gasolina para {valor}")
+#         continue
     
-    detalles_extraidos = []
+#     detalles_extraidos = []
 
-    for idx, icon in enumerate(gas_icons, start=1):
-        try:
-            logger.info(f"Haciendo clic en el icono de gasolina {idx} para {valor}")
-            icon.click()
-            time.sleep(nap)
+#     for idx, icon in enumerate(gas_icons, start=1):
+#         try:
+#             logger.info(f"Haciendo clic en el icono de gasolina {idx} para {valor}")
+#             icon.click()
+#             time.sleep(nap)
 
-            scroll_element(driver=driver, xpath='//*[@id="map"]/div[1]/div[6]/div/div[1]/div/div', pixeles=150)
-            time.sleep(nap)
+#             scroll_element(driver=driver, xpath='//*[@id="map"]/div[1]/div[6]/div/div[1]/div/div', pixeles=150)
+#             time.sleep(nap)
             
-            pl_valor_confirmar = extract_text(driver=driver, xpath='//*[@id="map"]/div[1]/div[6]/div/div[1]/div/div/ul/li[2]')
-            pl_valor_confirmar = pl_valor_confirmar.split(": ")[1]
+#             pl_valor_confirmar = extract_text(driver=driver, xpath='//*[@id="map"]/div[1]/div[6]/div/div[1]/div/div/ul/li[2]')
+#             pl_valor_confirmar = pl_valor_confirmar.split(": ")[1]
             
-            if pl_valor_confirmar == valor:
-                logger.info(f"El icono {idx} coincide con {valor}, extrayendo detalles.")
+#             if pl_valor_confirmar == valor:
+#                 logger.info(f"El icono {idx} coincide con {valor}, extrayendo detalles.")
                 
-                scroll_element(driver=driver, xpath='//*[@id="map"]/div[1]/div[6]/div/div[1]/div/div', pixeles=300)
+#                 scroll_element(driver=driver, xpath='//*[@id="map"]/div[1]/div[6]/div/div[1]/div/div', pixeles=300)
 
-                click_button(driver=driver, xpath='//*[@id="map"]/div[1]/div[6]/div/div[1]/div/div/a[1]', 
-                             button_name=f"Botón de Ver Detalle para {valor}")
+#                 click_button(driver=driver, xpath='//*[@id="map"]/div[1]/div[6]/div/div[1]/div/div/a[1]', 
+#                              button_name=f"Botón de Ver Detalle para {valor}")
 
-                time.sleep(nap)
+#                 time.sleep(nap)
 
-                original_window = switch_to_new_tab(driver=driver)
+#                 original_window = switch_to_new_tab(driver=driver)
                 
-                if original_window:
-                    texto_extraido = extract_text(driver=driver, xpath='//*[@id="contact2"]/div/div/div[4]')
-                    razon_social = extract_text(driver=driver, xpath='//*[@id="contact2"]/div/div/div[3]')
-                    marca = extract_text(driver=driver, xpath='//*[@id="contact2"]/div/div/div[5]')
-                    if texto_extraido:
-                        detalles_extraidos.append(texto_extraido)
-                        detalles_extraidos.append(razon_social)
-                        detalles_extraidos.append(marca)
-                        logger.info(f"Datos obtenidos del icono {idx} para {valor}: {texto_extraido}")
+#                 if original_window:
+#                     texto_extraido = extract_text(driver=driver, xpath='//*[@id="contact2"]/div/div/div[4]')
+#                     razon_social = extract_text(driver=driver, xpath='//*[@id="contact2"]/div/div/div[3]')
+#                     marca = extract_text(driver=driver, xpath='//*[@id="contact2"]/div/div/div[5]')
+#                     if texto_extraido:
+#                         detalles_extraidos.append(texto_extraido)
+#                         detalles_extraidos.append(f"Razón Social - {razon_social}")
+#                         detalles_extraidos.append(f"Marca - {marca}")
+#                         logger.info(f"Datos obtenidos del icono {idx} para {valor}: {texto_extraido}")
 
 
-                    time.sleep(2)
-                    close_current_tab_and_return(driver=driver, original_window=original_window)
-                    time.sleep(2)
+#                     time.sleep(2)
+#                     close_current_tab_and_return(driver=driver, original_window=original_window)
+#                     time.sleep(2)
 
-                break
+#                 break
             
-            else:
-                logger.info(f"El icono {idx} no coincide con {valor}, cerrando popup y buscando otro.")
-                scroll_element(driver=driver, xpath='//*[@id="map"]/div[1]/div[6]/div/div[1]/div/div', pixeles=300)
-                time.sleep(nap)
+#             else:
+#                 logger.info(f"El icono {idx} no coincide con {valor}, cerrando popup y buscando otro.")
+#                 scroll_element(driver=driver, xpath='//*[@id="map"]/div[1]/div[6]/div/div[1]/div/div', pixeles=300)
+#                 time.sleep(nap)
 
-                xpath_cerrar = '//*[@id="map"]/div[1]/div[6]/div/a'
-                click_button(driver=driver, xpath=xpath_cerrar, button_name="Botón para cerrar")
-                time.sleep(1.5)
-        except Exception as e:
-            logger.error(f"Error al procesar el icono {idx} para {valor}: {e}")
+#                 xpath_cerrar = '//*[@id="map"]/div[1]/div[6]/div/a'
+#                 click_button(driver=driver, xpath=xpath_cerrar, button_name="Botón para cerrar")
+#                 time.sleep(1.5)
+#         except Exception as e:
+#             logger.error(f"Error al procesar el icono {idx} para {valor}: {e}")
 
 
-    resultados[valor] = detalles_extraidos
+#     resultados[valor] = detalles_extraidos
 
-logger.info("Proceso finalizado correctamente.")
-
+# logger.info("Proceso finalizado correctamente.")
 
 # results_dict = main_function()
+with open(ruta_archivo, "a", encoding="utf-8") as file:
+    for valor in ids_to_process:
+        logger.info(f"Iniciando búsqueda para: {valor}")
+
+        enter_text(driver=driver, xpath=buscar_en_el_mapa_xpath, text=valor)
+        time.sleep(nap)
+        
+        click_button(driver=driver, xpath=retry_xpath, button_name=f"Botón de RETRY - {valor}")
+        time.sleep(nap)
+        
+        click_button(driver=driver, xpath=lupa_buscar_xpath, button_name=f"Botón de Lupa (Buscar) para {valor}")
+        time.sleep(nap)
+
+        click_button(driver=driver, xpath='//*[@id="map"]/div[1]/div[4]/div', button_name=f"Botón Verde en Mapa para {valor}")
+        time.sleep(nap)
+
+        gas_icons = driver.find_elements(By.XPATH, '//*[@id="map"]/div[1]/div[4]/img')
+
+        if gas_icons:
+            logger.info(f"Se encontraron {len(gas_icons)} iconos de gasolina para {valor}")
+        else:
+            logger.warning(f"No se encontraron iconos de gasolina para {valor}")
+            continue
+        
+        detalles_extraidos = []
+
+        for idx, icon in enumerate(gas_icons, start=1):
+            try:
+                logger.info(f"Haciendo clic en el icono de gasolina {idx} para {valor}")
+                icon.click()
+                time.sleep(nap)
+
+                scroll_element(driver=driver, xpath='//*[@id="map"]/div[1]/div[6]/div/div[1]/div/div', pixeles=150)
+                time.sleep(nap)
+                
+                pl_valor_confirmar = extract_text(driver=driver, xpath='//*[@id="map"]/div[1]/div[6]/div/div[1]/div/div/ul/li[2]')
+                pl_valor_confirmar = pl_valor_confirmar.split(": ")[1]
+                
+                if pl_valor_confirmar == valor:
+                    logger.info(f"El icono {idx} coincide con {valor}, extrayendo detalles.")
+                    
+                    scroll_element(driver=driver, xpath='//*[@id="map"]/div[1]/div[6]/div/div[1]/div/div', pixeles=300)
+
+                    click_button(driver=driver, xpath='//*[@id="map"]/div[1]/div[6]/div/div[1]/div/div/a[1]', 
+                                 button_name=f"Botón de Ver Detalle para {valor}")
+
+                    time.sleep(nap)
+
+                    original_window = switch_to_new_tab(driver=driver)
+                    
+                    if original_window:
+                        texto_extraido = extract_text(driver=driver, xpath='//*[@id="contact2"]/div/div/div[4]')
+                        razon_social = extract_text(driver=driver, xpath='//*[@id="contact2"]/div/div/div[3]')
+                        marca = extract_text(driver=driver, xpath='//*[@id="contact2"]/div/div/div[5]')
+                        if texto_extraido:
+                            detalles_extraidos.append(texto_extraido)
+                            detalles_extraidos.append(f"Razón Social - {razon_social}")
+                            detalles_extraidos.append(f"Marca - {marca}")
+                            logger.info(f"Datos obtenidos del icono {idx} para {valor}: {texto_extraido}")
+                            
+                            if len(detalles_extraidos) >= 3:
+                                direccion_info = {}
+                                for linea in detalles_extraidos[0].splitlines():
+                                    if ":" in linea:
+                                        campo, valor_campo = linea.split(":", 1)
+                                        direccion_info[campo.strip()] = valor_campo.strip()
+
+                                salida = (
+                                    f"{valor} - {direccion_info.get('Calle', '')} - Código Postal {direccion_info.get('Código Postal', '')} "
+                                    f"- Colonia {direccion_info.get('Colonia', '')} - Estado {direccion_info.get('ID Entidad Federativa', '')} "
+                                    f"- Municipio {direccion_info.get('ID Municipio', '')} - {detalles_extraidos[1]} - {detalles_extraidos[2]}"
+                                )
+                                file.write(salida + "\n")
+                                file.flush()
+
+                        time.sleep(2)
+                        close_current_tab_and_return(driver=driver, original_window=original_window)
+                        time.sleep(2)
+
+                    break
+                
+                else:
+                    logger.info(f"El icono {idx} no coincide con {valor}, cerrando popup y buscando otro.")
+                    scroll_element(driver=driver, xpath='//*[@id="map"]/div[1]/div[6]/div/div[1]/div/div', pixeles=300)
+                    time.sleep(nap)
+
+                    xpath_cerrar = '//*[@id="map"]/div[1]/div[6]/div/a'
+                    click_button(driver=driver, xpath=xpath_cerrar, button_name="Botón para cerrar")
+                    time.sleep(1.5)
+            except Exception as e:
+                logger.error(f"Error al procesar el icono {idx} para {valor}: {e}")
+
+        # if len(detalles_extraidos) >= 3:
+        #     direccion_info = {}
+        #     for linea in detalles_extraidos[0].splitlines():
+        #         if ":" in linea:
+        #             campo, valor_campo = linea.split(":", 1)
+        #             direccion_info[campo.strip()] = valor_campo.strip()
+
+        #     salida = (
+        #         f"{valor} - {direccion_info.get('Calle', '')} - Código Postal {direccion_info.get('Código Postal', '')} "
+        #         f"- Colonia {direccion_info.get('Colonia', '')} - Estado {direccion_info.get('ID Entidad Federativa', '')} "
+        #         f"- Municipio {direccion_info.get('ID Municipio', '')} - {detalles_extraidos[1]} - {detalles_extraidos[2]}"
+        #     )
+        #     file.write(salida + "\n")
+        #     logger.info(f"Información guardada para: {valor}")
+        # else:
+        #     logger.warning(f"No se completó la extracción de datos para {valor}, por lo que no se guardará.")
+            
+logger.info("Proceso finalizado correctamente.")
 
 #%%
 
-os.makedirs("Output/Results", exist_ok=True)
+# mode = "a" if os.path.exists(file_path) else "w"
 
-ruta_archivo = os.path.join("Output", "Results", "resultado.txt")
+# with open(ruta_archivo, mode, encoding="utf-8") as file:
+#     for identificador, datos in resultados.items():
 
-with open(ruta_archivo, "w", encoding="utf-8") as file:
-    for identificador, datos in resultados.items():
+#         direccion_info = {}
+#         for linea in datos[0].splitlines():
+#             if ":" in linea:
+#                 campo, valor = linea.split(":", 1)
+#                 direccion_info[campo.strip()] = valor.strip()
 
-        direccion_info = {}
-        for linea in datos[0].splitlines():
-            if ":" in linea:
-                campo, valor = linea.split(":", 1)
-                direccion_info[campo.strip()] = valor.strip()
-
-        salida = (
-            f"{identificador} - {direccion_info.get('Calle', '')} - Código Postal {direccion_info.get('Código Postal', '')} "
-            f"- Colonia {direccion_info.get('Colonia', '')} - Estado {direccion_info.get('ID Entidad Federativa', '')} "
-            f"- Municipio {direccion_info.get('ID Municipio', '')} - {datos[1]} - {datos[2]}"
-        )
+#         salida = (
+#             f"{identificador} - {direccion_info.get('Calle', '')} - Código Postal {direccion_info.get('Código Postal', '')} "
+#             f"- Colonia {direccion_info.get('Colonia', '')} - Estado {direccion_info.get('ID Entidad Federativa', '')} "
+#             f"- Municipio {direccion_info.get('ID Municipio', '')} - {datos[1]} - {datos[2]}"
+#         )
         
-        file.write(salida + "\n")
+#         file.write(salida + "\n")
 
