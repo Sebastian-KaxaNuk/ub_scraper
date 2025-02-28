@@ -293,7 +293,7 @@ options.add_experimental_option("excludeSwitches", ["enable-automation"])
 options.add_argument("start-maximized")
 options.add_argument("--disable-javascript")
 
-options.add_argument("--headless")
+# options.add_argument("--headless")
 options.add_argument("--no-sandbox")
 options.add_argument("--disable-dev-shm-usage")
 options.add_experimental_option('useAutomationExtension', False)
@@ -307,8 +307,8 @@ url = 'https://energeo.cre.gob.mx/Acceso/SesionExpirada#5/24.567/-101.755'
 
 #%%
 
-# driver = webdriver.Chrome(service=s, options=options)
-driver = webdriver.Chrome(options=options)
+driver = webdriver.Chrome(service=s, options=options)
+# driver = webdriver.Chrome(options=options)
 driver.get(url)
 
 #%%
@@ -329,6 +329,9 @@ retry_xpath = '//*[@id="autocomplete-list"]/div[2]'
 click_button(driver=driver, xpath='/html/body/div/div/div/div[2]/div[2]', button_name="Botón de Inicio")
 click_button(driver=driver, xpath='//*[@id="terms-and-conditions-modal"]/div/div/div[3]/button', button_name="Botón de Aceptar Términos")
 click_button(driver=driver, xpath='//*[@id="consultaPublica"]/div/div[2]/a', button_name="Botón de Consulta Pública")
+driver.execute_script("document.body.style.zoom='50%'")  # Ajusta el porcentaje según necesites
+click_button(driver=driver, xpath='/html/body/header/div[1]/div/div/div/div[1]', button_name="Botón de tres rayas")
+
 click_button(driver=driver, xpath='//*[@id="app-nav-main"]/li[2]/a', button_name="Botón de Sistema Energético Mexicano")
 
 time.sleep(4)
@@ -336,9 +339,11 @@ time.sleep(4)
 
 #%%
 
+driver.execute_script("document.body.style.zoom='50%'")  # Ajusta el porcentaje según necesites
+
 element_found = find_element_with_scroll(driver, xpath=buscar_en_el_mapa_xpath, max_attempts=5, scroll_pixels=300)
 
-driver.execute_script("window.scrollBy(0, 250);")
+# driver.execute_script("window.scrollBy(0, 150);")
 
 #%%
 
