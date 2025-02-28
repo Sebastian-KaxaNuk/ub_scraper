@@ -339,7 +339,7 @@ time.sleep(4)
 
 #%%
 
-driver.execute_script("document.body.style.zoom='50%'")  # Ajusta el porcentaje según necesites
+# driver.execute_script("document.body.style.zoom='50%'")  # Ajusta el porcentaje según necesites
 
 element_found = find_element_with_scroll(driver, xpath=buscar_en_el_mapa_xpath, max_attempts=5, scroll_pixels=300)
 
