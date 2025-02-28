@@ -1,6 +1,3 @@
-#Personal Modules
-from src.scrapers_reggas.input_handlers import excel_handler as exlh
-
 # Libraries
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
@@ -39,10 +36,6 @@ if not logger.handlers:
 logger.info(f"Logger inicializado. Guardando logs en: {log_filename}")
 
 logger.info("Iniciando el proceso de scraping...")
-
-directorio_reggas = 'Input/reggas.xlsx'
-reggas_file = exlh.validacion_archivo(path=directorio_reggas)
-logger.info("Archivo validado correctamente.")
 
 
 #%%
@@ -85,6 +78,8 @@ def scroll_element(driver, xpath: str, pixeles: str):
     try:
         element = WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.XPATH, xpath)))
         driver.execute_script(f"arguments[0].scrollTop += {pixeles};", element)
+        # driver.execute_script("arguments[0].scrollTop = arguments[0].scrollHeight;", element)
+        # driver.execute_script("window.scrollBy(0, 437);")
         logger.info("Scroll realizado")
     except Exception as e:
         logger.error(f"Error al hacer scroll en {xpath}: {e}")
@@ -131,129 +126,18 @@ def extract_text(driver, xpath: str, timeout: int=5):
         logger.error(f"Error al extraer texto de {xpath}: {e}")
         return None
 
-def scroll_to_element(driver, xpath: str, timeout: int = 5):
-    """
-    Desplaza la vista hasta que el elemento especificado esté visible en la pantalla.
-
-    :param driver: Instancia de Selenium WebDriver.
-    :param xpath: XPath del elemento al que se desea hacer scroll.
-    :param timeout: Tiempo máximo de espera para que el elemento aparezca (default 5s).
-    """
-    try:
-        element = WebDriverWait(driver, timeout).until(EC.presence_of_element_located((By.XPATH, xpath)))
-        driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", element)
-        time.sleep(1)  # Pequeña pausa para garantizar que el scroll se complete
-        logger.info(f"Scrolled to element: {xpath}")
-    except Exception as e:
-        logger.error(f"Error al hacer scroll hasta {xpath}: {e}")
-
-def enter_text_with_scroll(driver, xpath: str, text: str, timeout: int = 5):
-    """
-    Asegura que el campo de entrada esté visible en la pantalla antes de ingresar texto.
-
-    :param driver: Instancia de Selenium WebDriver.
-    :param xpath: XPath del campo de entrada.
-    :param text: Texto que se desea ingresar.
-    :param timeout: Tiempo de espera antes de fallar (default 5s).
-    """
-    try:
-        # Primero, hacer scroll hasta el campo de entrada
-        scroll_to_element(driver=driver, xpath=xpath, timeout=timeout)
-        
-        # Luego, esperar que el campo de entrada sea interactuable
-        input_element = WebDriverWait(driver, timeout).until(EC.element_to_be_clickable((By.XPATH, xpath)))
-        
-        # Limpiar el campo y escribir el texto
-        input_element.clear()
-        time.sleep(0.5)  # Pausa breve
-        input_element.send_keys(text)
-        
-        logger.info(f"Texto ingresado: {text}")
-    except Exception as e:
-        logger.error(f"Error al ingresar texto en {xpath}: {e}")
-
-def enter_text_with_dynamic_scroll(driver, xpath: str, text: str, max_attempts: int = 5, scroll_pixels: int = 300, timeout: int = 5):
-    """
-    Intenta encontrar un campo de entrada, hacer scroll si no está visible y volver a intentarlo hasta que se encuentre.
-
-    :param driver: Instancia de Selenium WebDriver.
-    :param xpath: XPath del campo de entrada.
-    :param text: Texto que se desea ingresar.
-    :param max_attempts: Número máximo de intentos de scroll antes de fallar (default 5).
-    :param scroll_pixels: Cantidad de píxeles a desplazar en cada intento (default 300).
-    :param timeout: Tiempo de espera antes de fallar un intento (default 5s).
-    """
-    attempts = 0
-    while attempts < max_attempts:
-        try:
-            # Intentar encontrar el elemento
-            input_element = WebDriverWait(driver, timeout).until(EC.element_to_be_clickable((By.XPATH, xpath)))
-            
-            # Si lo encuentra, limpiar el campo y escribir el texto
-            input_element.clear()
-            time.sleep(0.5)  # Pausa breve
-            input_element.send_keys(text)
-            logger.info(f"Texto ingresado: {text}")
-            return  # Sale de la función si todo fue exitoso
-        
-        except Exception as e:
-            logger.warning(f"Intento {attempts+1}: No se encontró el campo {xpath}, haciendo scroll y reintentando...")
-            
-            # Intentar hacer scroll hacia abajo
-            driver.execute_script(f"window.scrollBy(0, {scroll_pixels});")
-            time.sleep(1)  # Pausa después del scroll
-            
-        attempts += 1
-    
-    # Si después de varios intentos no se encontró, se registra un error
-    logger.error(f"No se pudo encontrar el campo {xpath} después de {max_attempts} intentos.")
-
-def find_element_with_scroll(driver, xpath: str, max_attempts: int = 5, scroll_pixels: int = 300, timeout: int = 5):
-    """
-    Busca un elemento en la página. Si no lo encuentra, hace scroll y vuelve a intentarlo hasta alcanzarlo.
-
-    :param driver: Instancia de Selenium WebDriver.
-    :param xpath: XPath del elemento a buscar.
-    :param max_attempts: Número máximo de intentos de scroll antes de fallar (default 5).
-    :param scroll_pixels: Cantidad de píxeles a desplazar en cada intento (default 300).
-    :param timeout: Tiempo máximo de espera por intento antes de fallar (default 5s).
-    :return: True si encuentra el elemento, False si no lo encuentra después de los intentos.
-    """
-    attempts = 0
-    while attempts < max_attempts:
-        try:
-            # Intentar encontrar el elemento
-            input_element = WebDriverWait(driver, timeout).until(EC.presence_of_element_located((By.XPATH, xpath)))
-            
-            # Si lo encuentra, hacer scroll para centrarlo y salir del loop
-            driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", input_element)
-            time.sleep(1)  # Pequeña pausa para asegurar que el scroll se complete
-            logger.info(f"Elemento {xpath} encontrado y centrado en pantalla.")
-            return True  # Elemento encontrado y visible
-        
-        except Exception as e:
-            logger.warning(f"Intento {attempts+1}: No se encontró {xpath}, haciendo scroll y reintentando...")
-            
-            # Intentar hacer scroll hacia abajo
-            driver.execute_script(f"window.scrollBy(0, {scroll_pixels});")
-            time.sleep(1)  # Pausa después del scroll
-            
-        attempts += 1
-    
-    logger.error(f"No se pudo encontrar el elemento {xpath} después de {max_attempts} intentos.")
-    return False  # Elemento no encontrado
 
 #%%
 
-os.makedirs("Output/Results", exist_ok=True)
 
-ruta_archivo = os.path.join("Output", "Results", "resultado.txt")
+reggas_list = [
+    "PL/658/EXP/ES/2015",
+    "PL/902/EXP/ES/2015",
+    "PL/760/EXP/ES/2015",
+    "PL/825/EXP/ES/2015",
+    "PL/585/EXP/ES/2015"
+]
 
-directorio_reggas = 'Input/reggas.xlsx'
-
-reggas_file = exlh.validacion_archivo(path=directorio_reggas)
-
-reggas_list = list(reggas_file['reg'])
 
 #%%
 
@@ -311,6 +195,8 @@ url = 'https://energeo.cre.gob.mx/Acceso/SesionExpirada#5/24.567/-101.755'
 driver = webdriver.Chrome(options=options)
 driver.get(url)
 
+#es el que viene
+
 #%%
 
 buscar_en_el_mapa_xpath = '//*[@id="busquedaGeneralInput"]'
@@ -322,7 +208,6 @@ ver_detalle_boton_xpath = '//*[@id="map"]/div[1]/div[6]/div/div[1]/div/div/a[1]'
 caja_con_contenido_xpath = '//*[@id="contact2"]/div/div/div[4]'
 retry_xpath = '//*[@id="autocomplete-list"]/div[2]'
 
-
 #%%
 
 
@@ -332,15 +217,11 @@ click_button(driver=driver, xpath='//*[@id="consultaPublica"]/div/div[2]/a', but
 click_button(driver=driver, xpath='//*[@id="app-nav-main"]/li[2]/a', button_name="Botón de Sistema Energético Mexicano")
 
 time.sleep(4)
-# driver.execute_script("window.scrollBy(0, 430);")
+driver.execute_script("window.scrollBy(0, 430);")
 
 #%%
 
-element_found = find_element_with_scroll(driver, xpath=buscar_en_el_mapa_xpath, max_attempts=5, scroll_pixels=300)
-
-driver.execute_script("window.scrollBy(0, 250);")
-
-#%%
+#TODO: AGREGAR EL CLICK DEL POPUP QUE NO CONOCIA DE LOGIN (algo de que expiró)
 
 nap = 6
 
@@ -348,16 +229,17 @@ time.sleep(2)
 
 resultados = {}
 
+# results_dict = main_function()
 with open(ruta_archivo, "a", encoding="utf-8") as file:
     for valor in ids_to_process:
         logger.info(f"Iniciando búsqueda para: {valor}")
         
         click_button(driver=driver, xpath='//*[@id="btnContinuarSesion"]', button_name="Botón de Inicio de Sesion doble")
         time.sleep(1)
-
+        
         enter_text(driver=driver, xpath=buscar_en_el_mapa_xpath, text=valor)
         time.sleep(nap)
-
+        
         click_button(driver=driver, xpath=retry_xpath, button_name=f"Botón de RETRY - {valor}")
         time.sleep(nap)
         
@@ -442,5 +324,44 @@ with open(ruta_archivo, "a", encoding="utf-8") as file:
                     time.sleep(1.5)
             except Exception as e:
                 logger.error(f"Error al procesar el icono {idx} para {valor}: {e}")
+
+        # if len(detalles_extraidos) >= 3:
+        #     direccion_info = {}
+        #     for linea in detalles_extraidos[0].splitlines():
+        #         if ":" in linea:
+        #             campo, valor_campo = linea.split(":", 1)
+        #             direccion_info[campo.strip()] = valor_campo.strip()
+
+        #     salida = (
+        #         f"{valor} - {direccion_info.get('Calle', '')} - Código Postal {direccion_info.get('Código Postal', '')} "
+        #         f"- Colonia {direccion_info.get('Colonia', '')} - Estado {direccion_info.get('ID Entidad Federativa', '')} "
+        #         f"- Municipio {direccion_info.get('ID Municipio', '')} - {detalles_extraidos[1]} - {detalles_extraidos[2]}"
+        #     )
+        #     file.write(salida + "\n")
+        #     logger.info(f"Información guardada para: {valor}")
+        # else:
+        #     logger.warning(f"No se completó la extracción de datos para {valor}, por lo que no se guardará.")
             
 logger.info("Proceso finalizado correctamente.")
+
+#%%
+
+# mode = "a" if os.path.exists(file_path) else "w"
+
+# with open(ruta_archivo, mode, encoding="utf-8") as file:
+#     for identificador, datos in resultados.items():
+
+#         direccion_info = {}
+#         for linea in datos[0].splitlines():
+#             if ":" in linea:
+#                 campo, valor = linea.split(":", 1)
+#                 direccion_info[campo.strip()] = valor.strip()
+
+#         salida = (
+#             f"{identificador} - {direccion_info.get('Calle', '')} - Código Postal {direccion_info.get('Código Postal', '')} "
+#             f"- Colonia {direccion_info.get('Colonia', '')} - Estado {direccion_info.get('ID Entidad Federativa', '')} "
+#             f"- Municipio {direccion_info.get('ID Municipio', '')} - {datos[1]} - {datos[2]}"
+#         )
+        
+#         file.write(salida + "\n")
+
