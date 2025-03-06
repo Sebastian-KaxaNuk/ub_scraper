@@ -327,11 +327,30 @@ retry_xpath = '//*[@id="autocomplete-list"]/div[2]'
 #%%
 
 
+# boton_tres_rayas = WebDriverWait(driver, 5).until(
+#     EC.presence_of_element_located((By.XPATH, '/html/body/header/div[1]/div/div/div/div[1]'))
+# )
+# logger.info("Elemento de tres rayas encontrado.")
+
+# #print("Visible:", boton_tres_rayas.is_displayed())  # ¿Es visible?
+# #print("Habilitado:", boton_tres_rayas.is_enabled())  # ¿Está habilitado?
+# time.sleep(1)
+# boton_tres_rayas.click()
+
+
 click_button(driver=driver, xpath='/html/body/div/div/div/div[2]/div[2]', button_name="Botón de Inicio")
 click_button(driver=driver, xpath='//*[@id="terms-and-conditions-modal"]/div/div/div[3]/button', button_name="Botón de Aceptar Términos")
 click_button(driver=driver, xpath='//*[@id="consultaPublica"]/div/div[2]/a', button_name="Botón de Consulta Pública")
 driver.execute_script("document.body.style.zoom='50%'")  # Ajusta el porcentaje según necesites
-click_button(driver=driver, xpath='/html/body/header/div[1]/div/div/div/div[1]', button_name="Botón de tres rayas")
+# driver.save_screenshot("screenshot.png")
+# time.sleep(2)
+# driver.execute_script("document.body.style.zoom='50%'")  # Ajusta el porcentaje según necesites
+
+boton_tres_rayas = WebDriverWait(driver, 5).until(
+    EC.element_to_be_clickable((By.XPATH, '/html/body/header/div[1]/div/div/div/div[1]'))
+)
+
+ActionChains(driver).move_to_element(boton_tres_rayas).click().perform()
 
 click_button(driver=driver, xpath='//*[@id="app-nav-main"]/li[2]/a', button_name="Botón de Sistema Energético Mexicano")
 
