@@ -258,7 +258,7 @@ reggas_list = list(reggas_file['reg'])
 
 #%%
 
-update = False
+update = True
 
 folder = os.path.join("Output", "Results")
 os.makedirs(folder, exist_ok=True)
@@ -271,7 +271,8 @@ if os.path.exists(file_path) and update:
             parts = line.split(" - ")
             if parts:
                 existing_identifiers.add(parts[0].strip())
-    logger.info(f"Identificadores ya procesados: {existing_identifiers}")
+    cantidad_ids_procesados = len(existing_identifiers)
+    logger.info(f"Cantidad de identificadores ya procesados: {cantidad_ids_procesados}")
 else:
     existing_identifiers = set()
     if not os.path.exists(file_path):
@@ -297,7 +298,7 @@ options.add_argument("--disable-javascript")
 options.add_argument("--headless")
 options.add_argument("--no-sandbox")
 options.add_argument("--disable-gpu")  # Desactiva la GPU
-options.add_argument("--blink-settings=imagesEnabled=false")  # Desactiva imágenes
+#options.add_argument("--blink-settings=imagesEnabled=false")  # Desactiva imágenes
 options.add_argument("--disable-dev-shm-usage")
 options.add_experimental_option('useAutomationExtension', False)
 headers = {"User-agent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.80 Safari/537.36"}
@@ -310,7 +311,7 @@ url = 'https://energeo.cre.gob.mx/Acceso/SesionExpirada#5/24.567/-101.755'
 
 #%%
 
-# driver = webdriver.Chrome(service=s, options=options)
+#driver = webdriver.Chrome(service=s, options=options)
 driver = webdriver.Chrome(options=options)
 driver.get(url)
 
@@ -348,8 +349,6 @@ nap = 6
 time.sleep(2)
 
 resultados = {}
-
-#%%
 
 with open(ruta_archivo, "a", encoding="utf-8") as file:
     for valor in ids_to_process:
@@ -398,11 +397,66 @@ with open(ruta_archivo, "a", encoding="utf-8") as file:
                     logger.warning("Botón de retry no encontrado.")
 
                 try:
-                    lupa = WebDriverWait(driver, 5).until(EC.element_to_be_clickable((By.XPATH, lupa_buscar_xpath)))
-                    lupa.click()
+                    # 🔹 Esperar a que la lupa esté en el DOM
+                    lupa = WebDriverWait(driver, 5).until(
+                        EC.presence_of_element_located((By.XPATH, lupa_buscar_xpath))
+                    )
+                    logger.info("✅ Lupa encontrada en el DOM")
+                
+                    # 🔹 Eliminar overlays ANTES de interactuar con la lupa
+                    overlays = driver.find_elements(By.CSS_SELECTOR, '[class*="overlay"], [class*="modal"]')
+                    if overlays:
+                        logger.warning(f"⚠️ Se detectaron {len(overlays)} overlays. Intentando ocultarlos...")
+                        for overlay in overlays:
+                            driver.execute_script("arguments[0].style.display = 'none';", overlay)
+                        time.sleep(1)  # 🔹 Dar tiempo a que los cambios surtan efecto
+                
+                    # 🔹 Hacer scroll para centrar la lupa
+                    driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", lupa)
+                    time.sleep(1)
+                
+                    # 🔹 Si la lupa tiene `disabled="true"`, eliminarlo con JS
+                    is_disabled = driver.execute_script("return arguments[0].hasAttribute('disabled');", lupa)
+                    if is_disabled:
+                        logger.warning("⚠️ La lupa estaba deshabilitada. Intentando habilitarla con JavaScript.")
+                        driver.execute_script("arguments[0].removeAttribute('disabled');", lupa)
+                
+                    # 🔹 Intentar hasta 3 veces si sigue oculta o deshabilitada
+                    for intento in range(3):
+                        display_status = driver.execute_script("return window.getComputedStyle(arguments[0]).display;", lupa)
+                        if lupa.is_displayed() and lupa.is_enabled() and display_status != "none":
+                            logger.info("✅ La lupa ahora es visible y habilitada")
+                            break
+                        else:
+                            logger.warning(f"⚠️ Intento {intento+1}: La lupa sigue oculta/deshabilitada (`display: {display_status}`). Reintentando...")
+                            time.sleep(1)
+                            lupa = driver.find_element(By.XPATH, lupa_buscar_xpath)  # 🔹 Volver a localizar el botón
+                
+                    # 🔹 Intentar darle `focus()` antes de hacer clic
+                    driver.execute_script("arguments[0].focus();", lupa)
+                    time.sleep(0.5)
+                
+                    # 🔹 Intentar hacer clic con `execute_script()`
+                    try:
+                        logger.info("🔹 Intentando clic con `execute_script()`")
+                        driver.execute_script("arguments[0].click();", lupa)
+                    except Exception as e:
+                        logger.error(f"❌ Error con `execute_script()`, intentando `ActionChains()` - {e}")
+                        try:
+                            ActionChains(driver).move_to_element(lupa).click().perform()
+                        except Exception as e:
+                            logger.error(f"❌ No se pudo hacer clic en la lupa con `ActionChains()` - {e}")
+                            driver.save_screenshot("error_lupa_click.png")
+                
+                    # 🔹 Si el botón tiene un evento `onclick="buscarGeneral()"`, ejecutarlo manualmente
+                    driver.execute_script("buscarGeneral();")
+                    logger.info("✅ Se ejecutó `buscarGeneral();` manualmente para simular el clic.")
+                
                     time.sleep(nap)
-                except:
-                    logger.warning("No se pudo hacer clic en la lupa de búsqueda.")
+                
+                except Exception as e:
+                    logger.warning(f"⚠️ No se pudo hacer clic en la lupa de búsqueda: {e}")
+                    driver.save_screenshot("lupa_no_clickable.png")  # 🔹 Guardar screenshot para revisión
 
                 datos_encontrados = False
 
