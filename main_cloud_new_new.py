@@ -34,7 +34,7 @@ console_handler.setFormatter(formatter)
 
 if not logger.handlers:
     logger.addHandler(file_handler)
-    logger.addHandler(console_handler)
+    #logger.addHandler(console_handler)
 
 logger.info(f"Logger inicializado. Guardando logs en: {log_filename}")
 
@@ -51,7 +51,7 @@ logger.info("Archivo validado correctamente.")
 def click_button(driver, xpath: str, button_name: str, timeout: int=5) -> None:
     """
     Hace clic en un botón si está disponible y registra el proceso en el logger.
-    
+
     :param xpath: XPath del botón.
     :param button_name: Nombre del botón (para mostrar en logs).
     :param timeout: Tiempo de espera antes de fallar (default 5s).
@@ -65,7 +65,7 @@ def click_button(driver, xpath: str, button_name: str, timeout: int=5) -> None:
 
 def enter_text(driver, xpath: str, text: str, timeout: int=5):
     """
-    Limpia un campo de entrada y 
+    Limpia un campo de entrada y
     escribe un nuevo valor.
     """
     try:
@@ -79,7 +79,7 @@ def enter_text(driver, xpath: str, text: str, timeout: int=5):
 
 def scroll_element(driver, xpath: str, pixeles: str):
     """
-    Hace scroll dentro de un 
+    Hace scroll dentro de un
     elemento específico.
     """
     try:
@@ -91,7 +91,7 @@ def scroll_element(driver, xpath: str, pixeles: str):
 
 def switch_to_new_tab(driver):
     """
-    Cambia a la nueva pestaña 
+    Cambia a la nueva pestaña
     cuando se abre.
     """
     try:
@@ -107,7 +107,7 @@ def switch_to_new_tab(driver):
 
 def close_current_tab_and_return(driver, original_window):
     """
-    Cierra la pestaña actual y 
+    Cierra la pestaña actual y
     vuelve a la original.
     """
     try:
@@ -119,7 +119,7 @@ def close_current_tab_and_return(driver, original_window):
 
 def extract_text(driver, xpath: str, timeout: int=5):
     """
-    Extrae el 
+    Extrae el
     texto de un elemento.
     """
     try:
@@ -159,15 +159,15 @@ def enter_text_with_scroll(driver, xpath: str, text: str, timeout: int = 5):
     try:
         # Primero, hacer scroll hasta el campo de entrada
         scroll_to_element(driver=driver, xpath=xpath, timeout=timeout)
-        
+
         # Luego, esperar que el campo de entrada sea interactuable
         input_element = WebDriverWait(driver, timeout).until(EC.element_to_be_clickable((By.XPATH, xpath)))
-        
+
         # Limpiar el campo y escribir el texto
         input_element.clear()
         time.sleep(0.5)  # Pausa breve
         input_element.send_keys(text)
-        
+
         logger.info(f"Texto ingresado: {text}")
     except Exception as e:
         logger.error(f"Error al ingresar texto en {xpath}: {e}")
@@ -188,23 +188,23 @@ def enter_text_with_dynamic_scroll(driver, xpath: str, text: str, max_attempts: 
         try:
             # Intentar encontrar el elemento
             input_element = WebDriverWait(driver, timeout).until(EC.element_to_be_clickable((By.XPATH, xpath)))
-            
+
             # Si lo encuentra, limpiar el campo y escribir el texto
             input_element.clear()
             time.sleep(0.5)  # Pausa breve
             input_element.send_keys(text)
             logger.info(f"Texto ingresado: {text}")
             return  # Sale de la función si todo fue exitoso
-        
+
         except Exception as e:
             logger.warning(f"Intento {attempts+1}: No se encontró el campo {xpath}, haciendo scroll y reintentando...")
-            
+
             # Intentar hacer scroll hacia abajo
             driver.execute_script(f"window.scrollBy(0, {scroll_pixels});")
             time.sleep(1)  # Pausa después del scroll
-            
+
         attempts += 1
-    
+
     # Si después de varios intentos no se encontró, se registra un error
     logger.error(f"No se pudo encontrar el campo {xpath} después de {max_attempts} intentos.")
 
@@ -224,22 +224,22 @@ def find_element_with_scroll(driver, xpath: str, max_attempts: int = 5, scroll_p
         try:
             # Intentar encontrar el elemento
             input_element = WebDriverWait(driver, timeout).until(EC.presence_of_element_located((By.XPATH, xpath)))
-            
+
             # Si lo encuentra, hacer scroll para centrarlo y salir del loop
             driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", input_element)
             time.sleep(1)  # Pequeña pausa para asegurar que el scroll se complete
             logger.info(f"Elemento {xpath} encontrado y centrado en pantalla.")
             return True  # Elemento encontrado y visible
-        
+
         except Exception as e:
             logger.warning(f"Intento {attempts+1}: No se encontró {xpath}, haciendo scroll y reintentando...")
-            
+
             # Intentar hacer scroll hacia abajo
             driver.execute_script(f"window.scrollBy(0, {scroll_pixels});")
             time.sleep(1)  # Pausa después del scroll
-            
+
         attempts += 1
-    
+
     logger.error(f"No se pudo encontrar el elemento {xpath} después de {max_attempts} intentos.")
     return False  # Elemento no encontrado
 
@@ -262,7 +262,7 @@ update = False
 folder = os.path.join("Output", "Results")
 os.makedirs(folder, exist_ok=True)
 file_path = os.path.join(folder, "resultado.txt")
-    
+
 if os.path.exists(file_path) and update:
     existing_identifiers = set()
     with open(file_path, "r", encoding="utf-8") as f:
@@ -293,8 +293,10 @@ options.add_experimental_option("excludeSwitches", ["enable-automation"])
 options.add_argument("start-maximized")
 options.add_argument("--disable-javascript")
 
-# options.add_argument("--headless")
+options.add_argument("--headless")
 options.add_argument("--no-sandbox")
+options.add_argument("--disable-gpu")  # Desactiva la GPU
+options.add_argument("--blink-settings=imagesEnabled=false")  # Desactiva imágenes
 options.add_argument("--disable-dev-shm-usage")
 options.add_experimental_option('useAutomationExtension', False)
 headers = {"User-agent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.80 Safari/537.36"}
@@ -307,8 +309,8 @@ url = 'https://energeo.cre.gob.mx/Acceso/SesionExpirada#5/24.567/-101.755'
 
 #%%
 
-driver = webdriver.Chrome(service=s, options=options)
-# driver = webdriver.Chrome(options=options)
+#driver = webdriver.Chrome(service=s, options=options)
+driver = webdriver.Chrome(options=options)
 driver.get(url)
 
 #%%
@@ -329,14 +331,13 @@ retry_xpath = '//*[@id="autocomplete-list"]/div[2]'
 click_button(driver=driver, xpath='/html/body/div/div/div/div[2]/div[2]', button_name="Botón de Inicio")
 click_button(driver=driver, xpath='//*[@id="terms-and-conditions-modal"]/div/div/div[3]/button', button_name="Botón de Aceptar Términos")
 click_button(driver=driver, xpath='//*[@id="consultaPublica"]/div/div[2]/a', button_name="Botón de Consulta Pública")
-driver.save_screenshot("screenshot1.png")  # Verifica visualmente si hay algo encima
 
 click_button(driver=driver, xpath='/html/body/header/div[1]/div/div/div/div[1]', button_name="Botón de tres rayas")
 
 click_button(driver=driver, xpath='//*[@id="app-nav-main"]/li[2]/a', button_name="Botón de Sistema Energético Mexicano")
 
 
-driver.execute_script("document.body.style.zoom='50%'")  # Ajusta el porcentaje según necesites
+driver.execute_script("document.body.style.zoom='60%'")
 time.sleep(5)
 
 element_found = find_element_with_scroll(driver, xpath=buscar_en_el_mapa_xpath, max_attempts=5, scroll_pixels=300)
@@ -348,30 +349,186 @@ time.sleep(2)
 resultados = {}
 
 with open(ruta_archivo, "a", encoding="utf-8") as file:
-    for valor in ids_to_process[:2]:
-        logger.info(f"Iniciando búsqueda para: {valor}")
-        
-        click_button(driver=driver, xpath='//*[@id="btnContinuarSesion"]', button_name="Botón de Inicio de Sesion doble")
-        time.sleep(1)
+    for valor in ids_to_process[:5]:
+        for intento in range(2):
+            try:
+                logger.info(f"Iniciando búsqueda para: {valor}")
 
-        driver.save_screenshot("despues_de_retry_inicio_de_sesion.png")  # Verifica visualmente si hay algo encima
+                driver.refresh()
+                driver.execute_script("document.body.style.zoom='50%'")  # Ajusta el porcentaje según necesites
+                time.sleep(3)
 
-        #enter_text(driver=driver, xpath=buscar_en_el_mapa_xpath, text=valor)
-        time.sleep(nap)
-        input_element = WebDriverWait(driver, 8).until(EC.element_to_be_clickable((By.XPATH, '//*[@id="busquedaGeneralInput"]')))
-        input_element.clear()
-        time.sleep(0.5)  # Pausa breve
-        input_element.send_keys(valor)
-        logger.info(f"Texto ingresado: {valor}")
-        driver.save_screenshot("despues_de_meter_texto.png")  # Verifica visualmente si hay algo encima
-        
-        try:
-            button_lupa = WebDriverWait(driver, 8).until(EC.element_to_be_clickable((By.XPATH,'//*[@id="search-container"]/button')))
-            
-            if button_lupa:
-                print("boton de lupa encontrado")
-                button_lupa.click()
-        except:
-            pass
-        
-        driver.save_screenshot("despues_de_retry.png")  # Verifica visualmente si hay algo encima
+                try:
+                    boton_doble_sesion = WebDriverWait(driver, 8).until(EC.element_to_be_clickable((By.XPATH, '//*[@id="btnContinuarSesion"]')))
+                    if boton_doble_sesion:
+                        driver.execute_script("arguments[0].click();", boton_doble_sesion)
+                    else:
+                        logger.error("Alerta de doble sesion no encontrado, proseguir con normalidad")
+                except Exception as e:
+                    logger.error(f"No se dio click al boton de doble sesion, no apareció")
+                    pass
+
+                try:
+                    time.sleep(nap)
+                    input_element = WebDriverWait(driver, 8).until(EC.element_to_be_clickable((By.XPATH, '//*[@id="busquedaGeneralInput"]')))
+                    input_element.clear()
+                    time.sleep(0.5)
+                    input_element.send_keys(valor)
+                    logger.info(f"Texto ingresado: {valor}")
+                    time.sleep(5)
+                except:
+                    try:
+                        alert = WebDriverWait(driver, 3).until(EC.alert_is_present())
+                        logger.warning(f"Se encontró una alerta inesperada: {alert.text}")
+                        alert.accept()
+                        logger.info(f"Reintentando búsqueda para {valor} (Intento {intento + 1})")
+                        continue
+                    except:
+                        logger.error(f"No se pudo manejar la alerta correctamente para {valor}")
+                        continue
+
+                try:
+                    button_retry = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, '//*[@id="autocomplete-list"]/div[1]')))
+                    if button_retry:
+                        logger.info("Boton de retry encontrado")
+                        driver.execute_script("arguments[0].click();", button_retry)
+                    else:
+                        logger.error("boton de retry no encontrado")
+                except Exception as e:
+                    logger.error(f"Error para el boton de retry - {e}")
+                    pass
+                try:
+                    lupa = WebDriverWait(driver, 5).until(
+                        EC.element_to_be_clickable((By.XPATH, lupa_buscar_xpath))
+                    )
+                    time.sleep(.05)
+                    #driver.execute_script("arguments[0].click();", lupa)
+                    lupa.click()
+                    time.sleep(nap)
+                except:
+                    logger.warning("No se pudo hacer clic en la lupa de búsqueda.  (no afecta al flujo)")
+
+                datos_encontrados = False
+
+                def procesar_iconos_de_gas():
+                    gas_icons = driver.find_elements(By.XPATH, '//*[@id="map"]/div[1]/div[4]/img')
+                    time.sleep(3)
+
+                    if gas_icons:
+                        logger.info(f"Se encontraron {len(gas_icons)} iconos de gasolina para {valor}")
+
+                        for gas_idx, icon in enumerate(gas_icons, start=1):
+                            try:
+                                logger.info(f"Haciendo clic en el icono de gasolina {gas_idx} para {valor}")
+                                driver.execute_script("arguments[0].click();", icon)
+                                time.sleep(nap)
+
+                                try:
+                                    element_para_scroll = WebDriverWait(driver, 8).until(
+                                        EC.presence_of_element_located((By.XPATH, '//*[@id="map"]/div[1]/div[6]/div/div[1]/div/div'))
+                                    )
+                                    driver.execute_script("arguments[0].scrollTop += 185;", element_para_scroll)
+                                    time.sleep(2)
+
+                                    element_texto = WebDriverWait(driver, 10).until(
+                                        EC.visibility_of_element_located((By.XPATH, '//*[@id="map"]/div[1]/div[6]/div/div[1]/div/div/ul/li[2]'))
+                                    )
+                                    text = element_texto.text.split(": ")[1]
+                                    logger.info(f"Texto extraído: {text}")
+                                except:
+                                    logger.warning(f"No se pudo extraer el texto de confirmación para {valor}")
+                                    continue
+                                time.sleep(1)
+                                if text == valor:
+                                    logger.info(f"El icono {gas_idx} coincide con {valor}, extrayendo detalles.")
+                                    driver.execute_script("arguments[0].scrollTop += 300;", element_para_scroll)
+
+                                    boton_detalle = WebDriverWait(driver, 10).until(
+                                        EC.element_to_be_clickable((By.XPATH, '//*[@id="map"]/div[1]/div[6]/div/div[1]/div/div/a[1]'))
+                                    )
+                                    driver.execute_script("arguments[0].click();", boton_detalle)
+                                    time.sleep(3)
+
+                                    # original_window = switch_to_new_tab(driver=driver)
+                                    original_window = driver.current_window_handle
+                                    WebDriverWait(driver, 10).until(EC.number_of_windows_to_be(2))
+
+                                    new_window = [w for w in driver.window_handles if w != original_window][0]
+                                    driver.switch_to.window(new_window)
+
+                                    if original_window:
+                                        try:
+                                            texto_extraido = extract_text(driver=driver, xpath='//*[@id="contact2"]/div/div/div[4]')
+                                            razon_social = extract_text(driver=driver, xpath='//*[@id="contact2"]/div/div/div[3]')
+                                            marca = extract_text(driver=driver, xpath='//*[@id="contact2"]/div/div/div[5]')
+
+                                            if texto_extraido and razon_social and marca:
+                                                direccion_info = {}
+                                                for linea in texto_extraido.splitlines():
+                                                    if ":" in linea:
+                                                        campo, valor_campo = linea.split(":", 1)
+                                                        direccion_info[campo.strip()] = valor_campo.strip()
+
+                                                salida = (
+                                                        f"{valor} - {direccion_info.get('Calle', '')} - Código Postal {direccion_info.get('Código Postal', '')} "
+                                                        f"- Colonia {direccion_info.get('Colonia', '')} - Estado {direccion_info.get('ID Entidad Federativa', '')} "
+                                                        f"- Municipio {direccion_info.get('ID Municipio', '')} - Razón Social: {razon_social} - Marca: {marca}"
+                                                )
+
+                                                file.write(salida + "\n")
+                                                file.flush()
+                                                driver.close()
+                                                driver.switch_to.window(original_window)
+
+                                                return True
+
+                                        except:
+                                            logger.warning(f"No se pudieron extraer los datos completos para {valor}")
+
+                            except Exception as e:
+                                logger.error(f"Error al procesar el icono {gas_idx} para {valor}: {e}")
+
+                    return False
+
+                datos_encontrados = procesar_iconos_de_gas()
+
+                if not datos_encontrados:
+                    logger.warning(f"No se encontraron datos en los iconos de gasolina para {valor}, buscando iconos verdes.")
+
+                    try:
+                        green_buttons = WebDriverWait(driver, 10).until(
+                            EC.presence_of_all_elements_located((By.XPATH, '//*[@id="map"]/div[1]/div[4]/div'))
+                        )
+                        logger.info(f"Se encontraron {len(green_buttons)} iconos verdes en el mapa.")
+                    except:
+                        logger.warning("No se encontraron iconos verdes en el mapa después de esperar 10 segundos.")
+                        green_buttons = []
+
+                    for idx, green_button in enumerate(green_buttons, start=1):
+                        try:
+                            logger.info(f"Haciendo clic en el icono verde {idx} para {valor}")
+                            driver.execute_script("arguments[0].click();", green_button)
+                            time.sleep(nap)
+
+                            datos_encontrados = procesar_iconos_de_gas()
+                            if datos_encontrados:
+                                break
+
+                        except Exception as e:
+                            logger.error(f"Error al hacer clic en el icono verde {idx}: {e}")
+
+                if datos_encontrados:
+                    break
+                else:
+                    logger.warning(f"No se obtuvieron datos para {valor}. Reintentando intento {intento + 1}...")
+
+            except Exception as e:
+                logger.error(f"Error en el intento {intento + 1} para {valor}: {e}")
+
+        else:
+            logger.warning(f"Se agotaron los intentos para {valor}, pasando al siguiente.")
+
+
+logger.info("Proceso finalizado correctamente.")
+
+
