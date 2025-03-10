@@ -8,6 +8,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.action_chains import ActionChains
+from selenium.common.exceptions import NoAlertPresentException
 import logging
 import time
 import os
@@ -311,8 +312,8 @@ url = 'https://energeo.cre.gob.mx/Acceso/SesionExpirada#5/24.567/-101.755'
 
 #%%
 
-#driver = webdriver.Chrome(service=s, options=options)
-driver = webdriver.Chrome(options=options)
+driver = webdriver.Chrome(service=s, options=options)
+# driver = webdriver.Chrome(options=options)
 driver.get(url)
 
 #%%
@@ -352,6 +353,8 @@ resultados = {}
 
 with open(ruta_archivo, "a", encoding="utf-8") as file:
     for valor in ids_to_process:
+    # for valor in ['PL/2783/EXP/ES/2015']:
+
         for intento in range(2):
             try:
                 logger.info(f"Iniciando búsqueda para: {valor}")
@@ -386,7 +389,7 @@ with open(ruta_archivo, "a", encoding="utf-8") as file:
                         continue
                     except:
                         logger.error(f"No se pudo manejar la alerta correctamente para {valor}")
-                        continue
+
 
                 try:
                     button_retry = WebDriverWait(driver, 10).until(
@@ -397,120 +400,71 @@ with open(ruta_archivo, "a", encoding="utf-8") as file:
                     logger.warning("Botón de retry no encontrado.")
 
                 try:
-                    # 🔹 Esperar a que la lupa esté en el DOM
-                    lupa = WebDriverWait(driver, 5).until(
-                        EC.presence_of_element_located((By.XPATH, lupa_buscar_xpath))
-                    )
-                    logger.info("✅ Lupa encontrada en el DOM")
-                
-                    # 🔹 Eliminar overlays ANTES de interactuar con la lupa
-                    overlays = driver.find_elements(By.CSS_SELECTOR, '[class*="overlay"], [class*="modal"]')
-                    if overlays:
-                        logger.warning(f"⚠️ Se detectaron {len(overlays)} overlays. Intentando ocultarlos...")
-                        for overlay in overlays:
-                            driver.execute_script("arguments[0].style.display = 'none';", overlay)
-                        time.sleep(1)  # 🔹 Dar tiempo a que los cambios surtan efecto
-                
-                    # 🔹 Hacer scroll para centrar la lupa
-                    driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", lupa)
-                    time.sleep(1)
-                
-                    # 🔹 Si la lupa tiene `disabled="true"`, eliminarlo con JS
-                    is_disabled = driver.execute_script("return arguments[0].hasAttribute('disabled');", lupa)
-                    if is_disabled:
-                        logger.warning("⚠️ La lupa estaba deshabilitada. Intentando habilitarla con JavaScript.")
-                        driver.execute_script("arguments[0].removeAttribute('disabled');", lupa)
-                
-                    # 🔹 Intentar hasta 3 veces si sigue oculta o deshabilitada
-                    for intento in range(3):
-                        display_status = driver.execute_script("return window.getComputedStyle(arguments[0]).display;", lupa)
-                        if lupa.is_displayed() and lupa.is_enabled() and display_status != "none":
-                            logger.info("✅ La lupa ahora es visible y habilitada")
-                            break
-                        else:
-                            logger.warning(f"⚠️ Intento {intento+1}: La lupa sigue oculta/deshabilitada (`display: {display_status}`). Reintentando...")
-                            time.sleep(1)
-                            lupa = driver.find_element(By.XPATH, lupa_buscar_xpath)  # 🔹 Volver a localizar el botón
-                
-                    # 🔹 Intentar darle `focus()` antes de hacer clic
-                    driver.execute_script("arguments[0].focus();", lupa)
-                    time.sleep(0.5)
-                
-                    # 🔹 Intentar hacer clic con `execute_script()`
-                    try:
-                        logger.info("🔹 Intentando clic con `execute_script()`")
-                        driver.execute_script("arguments[0].click();", lupa)
-                    except Exception as e:
-                        logger.error(f"❌ Error con `execute_script()`, intentando `ActionChains()` - {e}")
-                        try:
-                            ActionChains(driver).move_to_element(lupa).click().perform()
-                        except Exception as e:
-                            logger.error(f"❌ No se pudo hacer clic en la lupa con `ActionChains()` - {e}")
-                            driver.save_screenshot("error_lupa_click.png")
-                
-                    # 🔹 Si el botón tiene un evento `onclick="buscarGeneral()"`, ejecutarlo manualmente
-                    driver.execute_script("buscarGeneral();")
-                    logger.info("✅ Se ejecutó `buscarGeneral();` manualmente para simular el clic.")
-                
+                    click_button(driver, xpath='//*[@id="search-container"]/button', button_name='lupa')
                     time.sleep(nap)
-                
-                except Exception as e:
-                    logger.warning(f"⚠️ No se pudo hacer clic en la lupa de búsqueda: {e}")
-                    driver.save_screenshot("lupa_no_clickable.png")  # 🔹 Guardar screenshot para revisión
+                except:
+                    logger.warning("No se pudo hacer clic en la lupa de búsqueda.")
+
+                try:
+                    alert = WebDriverWait(driver, 3).until(EC.alert_is_present())
+                    alert_text = alert.text
+                    logger.warning(f"⚠️ Alerta inesperada detectada: {alert_text}")
+                    alert.accept()
+                    logger.info("✅ Alerta aceptada, pasando al siguiente valor...")
+                    continue  # Pasar a la siguiente iteración inmediatamente
+                except:
+                    logger.warning(f"❌ No se pudo manejar la alerta correctamente para {valor}")
 
                 datos_encontrados = False
 
                 def procesar_iconos_de_gas():
-                    """ Procesa iconos de gasolina y extrae datos si coinciden con el valor buscado """
+                    """ Procesa iconos de gasolina que estén visibles en pantalla. """
                     try:
                         gas_icons = WebDriverWait(driver, 5).until(
                             EC.presence_of_all_elements_located((By.XPATH, '//*[@id="map"]/div[1]/div[4]/img'))
                         )
+                        # Filtrar solo los íconos visibles
+                        visible_gas_icons = [icon for icon in gas_icons if icon.is_displayed()]
+                        
+                        if not visible_gas_icons:
+                            logger.warning("⚠️ No hay íconos de gas visibles en la pantalla.")
+                            return False  # No hay iconos visibles, salir de la función
+
                     except:
-                        return False  # No hay iconos de gas
+                        logger.warning("⚠️ No se encontraron íconos de gasolina en el DOM.")
+                        return False  # No hay íconos detectados
 
-                    logger.info(f"Se encontraron {len(gas_icons)} iconos de gasolina para {valor}")
+                    logger.info(f"✅ Se encontraron {len(visible_gas_icons)} íconos de gasolina visibles en pantalla.")
 
-                    for gas_idx in range(len(gas_icons)):
+                    for gas_idx, icon in enumerate(visible_gas_icons):
                         try:
-                            gas_icons = WebDriverWait(driver, 5).until(
-                                EC.presence_of_all_elements_located((By.XPATH, '//*[@id="map"]/div[1]/div[4]/img'))
-                            )
-                            icon = gas_icons[gas_idx]
+                            logger.info(f"🛠️ Procesando ícono de gas {gas_idx + 1}")
 
-                            logger.info(f"Haciendo clic en el icono de gasolina {gas_idx+1} para {valor}")
-
-                            # 🔹 Verificar si el icono está visible y habilitado
+                            # Asegurar que el ícono esté centrado
                             driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", icon)
-                            WebDriverWait(driver, 5).until(lambda d: icon.is_displayed())
+                            time.sleep(1)  # Pequeña pausa para asegurar que el scroll se complete
 
-                            # 🔹 Intentar hacer clic
+                            # Intentar hacer clic
                             try:
                                 driver.execute_script("arguments[0].click();", icon)
-                                time.sleep(nap)
                             except:
-                                logger.warning(f"⚠️ Error en `execute_script()`, intentando `click()`.")
-                                try:
-                                    icon.click()
-                                except:
-                                    logger.error(f"❌ No se pudo hacer clic en el icono {gas_idx+1}")
-                                    driver.save_screenshot(f"error_click_icono_{gas_idx+1}.png")
-                                    continue
+                                logger.warning(f"⚠️ Error en `execute_script()`, intentando `click()`.") 
+                                icon.click()
 
                             time.sleep(nap)
 
-                            # 🔹 Scroll en el contenedor de detalles
+                            # Scroll en el contenedor de detalles
                             element_para_scroll = WebDriverWait(driver, 8).until(
                                 EC.presence_of_element_located((By.XPATH, '//*[@id="map"]/div[1]/div[6]/div/div[1]/div/div'))
                             )
 
                             for _ in range(3):
-                                driver.execute_script("arguments[0].scrollTop += 185;", element_para_scroll)
+                                driver.execute_script("arguments[0].scrollTop += 155;", element_para_scroll)
                                 time.sleep(1)
                                 if driver.execute_script("return arguments[0].scrollTop;", element_para_scroll) > 100:
                                     break
 
-                            # 🔹 Extraer texto
+                            # Extraer texto
                             element_texto = WebDriverWait(driver, 10).until(
                                 EC.visibility_of_element_located((By.XPATH, '//*[@id="map"]/div[1]/div[6]/div/div[1]/div/div/ul/li[2]'))
                             )
@@ -545,10 +499,10 @@ with open(ruta_archivo, "a", encoding="utf-8") as file:
                                                     campo, valor_campo = linea.split(":", 1)
                                                     direccion_info[campo.strip()] = valor_campo.strip()
                                             salida = (
-                                                        f"{valor} - {direccion_info.get('Calle', '')} - Código Postal {direccion_info.get('Código Postal', '')} "
-                                                        f"- Colonia {direccion_info.get('Colonia', '')} - Estado {direccion_info.get('ID Entidad Federativa', '')} "
-                                                        f"- Municipio {direccion_info.get('ID Municipio', '')} - Razón Social: {razon_social} - Marca: {marca}"
-                                                )
+                                                f"{valor} - {direccion_info.get('Calle', '')} - Código Postal {direccion_info.get('Código Postal', '')} "
+                                                f"- Colonia {direccion_info.get('Colonia', '')} - Estado {direccion_info.get('ID Entidad Federativa', '')} "
+                                                f"- Municipio {direccion_info.get('ID Municipio', '')} - Razón Social: {razon_social} - Marca: {marca}"
+                                            )
                                             file.write(salida + "\n")
                                             file.flush()
 

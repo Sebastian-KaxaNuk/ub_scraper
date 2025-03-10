@@ -8,10 +8,13 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.action_chains import ActionChains
+from selenium.common.exceptions import NoAlertPresentException
 import logging
 import time
 import os
 from datetime import datetime
+import psutil
+import gc
 
 #%%
 
@@ -244,6 +247,45 @@ def find_element_with_scroll(driver, xpath: str, max_attempts: int = 5, scroll_p
     logger.error(f"No se pudo encontrar el elemento {xpath} después de {max_attempts} intentos.")
     return False  # Elemento no encontrado
 
+def check_memory_usage():
+    """
+    Displays and returns the total memory usage of Selenium/Chrome, including child processes.
+
+    :return: Total memory used in MB (float)
+    """
+    try:
+        driver_process = psutil.Process(driver.service.process.pid)
+        child_processes = driver_process.children(recursive=True)  # Get all child processes
+
+        total_memory = driver_process.memory_info().rss  # Main process memory
+        for child in child_processes:
+            total_memory += child.memory_info().rss  # Add memory from child processes
+
+        total_memory_mb = total_memory / 1024 / 1024  # Convert to MB
+        logger.info(f"🔴 Total memory used by Selenium/Chrome: {total_memory_mb:.2f} MB")
+
+        return total_memory_mb  # ✅ Now it returns the memory usage!
+
+    except Exception as e:
+        logger.error(f"❌ Error measuring memory usage: {e}")
+        return 0  # If error occurs, return 0 to avoid crashing the process
+
+def check_total_system_memory():
+    """
+    Muestra el consumo total de memoria RAM del sistema
+    """
+    mem = psutil.virtual_memory()
+    total_mb = mem.total / 1024 / 1024
+    available_mb = mem.available / 1024 / 1024
+    used_mb = mem.used / 1024 / 1024
+    percent_used = mem.percent
+
+    logger.info(f"🖥️ Total System Memory: {total_mb:.2f} MB")
+    logger.info(f"✅ Available Memory: {available_mb:.2f} MB")
+    logger.info(f"🚀 Used Memory: {used_mb:.2f} MB ({percent_used:.2f}%)")
+
+    return available_mb
+
 #%%
 
 os.makedirs("Output/Results", exist_ok=True)
@@ -294,16 +336,18 @@ options.add_argument('--disable-blink-features=AutomationControlled')
 options.add_experimental_option("excludeSwitches", ["enable-automation"])
 options.add_argument("start-maximized")
 options.add_argument("--disable-javascript")
-
+options.add_argument("--renderer-process-limit=2")
+options.add_argument("--single-process")  # Force Chrome to use a single process
 options.add_argument("--headless")
 options.add_argument("--no-sandbox")
 options.add_argument("--disable-gpu")  # Desactiva la GPU
-#options.add_argument("--blink-settings=imagesEnabled=false")  # Desactiva imágenes
+options.add_argument("--blink-settings=imagesEnabled=false")  # Desactiva imágenes
 options.add_argument("--disable-dev-shm-usage")
 options.add_experimental_option('useAutomationExtension', False)
 headers = {"User-agent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.80 Safari/537.36"}
 executable_path_user = r'chromedriver.exe'
 s = Service(r'chromedriver.exe')
+options.add_argument("--enable-precise-memory-info")
 
 #%%
 
@@ -352,14 +396,50 @@ resultados = {}
 
 with open(ruta_archivo, "a", encoding="utf-8") as file:
     for valor in ids_to_process:
+
+        # 🔄 CONTROL DE MEMORIA: Si la memoria es alta, reinicia el navegador
+        while True:
+            available_memory = check_total_system_memory()
+            used_memory = check_memory_usage()
+
+            if used_memory > 2600 or available_memory < 500:
+                logger.warning("⚠️ Memoria demasiado alta o poca memoria libre. Reiniciando Chrome...")
+
+                driver.quit()
+                time.sleep(5)
+                driver = webdriver.Chrome(options=options)
+                driver.get(url)
+
+                click_button(driver, '/html/body/div/div/div/div[2]/div[2]', "Botón de Inicio")
+                click_button(driver, '//*[@id="terms-and-conditions-modal"]/div/div/div[3]/button', "Botón de Aceptar Términos")
+                click_button(driver, '//*[@id="consultaPublica"]/div/div[2]/a', "Botón de Consulta Pública")
+                click_button(driver, '/html/body/header/div[1]/div/div/div/div[1]', "Botón de tres rayas")
+                click_button(driver, '//*[@id="app-nav-main"]/li[2]/a', "Botón de Sistema Energético Mexicano")
+
+                driver.execute_script("document.body.style.zoom='60%'")
+                time.sleep(5)
+                find_element_with_scroll(driver, buscar_en_el_mapa_xpath, max_attempts=5, scroll_pixels=300)
+                time.sleep(2)
+
+                continue  # 🔄 Volver a checar la memoria antes de iniciar el proceso
+
+            break  # ✅ Salir del while si la memoria está en niveles seguros
+
         for intento in range(2):
             try:
-                logger.info(f"Iniciando búsqueda para: {valor}")
+                logger.info(f"🛠️ Iniciando búsqueda para: {valor}")
 
                 driver.refresh()
-                driver.execute_script("document.body.style.zoom='50%'")
-                time.sleep(3)
+                driver.execute_script("window.localStorage.clear();")
+                driver.execute_script("window.sessionStorage.clear();")
+                logger.info("📊 Medición inicial de memoria RAM")
+                time.sleep(1)
+                check_memory_usage()
 
+                driver.execute_script("document.body.style.zoom='50%'")
+                time.sleep(2)
+
+                # 🔹 Manejo de alerta de doble sesión
                 try:
                     boton_doble_sesion = WebDriverWait(driver, 8).until(
                         EC.element_to_be_clickable((By.XPATH, '//*[@id="btnContinuarSesion"]'))
@@ -368,104 +448,140 @@ with open(ruta_archivo, "a", encoding="utf-8") as file:
                 except:
                     logger.info("No apareció alerta de doble sesión, continuando...")
 
+                driver.execute_script("window.localStorage.clear();")
+                driver.execute_script("window.sessionStorage.clear();")
+                time.sleep(1)
+                check_memory_usage()
+
+                # 🔹 Buscar input y escribir texto
                 try:
                     time.sleep(nap)
+                    logger.info("📊 Medición antes de encontrar el campo de texto")
+
+                    # ✅ Medir memoria antes de interactuar
+                    used_memory = check_memory_usage()
+
+                    if used_memory < 50:
+                        logger.warning("⚠️ Posible error en la medición de memoria. Revisando Chrome...")
+                        continue  # 🔄 Volver a intentar
+
+                    driver.execute_script("window.localStorage.clear();")
+                    driver.execute_script("window.sessionStorage.clear();")
+
                     input_element = WebDriverWait(driver, 8).until(
                         EC.element_to_be_clickable((By.XPATH, '//*[@id="busquedaGeneralInput"]'))
                     )
+                    time.sleep(1)
+
+                    # ✅ Medir memoria después de encontrar el input
+                    used_memory = check_memory_usage()
+
+                    if used_memory > 2600:
+                        logger.warning("🚨 Memoria excedida después de encontrar el input. Volviendo al inicio...")
+                        continue  # 🔄 Volver a intentar con el mismo `valor`
+
+                    driver.execute_script("window.localStorage.clear();")
+                    driver.execute_script("window.sessionStorage.clear();")
+                    time.sleep(0.5)
+
                     input_element.clear()
                     time.sleep(0.5)
                     input_element.send_keys(valor)
-                    logger.info(f"Texto ingresado: {valor}")
-                    time.sleep(5)
-                except:
-                    try:
-                        alert = WebDriverWait(driver, 3).until(EC.alert_is_present())
-                        alert.accept()
-                        logger.warning(f"Alerta inesperada detectada y aceptada para {valor}")
-                        continue
-                    except:
-                        logger.error(f"No se pudo manejar la alerta correctamente para {valor}")
-                        continue
+                    logger.info(f"📝 Texto ingresado: {valor}")
 
+                    time.sleep(1)
+                    driver.execute_script("window.localStorage.clear();")
+                    driver.execute_script("window.sessionStorage.clear();")
+                    time.sleep(.05)
+
+                    # ✅ Medir memoria después de ingresar el texto
+                    used_memory = check_memory_usage()
+
+                    if used_memory > 2600:
+                        logger.warning("🚨 Memoria excedida después de ingresar el texto. Volviendo al inicio...")
+                        continue  # 🔄 Volver a intentar con el mismo `valor`
+
+                    time.sleep(5)
+
+                except Exception as e:
+                    logger.error(f"❌ Error al ingresar texto: {e}")
+                    continue
+
+                driver.execute_script("window.localStorage.clear();")
+                driver.execute_script("window.sessionStorage.clear();")
+                check_memory_usage()
+
+                # 🔹 Buscar botón de retry
                 try:
                     button_retry = WebDriverWait(driver, 10).until(
                         EC.element_to_be_clickable((By.XPATH, '//*[@id="autocomplete-list"]/div[1]'))
                     )
                     driver.execute_script("arguments[0].click();", button_retry)
                 except:
-                    logger.warning("Botón de retry no encontrado.")
+                    logger.warning("⚠️ Botón de retry no encontrado.")
+                    continue
 
-                try:
-                    lupa = WebDriverWait(driver, 5).until(EC.element_to_be_clickable((By.XPATH, lupa_buscar_xpath)))
-                    lupa.click()
-                    time.sleep(nap)
-                except:
-                    logger.warning("No se pudo hacer clic en la lupa de búsqueda.")
+                driver.execute_script("window.localStorage.clear();")
+                driver.execute_script("window.sessionStorage.clear();")
+                check_memory_usage()
 
                 datos_encontrados = False
 
+                # ========== 🔹 PROCESAR ÍCONOS ========== #
                 def procesar_iconos_de_gas():
-                    """ Procesa iconos de gasolina y extrae datos si coinciden con el valor buscado """
+                    """ Procesa íconos de gasolina visibles en pantalla y extrae datos. """
                     try:
                         gas_icons = WebDriverWait(driver, 5).until(
                             EC.presence_of_all_elements_located((By.XPATH, '//*[@id="map"]/div[1]/div[4]/img'))
                         )
+                        driver.execute_script("window.localStorage.clear();")
+                        driver.execute_script("window.sessionStorage.clear();")
+                        check_memory_usage()
+
+                        # Filtrar íconos visibles
+                        visible_gas_icons = [icon for icon in gas_icons if icon.is_displayed()]
+                        if not visible_gas_icons:
+                            logger.warning("⚠️ No hay íconos de gas visibles.")
+                            return False
+
                     except:
-                        return False  # No hay iconos de gas
+                        logger.warning("⚠️ No se encontraron íconos de gasolina en el DOM.")
+                        return False
 
-                    logger.info(f"Se encontraron {len(gas_icons)} iconos de gasolina para {valor}")
+                    logger.info(f"✅ Se encontraron {len(visible_gas_icons)} íconos de gasolina.")
 
-                    for gas_idx in range(len(gas_icons)):
+                    for gas_idx, icon in enumerate(visible_gas_icons):
                         try:
-                            gas_icons = WebDriverWait(driver, 5).until(
-                                EC.presence_of_all_elements_located((By.XPATH, '//*[@id="map"]/div[1]/div[4]/img'))
-                            )
-                            icon = gas_icons[gas_idx]
+                            logger.info(f"🛠️ Procesando ícono de gas {gas_idx + 1}")
 
-                            logger.info(f"Haciendo clic en el icono de gasolina {gas_idx+1} para {valor}")
-
-                            # 🔹 Verificar si el icono está visible y habilitado
                             driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", icon)
-                            WebDriverWait(driver, 5).until(lambda d: icon.is_displayed())
+                            time.sleep(1)
 
-                            # 🔹 Intentar hacer clic
                             try:
                                 driver.execute_script("arguments[0].click();", icon)
-                                time.sleep(nap)
                             except:
-                                logger.warning(f"⚠️ Error en `execute_script()`, intentando `click()`.")
-                                try:
-                                    icon.click()
-                                except:
-                                    logger.error(f"❌ No se pudo hacer clic en el icono {gas_idx+1}")
-                                    driver.save_screenshot(f"error_click_icono_{gas_idx+1}.png")
-                                    continue
+                                icon.click()
 
                             time.sleep(nap)
 
-                            # 🔹 Scroll en el contenedor de detalles
+                            # Scroll en el contenedor de detalles
                             element_para_scroll = WebDriverWait(driver, 8).until(
                                 EC.presence_of_element_located((By.XPATH, '//*[@id="map"]/div[1]/div[6]/div/div[1]/div/div'))
                             )
 
                             for _ in range(3):
-                                driver.execute_script("arguments[0].scrollTop += 185;", element_para_scroll)
+                                driver.execute_script("arguments[0].scrollTop += 155;", element_para_scroll)
                                 time.sleep(1)
                                 if driver.execute_script("return arguments[0].scrollTop;", element_para_scroll) > 100:
                                     break
 
-                            # 🔹 Extraer texto
+                            # 🔹 Extraer información
                             element_texto = WebDriverWait(driver, 10).until(
                                 EC.visibility_of_element_located((By.XPATH, '//*[@id="map"]/div[1]/div[6]/div/div[1]/div/div/ul/li[2]'))
                             )
                             text = element_texto.text.split(": ")[1]
-                            logger.info(f"Texto extraído: {text}")
 
                             if text == valor:
-                                logger.info(f"El icono {gas_idx+1} coincide con {valor}, extrayendo detalles.")
-                                driver.execute_script("arguments[0].scrollTop += 300;", element_para_scroll)
-
                                 boton_detalle = WebDriverWait(driver, 10).until(
                                     EC.element_to_be_clickable((By.XPATH, '//*[@id="map"]/div[1]/div[6]/div/div[1]/div/div/a[1]'))
                                 )
@@ -478,41 +594,36 @@ with open(ruta_archivo, "a", encoding="utf-8") as file:
                                 driver.switch_to.window(new_window)
 
                                 if original_window:
-                                    try:
-                                        texto_extraido = extract_text(driver, '//*[@id="contact2"]/div/div/div[4]')
-                                        razon_social = extract_text(driver, '//*[@id="contact2"]/div/div/div[3]')
-                                        marca = extract_text(driver, '//*[@id="contact2"]/div/div/div[5]')
+                                    texto_extraido = extract_text(driver, '//*[@id="contact2"]/div/div/div[4]')
+                                    razon_social = extract_text(driver, '//*[@id="contact2"]/div/div/div[3]')
+                                    marca = extract_text(driver, '//*[@id="contact2"]/div/div/div[5]')
 
-                                        if texto_extraido and razon_social and marca:
-                                            direccion_info = {}
-                                            for linea in texto_extraido.splitlines():
-                                                if ":" in linea:
-                                                    campo, valor_campo = linea.split(":", 1)
-                                                    direccion_info[campo.strip()] = valor_campo.strip()
-                                            salida = (
-                                                        f"{valor} - {direccion_info.get('Calle', '')} - Código Postal {direccion_info.get('Código Postal', '')} "
-                                                        f"- Colonia {direccion_info.get('Colonia', '')} - Estado {direccion_info.get('ID Entidad Federativa', '')} "
-                                                        f"- Municipio {direccion_info.get('ID Municipio', '')} - Razón Social: {razon_social} - Marca: {marca}"
-                                                )
-                                            file.write(salida + "\n")
-                                            file.flush()
+                                    if texto_extraido and razon_social and marca:
+                                        file.write(f"{valor} - {text} - {razon_social} - {marca} - {texto_extraido}\n")
+                                        file.flush()
 
-                                            driver.close()
-                                            driver.switch_to.window(original_window)
+                                        driver.execute_script("window.localStorage.clear();")
+                                        driver.execute_script("window.sessionStorage.clear();")
+                                        check_memory_usage()
 
-                                            return True
-                                    except:
-                                        logger.warning(f"No se pudieron extraer los datos completos para {valor}")
+                                        del gas_icons, visible_gas_icons
+                                        gc.collect()
+
+                                        driver.close()
+                                        driver.switch_to.window(original_window)
+
+                                        return True
 
                         except Exception as e:
-                            logger.error(f"Error al procesar el icono {gas_idx+1} para {valor}: {e}")
+                            logger.error(f"❌ Error procesando ícono {gas_idx + 1}: {e}")
 
                     return False
 
                 datos_encontrados = procesar_iconos_de_gas()
 
+                # 🔹 Si no se encontraron datos en los íconos, buscar en botones verdes
                 if not datos_encontrados:
-                    logger.warning(f"No se encontraron datos en los iconos de gasolina para {valor}, buscando iconos verdes.")
+                    logger.warning(f"⚠️ No se encontraron datos en los íconos de gas para {valor}, buscando botones verdes.")
 
                     try:
                         green_buttons = WebDriverWait(driver, 10).until(
@@ -521,10 +632,9 @@ with open(ruta_archivo, "a", encoding="utf-8") as file:
                     except:
                         green_buttons = []
 
-                    for idx in range(len(green_buttons)):
+                    for idx, green_button in enumerate(green_buttons):
                         try:
-                            green_button = green_buttons[idx]
-                            logger.info(f"Haciendo clic en el icono verde {idx+1} para {valor}")
+                            logger.info(f"🔍 Clic en botón verde {idx+1} para {valor}")
                             driver.execute_script("arguments[0].click();", green_button)
                             time.sleep(nap)
 
@@ -532,15 +642,16 @@ with open(ruta_archivo, "a", encoding="utf-8") as file:
                             if datos_encontrados:
                                 break
                         except Exception as e:
-                            logger.error(f"Error al hacer clic en el icono verde {idx+1}: {e}")
+                            logger.error(f"❌ Error clic en botón verde {idx+1}: {e}")
 
                 if datos_encontrados:
                     break
 
             except Exception as e:
-                logger.error(f"Error en el intento {intento + 1} para {valor}: {e}")
+                logger.error(f"❌ Error en intento {intento + 1} para {valor}: {e}")
 
         else:
-            logger.warning(f"Se agotaron los intentos para {valor}, pasando al siguiente.")
+            logger.warning(f"⚠️ Se agotaron intentos para {valor}, pasando al siguiente.")
 
-logger.info("Proceso finalizado correctamente.")
+logger.info("✅ Proceso finalizado correctamente.")
+driver.quit()
