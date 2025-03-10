@@ -49,6 +49,15 @@ logger.info("Archivo validado correctamente.")
 
 #%%
 
+"""
+@echo off
+cd /d "C:\Users\sebas\OneDrive\Escritorio\Python_Projects\ub_scraper"
+call conda activate scrapers_rod
+python launcher.py
+pause
+"""
+
+
 #functions
 def click_button(driver, xpath: str, button_name: str, timeout: int=5) -> None:
     """
